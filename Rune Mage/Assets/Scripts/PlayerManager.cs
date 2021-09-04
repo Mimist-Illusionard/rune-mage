@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System;
 
 public class PlayerManager : MonoBehaviour, IExecute
 {
@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour, IExecute
     [SerializeField] private float _playerMaxMane = 100f;
     [SerializeField] private float _playerMane;
     [SerializeField] private float _playerManaRegen;
+
+    public Action<float, float> ManaUiSet;
 
 	private Player _player;
 
@@ -71,12 +73,13 @@ public class PlayerManager : MonoBehaviour, IExecute
 
     public void ManaChange(float change)
     {
+        ManaUiSet?.Invoke(_playerMane, _playerMaxMane);
         _playerMane += change;
     }
 
     public void ManaRegen(float manaChange)
     {
-        Debug.Log(manaChange * Time.deltaTime);
+        ManaUiSet?.Invoke(_playerMane, _playerMaxMane);
         _playerMane += manaChange * Time.deltaTime;
     }
 
