@@ -38,6 +38,7 @@ public class SpellEditor : Editor
         if (_isSpellGenerated == true)
         {
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Name"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("ManaCost"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Prefab"));
 
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, true, false, GUILayout.Height(200));

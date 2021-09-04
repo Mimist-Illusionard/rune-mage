@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Spell_2
   m_EditorClassIdentifier: 
   Name: Spell_2
+  ManaCost: 50
   Length: 2
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}

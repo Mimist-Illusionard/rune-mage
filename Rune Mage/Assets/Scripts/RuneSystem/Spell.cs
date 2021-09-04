@@ -9,6 +9,7 @@ using UnityEngine;
 public class Spell : ScriptableObject
 {
     public string Name;
+    public float ManaCost;
     public int Length;
     public List<Rune> Runes = new List<Rune>();
     public GameObject Prefab;
