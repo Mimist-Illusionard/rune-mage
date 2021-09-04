@@ -11,25 +11,40 @@ public class SpellInput : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SpellsSystem.Singleton.AddNewRune(FirstRune);
-            Debug.Log("Press Alpha1 button");
+            Debug.Log("Press Alpha2 button");
+            if (SpellsSystem.Singleton.AddNewRune(FirstRune))
+            {
+                CreateIcon(FirstRune);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SpellsSystem.Singleton.AddNewRune(SecondRune);
             Debug.Log("Press Alpha2 button");
+            if (SpellsSystem.Singleton.AddNewRune(SecondRune))
+            {
+                CreateIcon(SecondRune);
+            }          
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SpellsSystem.Singleton.AddNewRune(ThirdRune);
-            Debug.Log("Press Alpha3 button");
+            Debug.Log("Press Alpha2 button");
+            if (SpellsSystem.Singleton.AddNewRune(ThirdRune))
+            {
+                CreateIcon(ThirdRune);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             SpellsSystem.Singleton.UseSpell();
+            RunesUi.Singleton.DeleteRuneIcons();
         }
+    }
+
+    private void CreateIcon(Rune rune)
+    {
+        RunesUi.Singleton.CreateRuneIcon(rune);
     }
 }
