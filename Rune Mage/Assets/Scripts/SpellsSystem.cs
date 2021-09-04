@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpellsSystem : MonoBehaviour
 {
     [SerializeField] private List<Spell> _spells = new List<Spell>();
+    [SerializeField] private int _maxRunesAmount;
+
+    private int _currentRunesInSpell;
 
     public List<Rune> _currentRunes = new List<Rune>();
     public static SpellsSystem Singleton { get; private set; }
@@ -14,10 +17,18 @@ public class SpellsSystem : MonoBehaviour
         Singleton = this;
     }
 
-
-    public void AddNewRune(Rune rune)
+    public bool AddNewRune(Rune rune)
     {
-        _currentRunes.Add(rune);
+        if (_currentRunesInSpell >= _maxRunesAmount)
+        {
+            return false;
+        } 
+        else
+        {
+            _currentRunes.Add(rune);
+            _currentRunesInSpell++;
+            return true;
+        }
     }
 
     public void UseSpell()
@@ -60,6 +71,7 @@ public class SpellsSystem : MonoBehaviour
                 correctRunes = 0;
         }
 
+        _currentRunesInSpell = 0;
         _currentRunes.Clear();
     }
 }
