@@ -18,4 +18,4 @@ MonoBehaviour:
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
-  Prefab: {fileID: 8394959165212597424, guid: fc3386152d1e9c947a75628c1a8c0165, type: 3}
+  Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
