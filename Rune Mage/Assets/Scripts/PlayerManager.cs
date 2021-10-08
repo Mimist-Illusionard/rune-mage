@@ -92,4 +92,11 @@ public class PlayerManager : MonoBehaviour, IExecute
 	{
 		return _player;
 	}
+
+	public RaycastHit Raycast()
+    {
+		RaycastHit hitInfo;
+		Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hitInfo);
+		return hitInfo;
+	}
 }

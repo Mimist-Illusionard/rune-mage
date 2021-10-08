@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using UnityEngine;
 
 
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         _executes.Remove(executeGameObject);
     } 
 
-    public void ClearAllExeciteObjects()
+    public void ClearAllExecuteObjects()
     {
         _executes.Clear();
     }

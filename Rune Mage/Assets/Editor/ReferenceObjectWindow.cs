@@ -12,7 +12,7 @@ public class ReferenceObjectWindow : EditorWindow
 
     private Vector2 _scrollPosition = Vector2.zero;
 
-    public static void OpenWithField(Object[] objects, string objectPath, string fieldName, int index = 0, bool isArray = false)
+    public static void Open(Object[] objects, string objectPath, string fieldName, int index = 0, bool isArray = false)
     {
         _objects = objects;
         _objectPath = objectPath;

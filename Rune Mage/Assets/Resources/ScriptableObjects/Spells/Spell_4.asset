@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Spell_4
   m_EditorClassIdentifier: 
   Name: Spell_4
+  ManaCost: 0
   Length: 2
   Runes:
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
   Prefab: {fileID: 1597648706924790914, guid: 5ebda99082b517349a52b46cf9f57647, type: 3}
+  Type: 1

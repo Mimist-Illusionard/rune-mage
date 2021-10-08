@@ -40,6 +40,7 @@ public class SpellEditor : Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Name"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("ManaCost"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Prefab"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("Type"));
 
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, true, false, GUILayout.Height(200));
             GUILayout.BeginHorizontal();
@@ -69,6 +70,11 @@ public class SpellEditor : Editor
             }
             GUILayout.EndHorizontal();
             GUILayout.EndScrollView();
+
+            if (GUILayout.Button("Spell Logic"))
+            {
+                SpellEditorWindow.Open(_spell.SpellNodes);
+            }
         }
 
         if (_isSpellGenerated == true)
@@ -76,6 +82,10 @@ public class SpellEditor : Editor
             if (GUILayout.Button("Regenerate Spell"))
             {
                 _spell.Runes.Clear();
+                _spell.SpellNodes.Clear();
+
+                _spell.ManaCost = 0;
+                _spell.Prefab = null;
                 _isSpellGenerated = false;
             }
         }
@@ -98,7 +108,7 @@ public class SpellEditor : Editor
         {
             AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/ScriptableObjects");
             var list = Resources.FindObjectsOfTypeAll(typeof(Rune));
-            ReferenceObjectWindow.OpenWithField(list, $"ScriptableObjects/Spells/{_spell.name}", "Runes", index, true);
+            ReferenceObjectWindow.Open(list, $"ScriptableObjects/Spells/{_spell.name}", "Runes", index, true);
         }
     }
 }

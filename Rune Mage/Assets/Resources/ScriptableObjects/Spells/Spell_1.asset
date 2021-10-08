@@ -18,4 +18,41 @@ MonoBehaviour:
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  SpellNodes:
+  - Name: Start Node
+    ID: e0e8ff29-0e38-4a2c-a35c-4f38a84d2a13
+    Type: 1
+    Position: {x: 500, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: c34ffff3-7529-4c0c-97ae-96a1c507ab70
+      Direction: 1
+      ConnectedNodeID: 69b5d43a-8d48-4cfc-88a0-ce12fa1fc96e
+  - Name: End Node
+    ID: 076eb4c8-8ca6-4266-ab32-2aacf2334004
+    Type: 2
+    Position: {x: 1000, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 8a982e45-6349-41b8-82f5-1037a2a7c4f6
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Spawn Point Node
+    ID: 69b5d43a-8d48-4cfc-88a0-ce12fa1fc96e
+    Type: 4
+    Position: {x: 757, y: 499}
+    Fields:
+      _data:
+      - Key: SpawnPointType
+        Value: Raycast_Point
+    Ports:
+    - ID: 59b495a0-e931-4b8a-b892-5ed81b3cd82e
+      Direction: 1
+      ConnectedNodeID: 076eb4c8-8ca6-4266-ab32-2aacf2334004
+    - ID: 5a07a319-b070-4a05-bd92-9c7f308ab29f
+      Direction: 0
+      ConnectedNodeID: 
   Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
+  Type: 1

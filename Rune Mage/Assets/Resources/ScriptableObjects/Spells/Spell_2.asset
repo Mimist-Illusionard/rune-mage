@@ -18,4 +18,41 @@ MonoBehaviour:
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  SpellNodes:
+  - Name: Start Node
+    ID: 43afe195-f2c5-4653-8594-44d62102c006
+    Type: 1
+    Position: {x: 500, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 9d9d821e-7944-43c6-b32e-3c22cd3b8f09
+      Direction: 1
+      ConnectedNodeID: 5f16e558-7476-4039-8753-9973226e7d52
+  - Name: End Node
+    ID: 91977959-87a7-46fc-944e-bfade559effc
+    Type: 2
+    Position: {x: 1000, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 5578bdba-68e5-47b4-b87e-e28c24fb924e
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Wait Node
+    ID: 5f16e558-7476-4039-8753-9973226e7d52
+    Type: 3
+    Position: {x: 764, y: 475}
+    Fields:
+      _data:
+      - Key: WaitTime
+        Value: 43
+    Ports:
+    - ID: 2254bff0-ca45-49fc-94dd-a7b08fd8f107
+      Direction: 1
+      ConnectedNodeID: 91977959-87a7-46fc-944e-bfade559effc
+    - ID: b92a45b5-7347-4284-a1de-1632b6f9c4a0
+      Direction: 0
+      ConnectedNodeID: 
   Prefab: {fileID: 1515739984047690601, guid: f10475c34bcb18845a6c88b698a1ea4d, type: 3}
+  Type: 1

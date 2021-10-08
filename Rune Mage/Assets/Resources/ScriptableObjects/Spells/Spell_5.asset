@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: Spell_3
+  m_Name: Spell_5
   m_EditorClassIdentifier: 
-  Name: Spell_3
-  ManaCost: 0
-  Length: 2
+  Name: Spell_5
+  ManaCost: 10
+  Length: 1
   Runes:
-  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
-  Type: 1
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  Prefab: {fileID: 6714257348929866549, guid: c67dfa3797a00bb468f6053ed11f2dff, type: 3}
+  Type: 2
