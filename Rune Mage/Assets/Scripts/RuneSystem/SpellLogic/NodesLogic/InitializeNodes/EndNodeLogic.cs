@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine;
+
 
 public class EndNodeLogic : NodeLogic
 {
@@ -6,8 +7,8 @@ public class EndNodeLogic : NodeLogic
     {       
     }
 
-    public override void Logic()
+    public override void Logic(GameObject spell)
     {
-        UnityEngine.Debug.Log("EndNode Logic");
+        Debug.Log("EndNode Logic");
     }
 }

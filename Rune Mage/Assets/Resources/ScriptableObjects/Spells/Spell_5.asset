@@ -13,9 +13,67 @@ MonoBehaviour:
   m_Name: Spell_5
   m_EditorClassIdentifier: 
   Name: Spell_5
-  ManaCost: 10
+  ManaCost: 5
   Length: 1
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Prefab: {fileID: 6714257348929866549, guid: c67dfa3797a00bb468f6053ed11f2dff, type: 3}
-  Type: 2
+  SpellNodes:
+  - Name: LifeTime Node
+    ID: 44b0ae66-336f-4d8d-a09d-39a2ed49258e
+    Type: 7
+    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
+    Position: {x: 850, y: 485}
+    Fields:
+      _data:
+      - Key: LifeTime
+        Value: 3
+    Ports:
+    - ID: a7b71a53-661b-4321-9530-a4dc82df0a70
+      Direction: 1
+      ConnectedNodeID: 580152fc-06c8-4745-b018-70e27fdf0418
+    - ID: 20d67abd-1090-4f2e-be4e-db920b4683f0
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Spawn Point Node
+    ID: 69d777eb-808b-4336-ae45-a463d118a6c2
+    Type: 6
+    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
+    Position: {x: 637, y: 481}
+    Fields:
+      _data:
+      - Key: SpawnPointType
+        Value: Raycast_Point
+    Ports:
+    - ID: ebbeac1e-adac-465c-bdd9-7b04d0ba6445
+      Direction: 1
+      ConnectedNodeID: 44b0ae66-336f-4d8d-a09d-39a2ed49258e
+    - ID: 7b4be3c5-0ef3-47a8-96d6-d4bdc3c7ed1d
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Start Node
+    ID: 95462d3c-bab8-4451-aa25-b69a45f0280a
+    Type: 1
+    GroupID: 
+    Position: {x: 381, y: 485}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 8d090eac-94cc-4e86-ad9f-b7b2b5b9c73d
+      Direction: 1
+      ConnectedNodeID: 69d777eb-808b-4336-ae45-a463d118a6c2
+  - Name: End Node
+    ID: 580152fc-06c8-4745-b018-70e27fdf0418
+    Type: 2
+    GroupID: 
+    Position: {x: 1081, y: 480}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 0e47bcc8-c3f2-4031-8dcb-38e9198b1cdb
+      Direction: 0
+      ConnectedNodeID: 
+  Groups:
+  - Name: Initialize
+    ID: ef0028ef-2dec-4af1-93d9-d4181a407e24
+    Position: {x: 612, y: 422}

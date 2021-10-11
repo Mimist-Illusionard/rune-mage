@@ -1,4 +1,5 @@
-﻿
+﻿using UnityEngine;
+
 
 public class WaitTimeNodeLogic : NodeLogic
 {
@@ -10,11 +11,11 @@ public class WaitTimeNodeLogic : NodeLogic
         fields.TryGetValue("WaitTime", out value);
 
         if (!float.TryParse(value, out _waitTime)) 
-            UnityEngine.Debug.LogError($"Can't parse <b>waitTimeValue</b>:{value} into <b>WaitIime</b> in <b>WaitTimeLogic</b>");
+            Debug.LogError($"Can't parse <b>waitTimeValue</b>:{value} into <b>WaitIime</b> in <b>WaitTimeLogic</b>");
     }
 
-    public override void Logic()
+    public override void Logic(GameObject spell)
     {
-        UnityEngine.Debug.Log("WaitTimeNode logic");
+        Debug.Log("WaitTimeNode logic");
     }
 }

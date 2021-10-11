@@ -8,16 +8,17 @@ using UnityEngine;
 
 public class SpellNodeBase : Node
 {
-    public SpellGraphView GraphView;
-    public VisualElement CustomDataContainer;
-    public SpellNodeData SpellNodeData = new SpellNodeData();
+    protected SpellGraphView GraphView;
+    protected VisualElement CustomDataContainer;
+    protected SpellNodeData SpellNodeData = new SpellNodeData();
 
-    public List<NodePortData> PortsData = new List<NodePortData>();
-    public List<Port> Ports = new List<Port>();
+    protected List<NodePortData> PortsData = new List<NodePortData>();
+    protected List<Port> Ports = new List<Port>();
 
     public SpellNodeType SpellNodeType;
     public string NodeName;
     public string ID;
+    public string GroupID;
 
     public virtual void Initialize(Vector2 position, bool needGenerateGuid = true)
     {
@@ -85,6 +86,7 @@ public class SpellNodeBase : Node
         SpellNodeData.ID = ID;
         SpellNodeData.Type = SpellNodeType;
         SpellNodeData.Position = this.GetPosition().position;
+        SpellNodeData.GroupID = GroupID;
 
         return SpellNodeData;
     }
@@ -106,7 +108,8 @@ public class SpellNodeBase : Node
     {
         NodeName = spellNodeData.Name;
         ID = spellNodeData.ID;
-        SpellNodeType = spellNodeData.Type;      
+        SpellNodeType = spellNodeData.Type;
+        GroupID = spellNodeData.GroupID;
     }
 
     public void LoadPorts(SpellNodeData spellNodeData)

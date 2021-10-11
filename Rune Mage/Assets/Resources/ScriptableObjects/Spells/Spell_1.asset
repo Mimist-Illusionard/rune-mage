@@ -13,46 +13,100 @@ MonoBehaviour:
   m_Name: Spell_1
   m_EditorClassIdentifier: 
   Name: Spell_1
-  ManaCost: 15
+  ManaCost: 5
   Length: 2
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
   SpellNodes:
-  - Name: Start Node
-    ID: e0e8ff29-0e38-4a2c-a35c-4f38a84d2a13
-    Type: 1
-    Position: {x: 500, y: 500}
+  - Name: Damage Node
+    ID: 4aa36e8a-9e38-4155-8ac9-606d2ab371f2
+    Type: 4
+    GroupID: 9dfeb396-5736-49d6-afa6-0b80340ad684
+    Position: {x: 698, y: 517}
     Fields:
-      _data: []
+      _data:
+      - Key: Damage
+        Value: 3
     Ports:
-    - ID: c34ffff3-7529-4c0c-97ae-96a1c507ab70
+    - ID: aef35410-cefa-4188-8fb7-8c9d713311f0
       Direction: 1
-      ConnectedNodeID: 69b5d43a-8d48-4cfc-88a0-ce12fa1fc96e
-  - Name: End Node
-    ID: 076eb4c8-8ca6-4266-ab32-2aacf2334004
-    Type: 2
-    Position: {x: 1000, y: 500}
+      ConnectedNodeID: a0778c14-7a66-4f59-97e6-9e1fc3dcb0ac
+    - ID: 582517e8-72d9-4eca-bee4-88f970769722
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Speed Node
+    ID: a0778c14-7a66-4f59-97e6-9e1fc3dcb0ac
+    Type: 5
+    GroupID: 9dfeb396-5736-49d6-afa6-0b80340ad684
+    Position: {x: 856, y: 517}
     Fields:
-      _data: []
+      _data:
+      - Key: Speed
+        Value: 400
     Ports:
-    - ID: 8a982e45-6349-41b8-82f5-1037a2a7c4f6
+    - ID: 261a77bc-3a81-4543-a56b-5d8ab89030fc
+      Direction: 1
+      ConnectedNodeID: 3875da35-32d3-4968-9379-8a32e76810ed
+    - ID: 5fe6a14c-e8b1-493f-be4e-efc3864ac6a0
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: LifeTime Node
+    ID: 3875da35-32d3-4968-9379-8a32e76810ed
+    Type: 7
+    GroupID: 9dfeb396-5736-49d6-afa6-0b80340ad684
+    Position: {x: 1009, y: 515}
+    Fields:
+      _data:
+      - Key: LifeTime
+        Value: 5
+    Ports:
+    - ID: 3892faf0-4968-4e7b-8e94-60cd007f8f62
+      Direction: 1
+      ConnectedNodeID: 97549903-a1b7-4722-a975-ba810f1c1303
+    - ID: 91eaa7a5-c6d7-4a8f-aacb-1108096df3a7
       Direction: 0
       ConnectedNodeID: 
   - Name: Spawn Point Node
-    ID: 69b5d43a-8d48-4cfc-88a0-ce12fa1fc96e
-    Type: 4
-    Position: {x: 757, y: 499}
+    ID: a0fe1bfe-eb8e-449a-afdb-cb666cde522e
+    Type: 6
+    GroupID: 9dfeb396-5736-49d6-afa6-0b80340ad684
+    Position: {x: 514, y: 515}
     Fields:
       _data:
       - Key: SpawnPointType
-        Value: Raycast_Point
+        Value: Bullet_Spawn_Point
     Ports:
-    - ID: 59b495a0-e931-4b8a-b892-5ed81b3cd82e
+    - ID: a32b569d-af0f-44bb-b7fd-c0a4b307b042
       Direction: 1
-      ConnectedNodeID: 076eb4c8-8ca6-4266-ab32-2aacf2334004
-    - ID: 5a07a319-b070-4a05-bd92-9c7f308ab29f
+      ConnectedNodeID: 4aa36e8a-9e38-4155-8ac9-606d2ab371f2
+    - ID: d0490ccb-a53d-4a7e-a832-8a1049d85cb0
       Direction: 0
       ConnectedNodeID: 
-  Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
-  Type: 1
+  - Name: Start Node
+    ID: f38dcb85-88f0-4f1d-95e7-79339d3fee4f
+    Type: 1
+    GroupID: 
+    Position: {x: 288, y: 518}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 2c3a913b-fbf5-4366-9e28-6dc50b0467e4
+      Direction: 1
+      ConnectedNodeID: a0fe1bfe-eb8e-449a-afdb-cb666cde522e
+  - Name: End Node
+    ID: 97549903-a1b7-4722-a975-ba810f1c1303
+    Type: 2
+    GroupID: 
+    Position: {x: 1201, y: 517}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 89343468-eb18-48d2-a2b4-db01c68c5b03
+      Direction: 0
+      ConnectedNodeID: 
+  Groups:
+  - Name: Initialize
+    ID: 9dfeb396-5736-49d6-afa6-0b80340ad684
+    Position: {x: 489, y: 456}

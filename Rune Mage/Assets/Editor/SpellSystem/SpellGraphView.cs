@@ -10,12 +10,14 @@ public class SpellGraphView : GraphView
 {
     private SpellEditorWindow _editorWindow;
     private static List<SpellNodeData> _savedNodes;
+    private static List<GroupData> _savedGroupes;
     private static List<SpellNodeBase> _currentNodes;
 
-    public SpellGraphView(SpellEditorWindow editorWindow, List<SpellNodeData> nodes)
+    public SpellGraphView(SpellEditorWindow editorWindow, List<SpellNodeData> nodes, List<GroupData> savedGroupes)
     {
         _editorWindow = editorWindow;
         _savedNodes = nodes;
+        _savedGroupes = savedGroupes;
 
         CreateGridView();
         CreateManipulators();
@@ -30,6 +32,7 @@ public class SpellGraphView : GraphView
     }
 
     #region GraphView Methods
+    //Checks if port can connect to other ports with conditions
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
         List<Port> compatiblePorts = new List<Port>();
@@ -61,6 +64,7 @@ public class SpellGraphView : GraphView
     {
         graphViewChanged = (changes) =>
         {
+            //When creates new port's connections adds new inpurt port to list
             if (changes.edgesToCreate != null)
             {
                 foreach (var edge in changes.edgesToCreate)
@@ -94,9 +98,22 @@ public class SpellGraphView : GraphView
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
 
-        this.AddManipulator(CreateNodeContextMenu("Add Wait Time Node", SpellNodeType.WaitTime));
-        this.AddManipulator(CreateNodeContextMenu("Add Spawn Point Node", SpellNodeType.SpawnPoint));
+        CreateNodesContextMenu();
         this.AddManipulator(CreateGroupContextMenu());
+    }
+
+    private void CreateNodesContextMenu()
+    {
+        SpellNodeType[] array = (SpellNodeType[])Enum.GetValues(typeof(SpellNodeType));
+        List<SpellNodeType> list = new List<SpellNodeType>(array);
+        
+
+        foreach (var type in list)
+        {
+            if (type == SpellNodeType.None || type == SpellNodeType.Start || type == SpellNodeType.End) continue;
+
+            this.AddManipulator(CreateNodeContextMenu($"Add {type} Node", type));
+        }
     }
 
     private void CreateStartNodes()
@@ -109,13 +126,13 @@ public class SpellGraphView : GraphView
     {
         ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator
         (
-            menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => CreateGroup("Dialogue Group", GetLocalMousePosition(actionEvent.eventInfo.localMousePosition)))
+            menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => CreateGroup("Dialogue Group", Guid.NewGuid().ToString(), GetLocalMousePosition(actionEvent.eventInfo.localMousePosition)))
         );
 
         return contextualMenuManipulator;
     }
 
-    public GraphElement CreateGroup(string title, Vector2 localMousePosition)
+    public GraphElement CreateGroup(string title, string ID, Vector2 localMousePosition)
     {
         Group group = new GraphGroup(title, localMousePosition);
 
@@ -196,7 +213,9 @@ public class SpellGraphView : GraphView
     {
         var allElements = graphElements.ToList();
         Debug.Log("Graph save");
+
         _savedNodes.Clear();
+        _savedGroupes.Clear();
 
         foreach (var element in allElements)
         {
@@ -216,6 +235,14 @@ public class SpellGraphView : GraphView
 
                 _savedNodes.Add(nodeData);
             }
+
+            if (element is GraphGroup)
+            {
+                var graphGroup = (GraphGroup)element;
+
+                var data = graphGroup.Save();
+                _savedGroupes.Add(data);
+            }
         }
     }
 
@@ -225,6 +252,7 @@ public class SpellGraphView : GraphView
 
         Debug.Log("Loading Graph");
 
+        //Loading Nodes
         _currentNodes = new List<SpellNodeBase>();
         for (int i = 0; i < _savedNodes.Count; i++)
         {
@@ -239,12 +267,29 @@ public class SpellGraphView : GraphView
             AddElement(node);
         }
 
+        //Loading ports
         for (int i = 0; i < _currentNodes.Count; i++)
         {
             var currentNode = _currentNodes[i];
             var nodeData = _savedNodes[i];
 
             currentNode.LoadPorts(nodeData);
+        }
+
+        //Loading groupes
+        for (int i = 0; i < _savedGroupes.Count; i++)
+        {
+            var groupData = _savedGroupes[i];
+            var group = (GraphGroup)CreateGroup(groupData.Name, groupData.ID, groupData.Position);
+
+            group.ID = groupData.ID;
+
+            var nodesByGroupId = GetNodesByGroupId(group.ID);
+            for (int j = 0; j < nodesByGroupId.Count; j++)
+            {
+                var node = nodesByGroupId[j];
+                group.AddElement(node);
+            }
         }
 
         return true;
@@ -277,6 +322,21 @@ public class SpellGraphView : GraphView
         }
 
         return null;
+    }
+
+    public List<SpellNodeBase> GetNodesByGroupId(string Id)
+    {
+        var nodes = new List<SpellNodeBase>();
+
+        foreach (var node in _currentNodes)
+        {
+            if (node.GroupID == Id)
+            {
+                nodes.Add(node);
+            }
+        }
+
+        return nodes;
     }
     #endregion
 }

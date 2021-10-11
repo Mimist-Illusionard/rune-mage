@@ -44,6 +44,7 @@ public class Player : MonoBehaviour, IExecute
 			Sprint();
 			Move();
 			GameGravity();
+			Jump();
 		}
 	}
 
@@ -103,7 +104,17 @@ public class Player : MonoBehaviour, IExecute
 	private void GameGravity()
 	{
 		_velocity.y = _gravityForce;
+
 		_characterController.Move(_velocity * Time.deltaTime);
+
+		if (!_characterController.isGrounded)
+			_gravityForce -= 20f * Time.deltaTime;
+		else _gravityForce = -1f;		
+	}
+
+	private void Jump()
+    {
+		if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded) _gravityForce = _jumpForce;
 	}
 
 	public void SwitchCursorMode()

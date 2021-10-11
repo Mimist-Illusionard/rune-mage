@@ -40,7 +40,6 @@ public class SpellEditor : Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Name"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("ManaCost"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Prefab"));
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("Type"));
 
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, true, false, GUILayout.Height(200));
             GUILayout.BeginHorizontal();
@@ -73,7 +72,7 @@ public class SpellEditor : Editor
 
             if (GUILayout.Button("Spell Logic"))
             {
-                SpellEditorWindow.Open(_spell.SpellNodes);
+                SpellEditorWindow.Open(_spell.SpellNodes, _spell.Groups);
             }
         }
 

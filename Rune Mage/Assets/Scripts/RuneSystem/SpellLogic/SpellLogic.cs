@@ -51,12 +51,12 @@ public class SpellLogic
         }
     }
 
-    public void Logic()
+    public void Logic(GameObject spell)
     {
         for (int i = 0; i < _spellNodeLogics.Count; i++)
         {
             var spellNodeLogic = _spellNodeLogics[i];
-            spellNodeLogic.Logic();
+            spellNodeLogic.Logic(spell);
         }
     }
 

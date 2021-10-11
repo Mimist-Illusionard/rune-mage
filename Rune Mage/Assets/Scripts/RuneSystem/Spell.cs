@@ -12,26 +12,16 @@ public class Spell : ScriptableObject
     public float ManaCost;
     public int Length;
     public List<Rune> Runes = new List<Rune>();
-    public List<SpellNodeData> SpellNodes = new List<SpellNodeData>();
     public GameObject Prefab;
-    public SpellEnum Type = 0;
+
+    public List<SpellNodeData> SpellNodes = new List<SpellNodeData>();
+    public List<GroupData> Groups = new List<GroupData>();
 
     public void SpellLogic()
     {
+        var spell = Instantiate(Prefab);
+
         var spellLogic = new SpellLogic(SpellNodes);
-        spellLogic.Logic();
-
-        //if (Type == SpellEnum.Bullet)
-        //{
-        //    var spawnPoint = FindObjectOfType<Spawnpoint>().transform;
-        //    var bullet = Instantiate(Prefab, spawnPoint.position, spawnPoint.rotation);
-        //    bullet.GetComponent<Projectile>().SetSpawnPoint(spawnPoint);
-        //}
-
-        //if (Type == SpellEnum.Zone)
-        //{
-        //    RaycastHit raycastHit = PlayerManager.Singleton.Raycast();
-        //    Instantiate(Prefab, raycastHit.point, Quaternion.identity);
-        //}
+        spellLogic.Logic(spell);       
     }
 }

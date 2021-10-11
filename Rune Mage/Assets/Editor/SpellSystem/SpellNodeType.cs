@@ -6,5 +6,8 @@ public enum SpellNodeType
     Start      = 1,
     End        = 2,
     WaitTime   = 3,
-    SpawnPoint = 4
+    Damage     = 4,
+    Speed      = 5,
+    SpawnPoint = 6,
+    LifeTime   = 7
 }

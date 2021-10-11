@@ -35,6 +35,13 @@ public class WaitTimeNode : SpellNodeWithPorts
     }
 
     #region Save & Load Methods
+    public override SpellNodeData SaveNode()
+    {
+        SpellNodeData.Fields.Add("WaitTime", _titleField.text);
+
+        return base.SaveNode();
+    }
+
     public override void Load(SpellNodeData spellNodeData)
     {
         base.Load(spellNodeData);
@@ -46,13 +53,6 @@ public class WaitTimeNode : SpellNodeWithPorts
             _titleField.SetValueWithoutNotify(WaitTime.ToString());
         else
             Debug.LogError($"Can't parse <b>waitTimeValue</b>:{waitTimeValue} into <b>WaitIime</b> in <b>WaitTimeNode</b>");
-    }
-
-    public override SpellNodeData SaveNode()
-    {
-        SpellNodeData.Fields.Add("WaitTime", _titleField.text);
-
-        return base.SaveNode();
     }
     #endregion
 }

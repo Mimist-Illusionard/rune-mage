@@ -10,6 +10,7 @@ public class SpellNodeData
     public string Name;
     public string ID;
     public SpellNodeType Type;
+    public string GroupID;
     public Vector2 Position;
 
     public SerilializedDictionary<string, string> Fields = new SerilializedDictionary<string, string>();

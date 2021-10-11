@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6714257348929866546}
   - component: {fileID: 6714257348929866547}
   - component: {fileID: 6714257348929866548}
+  - component: {fileID: 2926285010633189226}
+  - component: {fileID: 1947684322084276696}
   m_Layer: 0
   m_Name: Zone
   m_TagString: Untagged
@@ -81,3 +83,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2926285010633189226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714257348929866549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c642226bf37db2147af3d92efb8bf7f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &1947684322084276696
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714257348929866549}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

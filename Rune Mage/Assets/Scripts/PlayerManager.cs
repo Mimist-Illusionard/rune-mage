@@ -88,11 +88,6 @@ public class PlayerManager : MonoBehaviour, IExecute
 		_player = player;
     }
 
-	public Player GetPlayer()
-	{
-		return _player;
-	}
-
 	public RaycastHit Raycast()
     {
 		RaycastHit hitInfo;
