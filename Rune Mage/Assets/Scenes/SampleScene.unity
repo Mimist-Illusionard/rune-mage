@@ -1310,6 +1310,8 @@ GameObject:
   - component: {fileID: 1168624020}
   - component: {fileID: 1168624022}
   - component: {fileID: 1168624023}
+  - component: {fileID: 1168624025}
+  - component: {fileID: 1168624024}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1355,11 +1357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 374db75c23bcc0e47beeafdc5834464a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMaxStamina: 100
-  _playerStamina: 0
-  _playerMaxMane: 100
-  _playerMane: 0
-  _playerManaRegen: 3
 --- !u!114 &1168624023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1380,6 +1377,36 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e237547e7e2ef5b4e92ffc00dd0ff769, type: 2}
   _maxRunesAmount: 5
   _currentRunes: []
+--- !u!114 &1168624024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168624019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0406ccda29bf694a8ecd51f2d172c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxStamina: 100
+  _currentStamina: 0
+  _regen: 5
+--- !u!114 &1168624025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168624019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40be3edffd5feee4caa7768d131c9397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxMane: 100
+  _currentMane: 0
+  _manaRegen: 5
 --- !u!1 &1205144576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2279,11 @@ PrefabInstance:
       propertyPath: _jumpForce
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 29594071974763132, guid: 9a47cc3f6da2f134e9c42eb97d50eb33,
+        type: 3}
+      propertyPath: _staminaSpent
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5061959815467956125, guid: 9a47cc3f6da2f134e9c42eb97d50eb33,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2332,7 +2364,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8904991008987837455, guid: 9a47cc3f6da2f134e9c42eb97d50eb33, type: 3}
+    - {fileID: 3793043465849702428, guid: 9a47cc3f6da2f134e9c42eb97d50eb33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9a47cc3f6da2f134e9c42eb97d50eb33, type: 3}
 --- !u!1 &4014955615561464761 stripped
 GameObject:
@@ -2367,4 +2401,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcba0ee8b340904b80df9fd13b6053e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0

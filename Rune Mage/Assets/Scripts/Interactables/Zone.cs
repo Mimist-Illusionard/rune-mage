@@ -15,7 +15,7 @@ public class Zone : Interactable, IDamage, ILifeTime
     {
         if (other.gameObject.GetComponent<Health>())
         {
-            other.gameObject.GetComponent<Health>().DealDamage(Damage);
+            other.gameObject.GetComponent<Health>().RemoveHealth(Damage);
         }
     }
 }

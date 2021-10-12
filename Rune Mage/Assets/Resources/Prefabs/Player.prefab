@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 8784189115719356147}
   - component: {fileID: 8286700575785996925}
   - component: {fileID: 29594071974763132}
+  - component: {fileID: 6039289751986682994}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -339,8 +340,19 @@ MonoBehaviour:
   _walkSpeed: 6
   _sprintSpeed: 9
   _jumpForce: 6
-  _smoothTime: 1
   _gravityForce: -9.8
   _staminaRegen: 1
-  _staminaSpent: -2
+  _staminaSpent: 2
   _canRun: 1
+--- !u!114 &6039289751986682994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784189115719356151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcba0ee8b340904b80df9fd13b6053e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

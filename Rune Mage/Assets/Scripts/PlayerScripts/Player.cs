@@ -4,17 +4,15 @@
 public class Player : MonoBehaviour, IExecute
 {
 	[SerializeField] Transform _cameraHolder;
-	[SerializeField] private float _mouseSensitivity, _walkSpeed, _sprintSpeed, _jumpForce, _smoothTime, _gravityForce;
+	[SerializeField] private float _mouseSensitivity, _walkSpeed, _sprintSpeed, _jumpForce, _gravityForce;
 	[SerializeField] private float _staminaRegen;
 	[SerializeField] private float _staminaSpent;
 
+	private Stamina _stamina;
 	private CharacterController _characterController;
-
 	private Vector3 _velocity;
-	private RaycastHit _hit;
 
-	private float _playerSpeed;
-	private float _verticalVelocity;
+	private float _currentSpeed;
 	private float _verticalLookRotation;
 
 	public bool _canRun = true;
@@ -26,14 +24,14 @@ public class Player : MonoBehaviour, IExecute
 
 	private void Start()
 	{
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
 		SwitchCursorMode();
 
-		_playerSpeed = _walkSpeed;
+		_currentSpeed = _walkSpeed;
 
-		GameManager.Singleton.SetNewExecuteObject(this);
+		GameManager.Singleton.AddExecuteObject(this);
 		PlayerManager.Singleton.SetPlayer(this);
+
+		_stamina = PlayerManager.Singleton.GetStamina();
 	}
 
 	public void Execute()
@@ -76,7 +74,7 @@ public class Player : MonoBehaviour, IExecute
 		float z = Input.GetAxis("Vertical");
 
 		Vector3 move = gameObject.transform.right * x + gameObject.transform.forward * z;
-		_characterController.Move(move * _playerSpeed * Time.deltaTime);
+		_characterController.Move(move * _currentSpeed * Time.deltaTime);
 	}
 
 	private void Sprint()
@@ -85,19 +83,19 @@ public class Player : MonoBehaviour, IExecute
 		{
 			if (Input.GetKey(KeyCode.LeftShift))
 			{
-				PlayerManager.Singleton.StaminaManager(_staminaSpent);
-				_playerSpeed = _sprintSpeed;
+				_stamina.SpentStamina(_staminaSpent);
+				_currentSpeed = _sprintSpeed;
 			}
 			else
 			{
-				PlayerManager.Singleton.StaminaManager(_staminaRegen);
-				_playerSpeed = _walkSpeed;
+				_stamina.Regen(_staminaRegen);
+				_currentSpeed = _walkSpeed;
 			}
 		}
 		else
 		{
-			PlayerManager.Singleton.StaminaManager(_staminaRegen);
-			_playerSpeed = _walkSpeed;
+			_stamina.Regen(_staminaRegen);
+			_currentSpeed = _walkSpeed;
 		}
 	}
 
@@ -109,11 +107,11 @@ public class Player : MonoBehaviour, IExecute
 
 		if (!_characterController.isGrounded)
 			_gravityForce -= 20f * Time.deltaTime;
-		else _gravityForce = -1f;		
+		else _gravityForce = -1f;
 	}
 
 	private void Jump()
-    {
+	{
 		if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded) _gravityForce = _jumpForce;
 	}
 
@@ -122,4 +120,9 @@ public class Player : MonoBehaviour, IExecute
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
+
+    private void OnDestroy()
+    {
+		GameManager.Singleton.RemoveExecuteObject(this);
+    }
 }

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class ManaUI : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class ManaUI : MonoBehaviour
 
     private void Start()
     {
-        PlayerManager.Singleton.ManaUiSet += SliderChange;
+        PlayerManager.Singleton.GetMana().OnMahaChange += SliderChange;
     }
 
     public void SliderChange(float mana, float Maxmana)

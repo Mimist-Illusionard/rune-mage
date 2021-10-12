@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetNewExecuteObject(IExecute executeGameObject)
+    public void AddExecuteObject(IExecute executeGameObject)
     {
         _executes.Add(executeGameObject);
     }

@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour, IExecute
 {  
     private void Start()
     {
-        GameManager.Singleton.SetNewExecuteObject(this);
+        GameManager.Singleton.AddExecuteObject(this);
     }
 
     public void Execute()

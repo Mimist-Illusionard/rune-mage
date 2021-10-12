@@ -60,9 +60,9 @@ public class SpellsSystem : MonoBehaviour
             if (correctRunes == spellLength)
             {
                 Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Length} Spell Cost: {spell.ManaCost}");
-                if (spell.ManaCost <= PlayerManager.Singleton.GiveMana())
+                if (spell.ManaCost <= PlayerManager.Singleton.GetMana().GiveMana())
                 {
-                    PlayerManager.Singleton.ManaChange(-spell.ManaCost);
+                    PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
                     spell.SpellLogic();
                 } 
                 break;

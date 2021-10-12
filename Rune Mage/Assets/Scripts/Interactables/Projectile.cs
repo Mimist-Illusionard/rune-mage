@@ -20,7 +20,7 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
     {
         if (other.gameObject.GetComponent<Health>())
         {
-            other.gameObject.GetComponent<Health>().DealDamage(Damage);
+            other.gameObject.GetComponent<Health>().RemoveHealth(Damage);
         }
 
         Destroy(this.gameObject);
