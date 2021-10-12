@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Zone : Interactable, IDamage, ILifeTime
+public class DamageZone : Interactable, IDamage, ILifeTime
 {
     public float Damage { get; set; }
     public float LifeTime { get; set; }

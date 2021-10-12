@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 
-[CreateAssetMenu(fileName = "Rune", menuName = "Data/Rune/Rune")]
+[CreateAssetMenu(fileName = "Rune", menuName = "Data/SpellSystem/Rune")]
 [Serializable]
 public class Rune : ScriptableObject
 {

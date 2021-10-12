@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: Healing Zone
+  m_EditorClassIdentifier: 
+  Name: Healing Zone
+  ManaCost: 30
+  Length: 3
+  Runes:
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  Prefab: {fileID: 6714257348929866549, guid: 2e23cd10ebad7eb488c8007773309163, type: 3}
+  SpellNodes:
+  - Name: Spawn Point Node
+    ID: ef6217f7-3b84-40fe-8b70-ee355dd4b4d8
+    Type: 6
+    GroupID: 7b2f8643-9055-4227-ae1a-c7cd74b66ed9
+    Position: {x: 603, y: 501}
+    Fields:
+      _data:
+      - Key: SpawnPointType
+        Value: Raycast_Point
+    Ports:
+    - ID: e4c726ec-c81b-4a7e-82a2-b8bc4f5ae54b
+      Direction: 1
+      ConnectedNodeID: 11d86084-baca-418a-9f78-00ea29c6a322
+    - ID: 8253d998-84e0-4664-98fe-290422ff6774
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Damage Node
+    ID: 11d86084-baca-418a-9f78-00ea29c6a322
+    Type: 4
+    GroupID: 7b2f8643-9055-4227-ae1a-c7cd74b66ed9
+    Position: {x: 778, y: 499}
+    Fields:
+      _data:
+      - Key: Damage
+        Value: 3
+    Ports:
+    - ID: 6851bf03-4934-447d-bf93-e939c5712627
+      Direction: 1
+      ConnectedNodeID: 5c307c6b-8370-409c-92fe-403241068b8b
+    - ID: d453d88c-01bb-4c5f-b1e5-4e5556a0db96
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: LifeTime Node
+    ID: 5c307c6b-8370-409c-92fe-403241068b8b
+    Type: 7
+    GroupID: 7b2f8643-9055-4227-ae1a-c7cd74b66ed9
+    Position: {x: 944, y: 496}
+    Fields:
+      _data:
+      - Key: LifeTime
+        Value: 4
+    Ports:
+    - ID: b69d16f0-7b81-4d9f-901f-9b6b667ac203
+      Direction: 1
+      ConnectedNodeID: 6af7c3cc-4e28-4590-918c-75f43871ecc8
+    - ID: 18c43315-0958-4ed4-a435-f5225d84af87
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Start Node
+    ID: b7b3b129-a437-4728-847c-3706f9b8e06a
+    Type: 1
+    GroupID: 
+    Position: {x: 351, y: 507}
+    Fields:
+      _data: []
+    Ports:
+    - ID: 10e77c38-d905-4720-bcce-b03b266df5d1
+      Direction: 1
+      ConnectedNodeID: ef6217f7-3b84-40fe-8b70-ee355dd4b4d8
+  - Name: End Node
+    ID: 6af7c3cc-4e28-4590-918c-75f43871ecc8
+    Type: 2
+    GroupID: 
+    Position: {x: 1139, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: e465072e-8dc7-4359-98df-db48ff0c7af4
+      Direction: 0
+      ConnectedNodeID: 
+  Groups:
+  - Name: Initialize
+    ID: 7b2f8643-9055-4227-ae1a-c7cd74b66ed9
+    Position: {x: 578, y: 437}

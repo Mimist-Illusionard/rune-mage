@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Spell", menuName = "Data/Rune/Spell")]
+[CreateAssetMenu(fileName = "Spell", menuName = "Data/SpellSystem/Spell")]
 [Serializable]
 public class Spell : ScriptableObject
 {
