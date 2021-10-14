@@ -1,0 +1,11 @@
+This txt file need to write down some notes here.
+
+Scripts:
+	TODO:
+	- Make Loop node (or group?) for graph system
+	- Implement WaitTimeNode logic
+
+	Ideas:
+	- Think about another nodeLogic create
+	- Think about general value for spell system
+	- Think about general implementation for Ui slider

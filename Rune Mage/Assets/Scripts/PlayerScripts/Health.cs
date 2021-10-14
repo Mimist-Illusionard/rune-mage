@@ -1,16 +1,21 @@
+using System;
 using System.Collections;
+
 using UnityEngine;
+
 
 
 public class Health : MonoBehaviour, IHealth
 {
     public float MaxHealth => 30f;
-
     public float CurrentHealth { get; set; }
+
+    public Action<float, float> OnHealthChange;
 
     private void Start()
     {
-        CurrentHealth = 10f;
+        CurrentHealth = MaxHealth;
+        OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
     }
 
     public void AddHealth(float value)
@@ -18,6 +23,8 @@ public class Health : MonoBehaviour, IHealth
         CurrentHealth += value;
 
         MinMaxClamp();
+
+        OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
     }
 
     public void RemoveHealth(float value)
@@ -25,6 +32,8 @@ public class Health : MonoBehaviour, IHealth
         CurrentHealth -= value;
 
         MinMaxClamp();
+
+        OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
     }
 
     private void MinMaxClamp()

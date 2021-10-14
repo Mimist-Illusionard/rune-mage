@@ -4,6 +4,8 @@
 public class PlayerManager : MonoBehaviour, IExecute
 {
     private Player _player;
+
+	private Health _health;
 	private Mana _mana => GetComponent<Mana>();
 	private Stamina _stamina => GetComponent<Stamina>();
 
@@ -27,7 +29,9 @@ public class PlayerManager : MonoBehaviour, IExecute
 	public void SetPlayer(Player player)
     {
 		_player = player;
-    }
+
+		_health = _player.GetComponent<Health>();
+	}
 
 	public RaycastHit Raycast()
     {
@@ -44,5 +48,10 @@ public class PlayerManager : MonoBehaviour, IExecute
 	public Stamina GetStamina()
     {
 		return _stamina;
+    }
+
+	public Health GetHealth()
+    {
+		return _health;
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
+//TODO: Change to 1 general slider logic
 public class ManaUI : MonoBehaviour
 {
     public Slider slider;

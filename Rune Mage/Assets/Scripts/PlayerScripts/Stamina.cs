@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+
+using UnityEngine;
 
 
 public class Stamina : MonoBehaviour, IExecute
@@ -7,6 +9,7 @@ public class Stamina : MonoBehaviour, IExecute
 	[SerializeField] private float _currentStamina;
 	[SerializeField] private float _regen;
 
+	public Action<float, float> OnStaminaChange;
 	private bool _canRun;
 
     private void Start()
@@ -39,12 +42,16 @@ public class Stamina : MonoBehaviour, IExecute
 	public void Regen(float staminaChange)
 	{
 		_currentStamina += staminaChange * Time.deltaTime;
+
+		OnStaminaChange?.Invoke(_currentStamina, _maxStamina);
 	}
 
 	public void SpentStamina(float staminaSpent)
     {
 		_currentStamina -= staminaSpent * Time.deltaTime;
-    }
+
+		OnStaminaChange?.Invoke(_currentStamina, _maxStamina);
+	}
 
 	public bool CanRun()
     {

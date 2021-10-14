@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class HealingZone : Interactable, ILifeTime, IDamage
 {
     public float LifeTime { get; set; }
@@ -7,7 +8,7 @@ public class HealingZone : Interactable, ILifeTime, IDamage
 
     private void Start()
     {
-        Destroy(this, LifeTime);
+        Destroy(gameObject, LifeTime);
     }
 
     protected override void Interact(Collider other)
