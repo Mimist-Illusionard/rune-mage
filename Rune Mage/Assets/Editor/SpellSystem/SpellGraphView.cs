@@ -1,5 +1,6 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
+using UnityEditor;
 using UnityEngine;
 
 using System.Collections.Generic;
@@ -244,6 +245,8 @@ public class SpellGraphView : GraphView
                 _savedGroupes.Add(data);
             }
         }
+
+        _editorWindow.Save();
     }
 
     public bool LoadGraph()

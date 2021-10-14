@@ -29,10 +29,10 @@ MonoBehaviour:
       - Key: LifeTime
         Value: 3
     Ports:
-    - ID: a7b71a53-661b-4321-9530-a4dc82df0a70
+    - ID: 4c53bf75-046e-40b6-8483-adb5604b7f21
       Direction: 1
-      ConnectedNodeID: 580152fc-06c8-4745-b018-70e27fdf0418
-    - ID: 20d67abd-1090-4f2e-be4e-db920b4683f0
+      ConnectedNodeID: 121f69bc-3f6a-4c9f-b93b-c47778e8c604
+    - ID: 4e960e29-fe2e-4b84-a596-5af775420ef1
       Direction: 0
       ConnectedNodeID: 
   - Name: Spawn Point Node
@@ -45,10 +45,10 @@ MonoBehaviour:
       - Key: SpawnPointType
         Value: Raycast_Point
     Ports:
-    - ID: ebbeac1e-adac-465c-bdd9-7b04d0ba6445
+    - ID: d480662e-cb50-42db-8988-d045376e60e9
       Direction: 1
       ConnectedNodeID: 44b0ae66-336f-4d8d-a09d-39a2ed49258e
-    - ID: 7b4be3c5-0ef3-47a8-96d6-d4bdc3c7ed1d
+    - ID: fa524439-5208-4061-975d-a2b55e88e3ca
       Direction: 0
       ConnectedNodeID: 
   - Name: Start Node
@@ -59,18 +59,34 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 8d090eac-94cc-4e86-ad9f-b7b2b5b9c73d
+    - ID: 072b7d37-ba23-43dd-ac2c-f554472ccd1d
       Direction: 1
       ConnectedNodeID: 69d777eb-808b-4336-ae45-a463d118a6c2
   - Name: End Node
     ID: 580152fc-06c8-4745-b018-70e27fdf0418
     Type: 2
     GroupID: 
-    Position: {x: 1081, y: 480}
+    Position: {x: 1219, y: 487}
     Fields:
       _data: []
     Ports:
-    - ID: 0e47bcc8-c3f2-4031-8dcb-38e9198b1cdb
+    - ID: aa9e6e2f-350a-406a-8c76-e0bcaede168f
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Damage Node
+    ID: 121f69bc-3f6a-4c9f-b93b-c47778e8c604
+    Type: 4
+    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
+    Position: {x: 1042, y: 483}
+    Fields:
+      _data:
+      - Key: Damage
+        Value: 5
+    Ports:
+    - ID: 3b045e33-116e-4da0-8ce4-25a2bd0a1946
+      Direction: 1
+      ConnectedNodeID: 580152fc-06c8-4745-b018-70e27fdf0418
+    - ID: 80dca5f0-c453-4cfa-83dc-4c2af29da302
       Direction: 0
       ConnectedNodeID: 
   Groups:

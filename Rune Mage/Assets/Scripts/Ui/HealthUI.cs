@@ -9,7 +9,10 @@ public class HealthUI : MonoBehaviour
 
     private void Start()
     {
-        GameObject.FindObjectOfType<Health>().OnHealthChange += SliderChange;
+        var health = GameObject.FindObjectOfType<Health>();
+
+        health.OnHealthChange += SliderChange;
+        health.AddHealth(0);
     }
 
     public void SliderChange(float mana, float Maxmana)

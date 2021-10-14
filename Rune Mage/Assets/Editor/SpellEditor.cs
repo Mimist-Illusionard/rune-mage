@@ -72,7 +72,7 @@ public class SpellEditor : Editor
 
             if (GUILayout.Button("Spell Logic"))
             {
-                SpellEditorWindow.Open(_spell.SpellNodes, _spell.Groups);
+                SpellEditorWindow.Open(_spell, _spell.SpellNodes, _spell.Groups);
             }
         }
 

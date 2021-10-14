@@ -3,18 +3,21 @@
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using UnityEditor;
+using UnityEngine;
 
 
 public class SpellEditorWindow : EditorWindow
 {
+    private static ScriptableObject _scriptableObject;
     private static List<SpellNodeData> _nodes;
     private static List<GroupData> _groupes;
     private static SpellGraphView _graphView;
 
     private readonly string _fileName = "Default File Name";
 
-    public static void Open(List<SpellNodeData> nodes, List<GroupData> groupes)
+    public static void Open(ScriptableObject scriptableObject, List<SpellNodeData> nodes, List<GroupData> groupes)
     {
+        _scriptableObject = scriptableObject;
         _nodes = nodes;
         _groupes = groupes;
 
@@ -48,5 +51,10 @@ public class SpellEditorWindow : EditorWindow
         toolbar.Add(saveButton);
 
         rootVisualElement.Add(toolbar);
+    }
+
+    public void Save()
+    {
+        EditorUtility.SetDirty(_scriptableObject);
     }
 }
