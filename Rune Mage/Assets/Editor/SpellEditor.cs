@@ -78,15 +78,23 @@ public class SpellEditor : Editor
 
         if (_isSpellGenerated == true)
         {
+            GUILayout.Space(10f);
+            GUILayout.BeginHorizontal();
             if (GUILayout.Button("Regenerate Spell"))
-            {
-                _spell.Runes.Clear();
-                _spell.SpellNodes.Clear();
-
+            {               
                 _spell.ManaCost = 0;
                 _spell.Prefab = null;
+                _spell.Runes.Clear();
+
                 _isSpellGenerated = false;
             }
+
+            if (GUILayout.Button("Clear Graph"))
+            {
+                _spell.SpellNodes.Clear();
+                _spell.Groups.Clear();
+            }
+            GUILayout.EndHorizontal();
         }
 
         if (GUI.changed)

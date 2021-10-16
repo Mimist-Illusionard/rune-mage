@@ -91,7 +91,7 @@ public class SpellNodeBase : Node
         return SpellNodeData;
     }
 
-    public virtual List<NodePortData> SavePorts()
+    public List<NodePortData> SavePorts()
     {
         for (int i = 0; i < Ports.Count; i++)
         {

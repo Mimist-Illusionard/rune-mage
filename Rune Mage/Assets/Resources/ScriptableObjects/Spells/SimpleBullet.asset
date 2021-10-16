@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: Spell_2
+  m_Name: SimpleBullet
   m_EditorClassIdentifier: 
   Name: Spell_2
   ManaCost: 5
-  Length: 2
+  Length: 1
   Runes:
-  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Prefab: {fileID: 1515739984047690601, guid: f10475c34bcb18845a6c88b698a1ea4d, type: 3}
   SpellNodes:
@@ -28,7 +27,7 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 32fe9c77-ca39-4535-8a3b-808258e79a10
+    - ID: b2a08235-c357-4a38-b916-b37f8add64ca
       Direction: 0
       ConnectedNodeID: 
   - Name: Speed Node
@@ -39,12 +38,12 @@ MonoBehaviour:
     Fields:
       _data:
       - Key: Speed
-        Value: 600
+        Value: 800
     Ports:
-    - ID: 6d810810-15fb-4c61-b551-43fee47fa2d2
+    - ID: e5f8de9e-4332-4662-a2a4-890912ef308b
       Direction: 1
       ConnectedNodeID: 76686817-1a8a-4ace-ab60-af0d9a259257
-    - ID: 181420f1-dba6-4854-b939-ccdc0e45d542
+    - ID: 774e77bc-1eb2-4ae3-856a-0724f926cbd3
       Direction: 0
       ConnectedNodeID: 
   - Name: Damage Node
@@ -57,10 +56,10 @@ MonoBehaviour:
       - Key: Damage
         Value: 2
     Ports:
-    - ID: 8c2cefd6-7799-4b91-a490-20601e85a0c5
+    - ID: f3ef3d01-6b39-4a4c-8496-6fd7b94309fb
       Direction: 1
       ConnectedNodeID: edac4aee-bdfa-4821-82d1-5e2d1e2df0f9
-    - ID: 1ef9ae7e-a9e5-4a62-b9be-6437b02665cc
+    - ID: 2e0f4d54-48dd-468c-8565-e6cbb45872b9
       Direction: 0
       ConnectedNodeID: 
   - Name: LifeTime Node
@@ -71,12 +70,12 @@ MonoBehaviour:
     Fields:
       _data:
       - Key: LifeTime
-        Value: 4
+        Value: 3
     Ports:
-    - ID: 827f1968-3301-4dd7-8936-c7ee401f5916
+    - ID: 9402badd-7c46-4938-b430-f7b21381d6d2
       Direction: 1
       ConnectedNodeID: 4d55672e-5b98-4202-9330-a6fdee84d3c8
-    - ID: fed32308-f7ab-4094-9e08-2b839ef94adc
+    - ID: df1a91b5-ced1-40ab-9147-0e4ce918559e
       Direction: 0
       ConnectedNodeID: 
   - Name: Start Node
@@ -87,7 +86,7 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 5591526b-9fd2-427f-9479-6920de862de1
+    - ID: 0cb86d58-1d54-4f18-b130-f3536b129397
       Direction: 1
       ConnectedNodeID: 532e8f2e-9804-4b5d-b777-ae14ca78f42d
   - Name: Spawn Point Node
@@ -100,10 +99,10 @@ MonoBehaviour:
       - Key: SpawnPointType
         Value: Bullet_Spawn_Point
     Ports:
-    - ID: 81093370-53dc-410c-9c37-581167153ca3
+    - ID: ebc7cac9-cfb0-4a9e-bdda-ed77bf1fcb6b
       Direction: 1
       ConnectedNodeID: 62c8a949-8886-461b-85bc-a14d87b504c0
-    - ID: 62ed0f71-d10c-4d33-aca2-ec6041a2dbcd
+    - ID: 1a3c39f8-d06b-411f-ad7f-bf82242fbb82
       Direction: 0
       ConnectedNodeID: 
   Groups:

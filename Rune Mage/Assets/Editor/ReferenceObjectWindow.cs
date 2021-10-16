@@ -23,6 +23,7 @@ public class ReferenceObjectWindow : EditorWindow
 
         GetWindow<ReferenceObjectWindow>($"{objects} Reference Window");
     }
+
     private void OnGUI()
     {
         _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, false, true);

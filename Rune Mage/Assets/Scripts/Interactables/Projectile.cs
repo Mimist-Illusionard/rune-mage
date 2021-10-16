@@ -18,9 +18,9 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
 
     protected override void Interact(Collider other)
     {
-        if (other.gameObject.GetComponent<Health>())
+        if (other.gameObject.GetComponentInObject<Health>())
         {
-            other.gameObject.GetComponent<Health>().RemoveHealth(Damage);
+            other.gameObject.GetComponentInObject<Health>().RemoveHealth(Damage);
         }
 
         Destroy(this.gameObject);

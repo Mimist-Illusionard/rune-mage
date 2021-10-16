@@ -12,6 +12,8 @@ public class Health : MonoBehaviour, IHealth
 
     public Action<float, float> OnHealthChange;
 
+    public Action OnHealthZero;
+
     private void Start()
     {
         CurrentHealth = MaxHealth;
@@ -46,6 +48,7 @@ public class Health : MonoBehaviour, IHealth
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
+            OnHealthZero?.Invoke();
         }
     }
 

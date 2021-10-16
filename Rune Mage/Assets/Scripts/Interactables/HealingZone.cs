@@ -13,8 +13,11 @@ public class HealingZone : Interactable, ILifeTime, IDamage
 
     protected override void Interact(Collider other)
     {
-        var health = other.GetComponent<Health>();
+        if (other.gameObject.GetComponentInObject<Health>())
+        {
+            var health = other.gameObject.GetComponentInObject<Health>();
 
-        health.StartRegenHealing(0.5f, Damage, 3f);
+            health.StartRegenHealing(0.5f, Damage, 3f);
+        }
     }
 }

@@ -13,9 +13,9 @@ public class DamageZone : Interactable, IDamage, ILifeTime
 
     protected override void Interact(Collider other)
     {
-        if (other.gameObject.GetComponent<Health>())
+        if (other.gameObject.GetComponentInObject<Health>())
         {
-            other.gameObject.GetComponent<Health>().RemoveHealth(Damage);
+            other.gameObject.GetComponentInObject<Health>().RemoveHealth(Damage);
         }
     }
 }

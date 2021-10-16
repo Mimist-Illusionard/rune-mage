@@ -16,7 +16,6 @@ public class SpellInput : MonoBehaviour, IExecute
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("Press Alpha1 button");
             if (SpellsSystem.Singleton.AddNewRune(FirstRune))
             {
                 CreateIcon(FirstRune);
@@ -25,7 +24,6 @@ public class SpellInput : MonoBehaviour, IExecute
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Debug.Log("Press Alpha2 button");
             if (SpellsSystem.Singleton.AddNewRune(SecondRune))
             {
                 CreateIcon(SecondRune);
@@ -34,7 +32,6 @@ public class SpellInput : MonoBehaviour, IExecute
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            Debug.Log("Press Alpha3 button");
             if (SpellsSystem.Singleton.AddNewRune(ThirdRune))
             {
                 CreateIcon(ThirdRune);
@@ -51,5 +48,10 @@ public class SpellInput : MonoBehaviour, IExecute
     private void CreateIcon(Rune rune)
     {
         RunesUi.Singleton.CreateRuneIcon(rune);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Singleton.RemoveExecuteObject(this);
     }
 }

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: HealingZone
   m_EditorClassIdentifier: 
   Name: Healing Zone
-  ManaCost: 15
+  ManaCost: 50
   Length: 3
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
-  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
   - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Prefab: {fileID: 6714257348929866549, guid: 2e23cd10ebad7eb488c8007773309163, type: 3}
   SpellNodes:
   - Name: Spawn Point Node

@@ -7,7 +7,6 @@ public class Stamina : MonoBehaviour, IExecute
 {
 	[SerializeField] private float _maxStamina = 100f;
 	[SerializeField] private float _currentStamina;
-	[SerializeField] private float _regen;
 
 	public Action<float, float> OnStaminaChange;
 	private bool _canRun;

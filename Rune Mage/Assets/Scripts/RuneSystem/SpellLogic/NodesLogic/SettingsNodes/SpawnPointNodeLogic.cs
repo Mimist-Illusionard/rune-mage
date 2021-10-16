@@ -28,7 +28,7 @@ public class SpawnPointNodeLogic : NodeLogic
                 break;
 
             case SpawnPointType.Bullet_Spawn_Point:
-                var spawnPoint = GameObject.FindObjectOfType<Spawnpoint>().transform;
+                var spawnPoint = GameObject.FindObjectOfType<Player>().gameObject.GetComponentInObject<Spawnpoint>().transform;
 
                 spell.transform.position = spawnPoint.position;
                 spell.GetComponent<Projectile>().SetSpawnPoint(spawnPoint);

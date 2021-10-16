@@ -13,83 +13,85 @@ MonoBehaviour:
   m_Name: DamageZone
   m_EditorClassIdentifier: 
   Name: Spell_5
-  ManaCost: 5
-  Length: 1
+  ManaCost: 40
+  Length: 3
   Runes:
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Prefab: {fileID: 6714257348929866549, guid: c67dfa3797a00bb468f6053ed11f2dff, type: 3}
   SpellNodes:
+  - Name: End Node
+    ID: 8c8e63ce-1c2a-402f-ab2c-ba48434a53ef
+    Type: 2
+    GroupID: 
+    Position: {x: 1000, y: 500}
+    Fields:
+      _data: []
+    Ports:
+    - ID: fdc7ccb2-7f76-48ec-8d23-0f2cfa056511
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Damage Node
+    ID: 92afbf48-ff5c-4c05-96e5-bd6cd1b5adf7
+    Type: 4
+    GroupID: b1a3f301-6388-4a01-a9d9-bcafaa2af407
+    Position: {x: 641, y: 487}
+    Fields:
+      _data:
+      - Key: Damage
+        Value: 10
+    Ports:
+    - ID: c6f59fde-c1d7-4e41-b9e1-bece15864478
+      Direction: 1
+      ConnectedNodeID: b3454ab6-1293-459c-ac97-241e052f390b
+    - ID: b48a629e-4f37-4db2-a042-2cf04c2980ed
+      Direction: 0
+      ConnectedNodeID: 
   - Name: LifeTime Node
-    ID: 44b0ae66-336f-4d8d-a09d-39a2ed49258e
+    ID: b3454ab6-1293-459c-ac97-241e052f390b
     Type: 7
-    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
-    Position: {x: 850, y: 485}
+    GroupID: b1a3f301-6388-4a01-a9d9-bcafaa2af407
+    Position: {x: 797, y: 485}
     Fields:
       _data:
       - Key: LifeTime
-        Value: 3
+        Value: 5
     Ports:
-    - ID: 4c53bf75-046e-40b6-8483-adb5604b7f21
+    - ID: 3edff9ff-0f6a-40e5-9886-60d1ff6721c3
       Direction: 1
-      ConnectedNodeID: 121f69bc-3f6a-4c9f-b93b-c47778e8c604
-    - ID: 4e960e29-fe2e-4b84-a596-5af775420ef1
+      ConnectedNodeID: 8c8e63ce-1c2a-402f-ab2c-ba48434a53ef
+    - ID: 8f3e71a0-803f-4e6c-b518-faedb3746048
       Direction: 0
       ConnectedNodeID: 
+  - Name: Start Node
+    ID: c6f4c912-102e-4a59-b567-cddcc5b42711
+    Type: 1
+    GroupID: 
+    Position: {x: 203, y: 488}
+    Fields:
+      _data: []
+    Ports:
+    - ID: e7e4716d-f17f-4219-bb50-3f85e5abbd30
+      Direction: 1
+      ConnectedNodeID: 3982bc2a-7883-4055-8588-d2209e5aba1d
   - Name: Spawn Point Node
-    ID: 69d777eb-808b-4336-ae45-a463d118a6c2
+    ID: 3982bc2a-7883-4055-8588-d2209e5aba1d
     Type: 6
-    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
-    Position: {x: 637, y: 481}
+    GroupID: b1a3f301-6388-4a01-a9d9-bcafaa2af407
+    Position: {x: 448, y: 491}
     Fields:
       _data:
       - Key: SpawnPointType
         Value: Raycast_Point
     Ports:
-    - ID: d480662e-cb50-42db-8988-d045376e60e9
+    - ID: a19453d0-311e-435d-ba62-c2e3821d76ba
       Direction: 1
-      ConnectedNodeID: 44b0ae66-336f-4d8d-a09d-39a2ed49258e
-    - ID: fa524439-5208-4061-975d-a2b55e88e3ca
-      Direction: 0
-      ConnectedNodeID: 
-  - Name: Start Node
-    ID: 95462d3c-bab8-4451-aa25-b69a45f0280a
-    Type: 1
-    GroupID: 
-    Position: {x: 381, y: 485}
-    Fields:
-      _data: []
-    Ports:
-    - ID: 072b7d37-ba23-43dd-ac2c-f554472ccd1d
-      Direction: 1
-      ConnectedNodeID: 69d777eb-808b-4336-ae45-a463d118a6c2
-  - Name: End Node
-    ID: 580152fc-06c8-4745-b018-70e27fdf0418
-    Type: 2
-    GroupID: 
-    Position: {x: 1219, y: 487}
-    Fields:
-      _data: []
-    Ports:
-    - ID: aa9e6e2f-350a-406a-8c76-e0bcaede168f
-      Direction: 0
-      ConnectedNodeID: 
-  - Name: Damage Node
-    ID: 121f69bc-3f6a-4c9f-b93b-c47778e8c604
-    Type: 4
-    GroupID: ef0028ef-2dec-4af1-93d9-d4181a407e24
-    Position: {x: 1042, y: 483}
-    Fields:
-      _data:
-      - Key: Damage
-        Value: 5
-    Ports:
-    - ID: 3b045e33-116e-4da0-8ce4-25a2bd0a1946
-      Direction: 1
-      ConnectedNodeID: 580152fc-06c8-4745-b018-70e27fdf0418
-    - ID: 80dca5f0-c453-4cfa-83dc-4c2af29da302
+      ConnectedNodeID: 92afbf48-ff5c-4c05-96e5-bd6cd1b5adf7
+    - ID: add5d527-a885-4136-9b03-c56782ecacff
       Direction: 0
       ConnectedNodeID: 
   Groups:
   - Name: Initialize
-    ID: ef0028ef-2dec-4af1-93d9-d4181a407e24
-    Position: {x: 612, y: 422}
+    ID: b1a3f301-6388-4a01-a9d9-bcafaa2af407
+    Position: {x: 423, y: 426}

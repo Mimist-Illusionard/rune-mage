@@ -8,7 +8,7 @@ using System.Collections.Generic;
 public class GraphGroup : Group
 {
     public string ID;
-
+    
     public GraphGroup(string groupTitle, Vector2 position)
     {
         title = groupTitle;

@@ -10,5 +10,4 @@ public class Rune : ScriptableObject
 {
     public Sprite Sprite;
     public string Name;
-    public List<SpellNodeData> SpellNodes = new List<SpellNodeData>();
 }

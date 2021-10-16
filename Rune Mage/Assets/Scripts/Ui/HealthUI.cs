@@ -9,7 +9,7 @@ public class HealthUI : MonoBehaviour
 
     private void Start()
     {
-        var health = GameObject.FindObjectOfType<Health>();
+        var health = GameObject.FindObjectOfType<Player>().gameObject.GetComponentInObject<Health>();
 
         health.OnHealthChange += SliderChange;
         health.AddHealth(0);
