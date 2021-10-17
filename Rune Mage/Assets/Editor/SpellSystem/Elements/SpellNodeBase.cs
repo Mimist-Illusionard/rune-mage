@@ -51,22 +51,9 @@ public class SpellNodeBase : Node
         extensionContainer.Add(CustomDataContainer);
     }
 
-    public void AddInputNode(SpellNodeBase inputNode)
+    public void AddInputNode(Port outputPort, SpellNodeBase inputNode)
     {
-        TryDeleteOutputPort();
-        PortsData.Add(new NodePortData(Guid.NewGuid().ToString(), Direction.Output, inputNode.ID));
-    }
-
-    private void TryDeleteOutputPort()
-    {
-        for (int i = 0; i < PortsData.Count; i++)
-        {
-            var port = PortsData[i];
-            if (port.Direction == Direction.Output)
-            {
-                PortsData.Remove(port);
-            }
-        }
+        PortsData.Add(new NodePortData(outputPort.portName, Guid.NewGuid().ToString(), Direction.Output, inputNode.ID));
     }
 
     public void SetGraphView(SpellGraphView graphView)
@@ -98,7 +85,7 @@ public class SpellNodeBase : Node
             var port = Ports[i];
 
             if (port.direction == Direction.Input)
-                PortsData.Add(new NodePortData(Guid.NewGuid().ToString(), port.direction, ""));
+                PortsData.Add(new NodePortData("Input", Guid.NewGuid().ToString(), port.direction, ""));
         }
 
         return PortsData;
@@ -114,15 +101,25 @@ public class SpellNodeBase : Node
 
     public void LoadPorts(SpellNodeData spellNodeData)
     {
+        List<NodePortData> outputPorts = new List<NodePortData>();
+
+        foreach (var portData in spellNodeData.Ports)
+        {
+            if (portData.Direction == Direction.Output)
+            {
+                outputPorts.Add(portData);
+            }
+        }
+
         foreach (var port in Ports)
         {
             if (port.direction == Direction.Output)
             {
-                foreach (var portData in spellNodeData.Ports)
+                foreach (var outputPort in outputPorts)
                 {
-                    if (portData.Direction == Direction.Output)
-                    {                       
-                        var connectedNode = GraphView.GetNodeByID(portData.ConnectedNodeID);
+                    if (port.portName == outputPort.Name)
+                    {
+                        var connectedNode = GraphView.GetNodeByID(outputPort.ConnectedNodeID);
 
                         foreach (var nodePort in connectedNode.Ports)
                         {
@@ -131,7 +128,7 @@ public class SpellNodeBase : Node
                                 var edge = port.ConnectTo(nodePort);
                                 GraphView.AddElement(edge);
 
-                                AddInputNode(connectedNode);
+                                AddInputNode(edge.output, connectedNode);
 
                                 connectedNode.RefreshPorts();
                                 port.node.RefreshPorts();

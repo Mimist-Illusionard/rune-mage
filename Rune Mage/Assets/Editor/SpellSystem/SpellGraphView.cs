@@ -73,7 +73,7 @@ public class SpellGraphView : GraphView
                     SpellNodeBase outputNode = (SpellNodeBase)edge.output.node;
                     SpellNodeBase inputNode = (SpellNodeBase)edge.input.node;
 
-                    outputNode.AddInputNode(inputNode);
+                    outputNode.AddInputNode(edge.output, inputNode);
                 }
             }           
 

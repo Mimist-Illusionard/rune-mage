@@ -21,6 +21,7 @@ public class SpellLogic
     {
         SpellNodeData currentNode = null;
 
+        //Find start node
         for (int i = 0; i < _spellNodeDatas.Count; i++)
         {
             var spellNodeData = _spellNodeDatas[i];
@@ -33,6 +34,7 @@ public class SpellLogic
             }
         }
 
+        //Loop for each node and generate node logic
         while (currentNode.Type != SpellNodeType.End)
         {
             foreach (var nodeData in _spellNodeDatas)
@@ -68,6 +70,12 @@ public class SpellLogic
 
         logic.Type = spellNodeData.Type;
         logic.GenerateFields(spellNodeData.Fields);
+
+        if (spellNodeData.Type == SpellNodeType.Loop)
+        {
+            var loopNodeLogic = (LoopNodeLogic)logic;
+            loopNodeLogic.SetSpellNodes(spellNodeData, _spellNodeDatas);
+        }
 
         return logic;
     }

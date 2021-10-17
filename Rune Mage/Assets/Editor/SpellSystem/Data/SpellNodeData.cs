@@ -21,12 +21,28 @@ public class SpellNodeData
         for (int i = 0; i < Ports.Count; i++)
         {
             var port = Ports[i];
-            if (port.Direction == UnityEditor.Experimental.GraphView.Direction.Output)
+            if (port.Direction == UnityEditor.Experimental.GraphView.Direction.Output && port.Name == "Output")
             {
                 return port;
             }
         }
 
         return null;
+    }
+
+    public List<NodePortData> GetAllOutputPorts()
+    {
+        var outputPorts = new List<NodePortData>();
+
+        for (int i = 0; i < Ports.Count; i++)
+        {
+            var port = Ports[i];
+            if (port.Direction == UnityEditor.Experimental.GraphView.Direction.Output)
+            {
+                outputPorts.Add(port);
+            }
+        }
+
+        return outputPorts;
     }
 }
