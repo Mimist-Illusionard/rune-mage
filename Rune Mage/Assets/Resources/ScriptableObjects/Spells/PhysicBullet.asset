@@ -30,10 +30,12 @@ MonoBehaviour:
       - Key: Damage
         Value: 8
     Ports:
-    - ID: d15ea082-f85f-4e18-9e05-e8ffeea9258a
+    - Name: Output
+      ID: d8aaff30-1555-46b2-8167-a966ee5c934d
       Direction: 1
       ConnectedNodeID: a0778c14-7a66-4f59-97e6-9e1fc3dcb0ac
-    - ID: afcb7189-180d-47ae-80f2-b88f6ff32f56
+    - Name: Input
+      ID: 215679b5-ff83-426a-951a-b5cd6976096f
       Direction: 0
       ConnectedNodeID: 
   - Name: Speed Node
@@ -46,10 +48,12 @@ MonoBehaviour:
       - Key: Speed
         Value: 1200
     Ports:
-    - ID: 1ad258e5-6c09-401c-baf3-5bb737a9d6ab
+    - Name: Output
+      ID: 249c9ea8-bcdb-4671-b781-95af42f45616
       Direction: 1
       ConnectedNodeID: 3875da35-32d3-4968-9379-8a32e76810ed
-    - ID: 7e0df471-429a-455d-9a65-6ef51e03f544
+    - Name: Input
+      ID: 0b7da31a-bc3e-47d2-8e6c-e99e6ea96f46
       Direction: 0
       ConnectedNodeID: 
   - Name: LifeTime Node
@@ -62,10 +66,12 @@ MonoBehaviour:
       - Key: LifeTime
         Value: 5
     Ports:
-    - ID: 725f2b86-7eeb-4fd6-a31d-c68a8579d566
+    - Name: Output
+      ID: c283a234-bc4b-4ac6-9401-2c083e2df945
       Direction: 1
       ConnectedNodeID: 97549903-a1b7-4722-a975-ba810f1c1303
-    - ID: 24a9efce-0dbc-4e34-96d2-361ee5f39f2f
+    - Name: Input
+      ID: fc04aeae-3bf0-4874-aed5-35f24bdbb45b
       Direction: 0
       ConnectedNodeID: 
   - Name: Spawn Point Node
@@ -78,10 +84,12 @@ MonoBehaviour:
       - Key: SpawnPointType
         Value: Bullet_Spawn_Point
     Ports:
-    - ID: c199a2cf-317c-4ee0-9daa-5bca40d3c9b9
+    - Name: Output
+      ID: 2fac2dd9-5a52-4eb6-9873-f9f5efb18d56
       Direction: 1
       ConnectedNodeID: 4aa36e8a-9e38-4155-8ac9-606d2ab371f2
-    - ID: c69c79df-0094-4f72-a12b-ddcc569a5f64
+    - Name: Input
+      ID: 9645d895-ec63-4eea-981f-19d516353b0a
       Direction: 0
       ConnectedNodeID: 
   - Name: Start Node
@@ -92,7 +100,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 7a96fb4b-0dd5-478c-9929-efa26e95343f
+    - Name: Output
+      ID: 7945c43b-1cd9-4025-8298-ecbebf3b86c3
       Direction: 1
       ConnectedNodeID: a0fe1bfe-eb8e-449a-afdb-cb666cde522e
   - Name: End Node
@@ -103,7 +112,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 22412b88-1db9-4f0a-aee1-aa7d037ec862
+    - Name: Input
+      ID: bb75122a-b7ee-4b3d-83d3-56a6d4eb4a5b
       Direction: 0
       ConnectedNodeID: 
   Groups:

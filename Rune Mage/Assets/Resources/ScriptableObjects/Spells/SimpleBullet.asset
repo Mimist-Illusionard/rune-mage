@@ -27,23 +27,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: b2a08235-c357-4a38-b916-b37f8add64ca
-      Direction: 0
-      ConnectedNodeID: 
-  - Name: Speed Node
-    ID: 4d55672e-5b98-4202-9330-a6fdee84d3c8
-    Type: 5
-    GroupID: 859ed1d4-30c6-4a32-b2df-54500eb23a48
-    Position: {x: 743, y: 490}
-    Fields:
-      _data:
-      - Key: Speed
-        Value: 800
-    Ports:
-    - ID: e5f8de9e-4332-4662-a2a4-890912ef308b
-      Direction: 1
-      ConnectedNodeID: 76686817-1a8a-4ace-ab60-af0d9a259257
-    - ID: 774e77bc-1eb2-4ae3-856a-0724f926cbd3
+    - Name: Input
+      ID: 8cc499c9-c8cd-4edf-9d65-cedbfbb6d524
       Direction: 0
       ConnectedNodeID: 
   - Name: Damage Node
@@ -56,10 +41,12 @@ MonoBehaviour:
       - Key: Damage
         Value: 2
     Ports:
-    - ID: f3ef3d01-6b39-4a4c-8496-6fd7b94309fb
+    - Name: Output
+      ID: e417fe48-701c-4ad4-9d83-0243350c9169
       Direction: 1
       ConnectedNodeID: edac4aee-bdfa-4821-82d1-5e2d1e2df0f9
-    - ID: 2e0f4d54-48dd-468c-8565-e6cbb45872b9
+    - Name: Input
+      ID: 87a6a7ef-fab8-4a11-b455-33e4d6a6ce5d
       Direction: 0
       ConnectedNodeID: 
   - Name: LifeTime Node
@@ -72,10 +59,12 @@ MonoBehaviour:
       - Key: LifeTime
         Value: 3
     Ports:
-    - ID: 9402badd-7c46-4938-b430-f7b21381d6d2
+    - Name: Output
+      ID: 7a16ac58-c6e3-4bad-ad3e-6342ce387cbf
       Direction: 1
       ConnectedNodeID: 4d55672e-5b98-4202-9330-a6fdee84d3c8
-    - ID: df1a91b5-ced1-40ab-9147-0e4ce918559e
+    - Name: Input
+      ID: 09b14322-7c76-409a-9cf8-a965a90cde59
       Direction: 0
       ConnectedNodeID: 
   - Name: Start Node
@@ -86,7 +75,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 0cb86d58-1d54-4f18-b130-f3536b129397
+    - Name: Output
+      ID: 4491d5e6-bc2e-4e51-addc-2b18e5439bd3
       Direction: 1
       ConnectedNodeID: 532e8f2e-9804-4b5d-b777-ae14ca78f42d
   - Name: Spawn Point Node
@@ -99,10 +89,30 @@ MonoBehaviour:
       - Key: SpawnPointType
         Value: Bullet_Spawn_Point
     Ports:
-    - ID: ebc7cac9-cfb0-4a9e-bdda-ed77bf1fcb6b
+    - Name: Output
+      ID: cb07de09-301d-4af8-9362-becdb9028998
       Direction: 1
       ConnectedNodeID: 62c8a949-8886-461b-85bc-a14d87b504c0
-    - ID: 1a3c39f8-d06b-411f-ad7f-bf82242fbb82
+    - Name: Input
+      ID: 9369100c-d64b-40ab-9b81-f4ac93aefc50
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Speed Node
+    ID: 4d55672e-5b98-4202-9330-a6fdee84d3c8
+    Type: 5
+    GroupID: 859ed1d4-30c6-4a32-b2df-54500eb23a48
+    Position: {x: 740, y: 491}
+    Fields:
+      _data:
+      - Key: Speed
+        Value: 800
+    Ports:
+    - Name: Output
+      ID: 3edb4adf-cbbd-479d-9001-988fb625f662
+      Direction: 1
+      ConnectedNodeID: 76686817-1a8a-4ace-ab60-af0d9a259257
+    - Name: Input
+      ID: 4152258c-994a-41f4-ad12-96657c67e29a
       Direction: 0
       ConnectedNodeID: 
   Groups:

@@ -31,10 +31,12 @@ MonoBehaviour:
       - Key: SpawnPointType
         Value: Raycast_Point
     Ports:
-    - ID: e4c726ec-c81b-4a7e-82a2-b8bc4f5ae54b
+    - Name: Output
+      ID: 7f8e0240-d4a8-4742-8da4-cf7719a8d1b6
       Direction: 1
       ConnectedNodeID: 11d86084-baca-418a-9f78-00ea29c6a322
-    - ID: 8253d998-84e0-4664-98fe-290422ff6774
+    - Name: Input
+      ID: ec05c5aa-a6b5-4848-9ac3-fdc94d868a2b
       Direction: 0
       ConnectedNodeID: 
   - Name: Damage Node
@@ -47,10 +49,12 @@ MonoBehaviour:
       - Key: Damage
         Value: 3
     Ports:
-    - ID: 6851bf03-4934-447d-bf93-e939c5712627
+    - Name: Output
+      ID: 112f1786-0597-48e1-b005-d5314f427631
       Direction: 1
       ConnectedNodeID: 5c307c6b-8370-409c-92fe-403241068b8b
-    - ID: d453d88c-01bb-4c5f-b1e5-4e5556a0db96
+    - Name: Input
+      ID: c8a37802-57cb-488a-a052-16542b872641
       Direction: 0
       ConnectedNodeID: 
   - Name: LifeTime Node
@@ -63,10 +67,12 @@ MonoBehaviour:
       - Key: LifeTime
         Value: 4
     Ports:
-    - ID: b69d16f0-7b81-4d9f-901f-9b6b667ac203
+    - Name: Output
+      ID: c9a25213-253a-4d29-b418-7073abbd3325
       Direction: 1
       ConnectedNodeID: 6af7c3cc-4e28-4590-918c-75f43871ecc8
-    - ID: 18c43315-0958-4ed4-a435-f5225d84af87
+    - Name: Input
+      ID: 43e991c6-c7d1-4d10-8d9d-ca999cedbc3b
       Direction: 0
       ConnectedNodeID: 
   - Name: Start Node
@@ -77,7 +83,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: 10e77c38-d905-4720-bcce-b03b266df5d1
+    - Name: Output
+      ID: 227e580f-b671-42ef-9e15-1b389e3917c5
       Direction: 1
       ConnectedNodeID: ef6217f7-3b84-40fe-8b70-ee355dd4b4d8
   - Name: End Node
@@ -88,7 +95,8 @@ MonoBehaviour:
     Fields:
       _data: []
     Ports:
-    - ID: e465072e-8dc7-4359-98df-db48ff0c7af4
+    - Name: Input
+      ID: 5cc02180-e557-45f0-9978-16904bbf4759
       Direction: 0
       ConnectedNodeID: 
   Groups:
