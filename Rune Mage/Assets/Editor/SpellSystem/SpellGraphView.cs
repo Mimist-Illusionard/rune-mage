@@ -1,6 +1,5 @@
 using UnityEditor.Experimental.GraphView;
 using UnityEngine.UIElements;
-using UnityEditor;
 using UnityEngine;
 
 using System.Collections.Generic;
@@ -10,6 +9,8 @@ using System;
 public class SpellGraphView : GraphView
 {
     private SpellEditorWindow _editorWindow;
+    private SpellSearchWindow _searchWindow;
+
     private static List<SpellNodeData> _savedNodes;
     private static List<GroupData> _savedGroupes;
     private static List<SpellNodeBase> _currentNodes;
@@ -28,6 +29,7 @@ public class SpellGraphView : GraphView
 
         AddStyleSheet();
         AddMinimap();
+        AddSearchWindow();
 
         OnGraphViewChanged();
     }
@@ -192,6 +194,18 @@ public class SpellGraphView : GraphView
     #endregion
 
     #region Add Methods
+    private void AddSearchWindow()
+    {
+        if (_searchWindow == null)
+        {
+            _searchWindow = ScriptableObject.CreateInstance<SpellSearchWindow>();
+
+            _searchWindow.Initialize(this);
+        }
+
+        nodeCreationRequest = context => SearchWindow.Open(new SearchWindowContext(context.screenMousePosition), _searchWindow);
+    }
+
     private void AddMinimap()
     {
         MiniMap miniMap = new MiniMap { anchored = true };
