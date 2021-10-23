@@ -9,6 +9,8 @@ public class SpellLogic
     private List<SpellNodeData> _spellNodeDatas;
     private List<NodeLogic> _spellNodeLogics;
 
+    private GameObject _spell;
+
     public SpellLogic(List<SpellNodeData> spellNodeDatas)
     {
         _spellNodeDatas = spellNodeDatas;

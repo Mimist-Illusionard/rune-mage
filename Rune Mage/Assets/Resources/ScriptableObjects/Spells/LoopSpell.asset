@@ -23,83 +23,119 @@ MonoBehaviour:
   Prefab: {fileID: 8394959165212597424, guid: fc3386152d1e9c947a75628c1a8c0165, type: 3}
   SpellNodes:
   - Name: Start Node
-    ID: 1399694c-64be-40ad-88bf-6f8c2847a070
+    ID: b2de350c-14e6-4784-b402-2600e84e6d5b
     Type: 1
     GroupID: 
-    Position: {x: 409, y: 497}
+    Position: {x: 423, y: 499}
     Fields:
       _data: []
     Ports:
     - Name: Output
-      ID: cfb44872-bab7-4583-8091-e2543dc0e9b4
+      ID: 851c71ad-397b-4557-a5f3-02bd8bb1ce57
       Direction: 1
-      ConnectedNodeID: 8ca49a5f-e81d-42ea-a536-42801a1a869e
+      ConnectedNodeID: 5da6beef-dac4-41b7-93a0-1b5bef399373
   - Name: Loop Node
-    ID: 8ca49a5f-e81d-42ea-a536-42801a1a869e
+    ID: 5da6beef-dac4-41b7-93a0-1b5bef399373
     Type: 8
     GroupID: 
-    Position: {x: 624, y: 468}
+    Position: {x: 629, y: 478}
     Fields:
       _data:
       - Key: LoopAmount
-        Value: 2
+        Value: 5
       - Key: LoopPortsAmount
-        Value: 2
+        Value: 8
     Ports:
     - Name: Output
-      ID: 8a230e49-9902-4507-9ad7-6c446061425e
+      ID: 6e38245a-1dbb-4857-9755-7ec41906a952
       Direction: 1
-      ConnectedNodeID: 35ef3200-d4fb-41ba-bd30-2745a041b59e
+      ConnectedNodeID: 07f39072-6ee4-4513-ad36-8c11794730f6
     - Name: Loop0
-      ID: 455b7cb7-7784-40d2-a844-78717e30acb9
+      ID: 8c3a797c-63e4-4bde-a2fb-5e38bc5e8f8b
       Direction: 1
-      ConnectedNodeID: 7ee2384b-9239-4aec-b778-ae49975c5d0b
+      ConnectedNodeID: 08080e96-af61-447b-a5d2-9dfc594a1174
     - Name: Loop1
-      ID: 00c834b6-8d72-4a1c-b4e9-1a968a1f2f10
+      ID: 984d4169-62ef-418b-a811-cb322b896518
       Direction: 1
-      ConnectedNodeID: cb238a91-53e6-4c81-9426-4abbdfcabedc
+      ConnectedNodeID: de544d14-1015-42dc-ba90-25db33e89c3a
+    - Name: Loop2
+      ID: fa917fb7-2a44-4cd6-972e-d7c347637390
+      Direction: 1
+      ConnectedNodeID: de173288-d222-491e-bccf-46e23e2d7cf3
+    - Name: Loop3
+      ID: ed754066-c1a0-418e-a5a0-0e19c94f38bc
+      Direction: 1
+      ConnectedNodeID: 05a98786-2eda-492d-90d8-0de0fe66fad4
     - Name: Input
-      ID: 04576c7e-6f27-441c-a8c8-1624eef459a0
+      ID: 0a6ef168-61fc-45ff-82c9-ef63cbef3e93
       Direction: 0
       ConnectedNodeID: 
   - Name: End Node
-    ID: 35ef3200-d4fb-41ba-bd30-2745a041b59e
+    ID: 07f39072-6ee4-4513-ad36-8c11794730f6
     Type: 2
     GroupID: 
-    Position: {x: 887, y: 267}
+    Position: {x: 852, y: 275}
     Fields:
       _data: []
     Ports:
     - Name: Input
-      ID: 0fa64c53-c8e5-4801-a009-ba2d11887ce5
+      ID: e2234cc6-91bc-4fad-b886-7727ab505467
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Prefab Node
+    ID: 08080e96-af61-447b-a5d2-9dfc594a1174
+    Type: 9
+    GroupID: 
+    Position: {x: 854, y: 489}
+    Fields:
+      _data:
+      - Key: AssetPath
+        Value: Assets/Resources/Prefabs/Bullets/Bullet_3.prefab
+    Ports:
+    - Name: Input
+      ID: 4c19e84e-9d74-4419-976a-e76cbe2970ba
       Direction: 0
       ConnectedNodeID: 
   - Name: Spawn Point Node
-    ID: cb238a91-53e6-4c81-9426-4abbdfcabedc
+    ID: de544d14-1015-42dc-ba90-25db33e89c3a
     Type: 6
     GroupID: 
-    Position: {x: 892, y: 628}
+    Position: {x: 1003, y: 480}
     Fields:
       _data:
       - Key: SpawnPointType
-        Value: Raycast_Point
+        Value: Bullet_Spawn_Point
     Ports:
     - Name: Input
-      ID: 6ba2a7db-a6c3-4e58-b5a5-d884bffd7185
+      ID: ed469047-c8e8-4420-9f36-c9bab00053b7
       Direction: 0
       ConnectedNodeID: 
-  - Name: Wait Node
-    ID: 7ee2384b-9239-4aec-b778-ae49975c5d0b
-    Type: 3
+  - Name: LifeTime Node
+    ID: de173288-d222-491e-bccf-46e23e2d7cf3
+    Type: 7
     GroupID: 
-    Position: {x: 894, y: 467}
+    Position: {x: 858, y: 645}
     Fields:
       _data:
-      - Key: WaitTime
-        Value: 3
+      - Key: LifeTime
+        Value: 10
     Ports:
     - Name: Input
-      ID: b19419b1-78fa-408d-8c52-0c182f20dec2
+      ID: d0b0d277-4c6e-4a60-b217-4f2c0b813e84
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Speed Node
+    ID: 05a98786-2eda-492d-90d8-0de0fe66fad4
+    Type: 5
+    GroupID: 
+    Position: {x: 1020, y: 649}
+    Fields:
+      _data:
+      - Key: Speed
+        Value: 200
+    Ports:
+    - Name: Input
+      ID: c1a32b18-4e04-4f96-a971-b102a3220c42
       Direction: 0
       ConnectedNodeID: 
   Groups: []

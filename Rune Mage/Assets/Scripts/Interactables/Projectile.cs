@@ -12,7 +12,6 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
 
     private void Start()
     {
-        _rigidbody.AddForce(_spawnPoint.forward * Speed);
         Object.Destroy(this.gameObject, LifeTime);
     }
 
@@ -29,5 +28,10 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
     public void SetSpawnPoint(Transform spawnPoint)
     {
         _spawnPoint = spawnPoint;
+    }
+
+    public void Logic()
+    {
+        _rigidbody.AddForce(_spawnPoint.forward * Speed);
     }
 }

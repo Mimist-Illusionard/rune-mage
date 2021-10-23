@@ -17,6 +17,8 @@ public class SpeedNodeLogic : NodeLogic
     public override void Logic(GameObject spell)
     {
         Debug.Log("SpeedNode logic");
-        spell.GetComponent<ISpeed>().Speed = _speed;
+        var speedComponent = spell.GetComponent<ISpeed>();
+        speedComponent.Speed = _speed;
+        speedComponent.Logic();
     }
 }

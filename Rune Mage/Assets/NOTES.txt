@@ -2,7 +2,6 @@ This txt file need to write down some notes here.
 
 Scripts:
 	TODO:
-	- Make Loop node (or group?) for graph system
 	- Implement WaitTimeNode logic
 
 	Ideas:
