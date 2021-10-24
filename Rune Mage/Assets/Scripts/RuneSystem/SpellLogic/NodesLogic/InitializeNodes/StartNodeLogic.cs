@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class StartNodeLogic : NodeLogic
@@ -7,8 +9,10 @@ public class StartNodeLogic : NodeLogic
     {
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("StartNode Logic");
+
+        return;
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
+public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
 {
     private Rigidbody _rigidbody => GetComponent<Rigidbody>();
     private Transform _spawnPoint;
@@ -10,9 +10,11 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
     public float Speed { get; set; }
     public float LifeTime { get; set; }
 
-    private void Start()
+    public void Initialize()
     {
         Object.Destroy(this.gameObject, LifeTime);
+        _rigidbody.AddForce(_spawnPoint.forward * Speed);
+        transform.rotation = _spawnPoint.rotation;
     }
 
     protected override void Interact(Collider other)
@@ -28,10 +30,5 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime
     public void SetSpawnPoint(Transform spawnPoint)
     {
         _spawnPoint = spawnPoint;
-    }
-
-    public void Logic()
-    {
-        _rigidbody.AddForce(_spawnPoint.forward * Speed);
     }
 }

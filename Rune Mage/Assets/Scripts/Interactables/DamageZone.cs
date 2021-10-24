@@ -1,12 +1,12 @@
 using UnityEngine;
 
 
-public class DamageZone : Interactable, IDamage, ILifeTime
+public class DamageZone : Interactable, IDamage, ILifeTime, IInitialize
 {
     public float Damage { get; set; }
     public float LifeTime { get; set; }
 
-    private void Start()
+    public void Initialize()
     {
         Object.Destroy(this.gameObject, LifeTime);
     }

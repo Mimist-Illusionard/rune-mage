@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -60,11 +61,7 @@ public class SpellsSystem : MonoBehaviour
             if (correctRunes == spellLength)
             {
                 Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Length} Spell Cost: {spell.ManaCost}");
-                if (spell.ManaCost <= PlayerManager.Singleton.GetMana().GiveMana())
-                {
-                    PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
-                    spell.SpellLogic();
-                } 
+                StartCoroutine(SpellLogic(spell));
                 break;
             }
             else
@@ -73,5 +70,38 @@ public class SpellsSystem : MonoBehaviour
 
         _currentRunesInSpell = 0;
         _currentRunes.Clear();
+    }
+
+    private IEnumerator SpellLogic(Spell spell)
+    {
+        float currentWaitTime = spell.Interval;
+        if (spell.InputMode == InputModeType.Hold)
+        {
+            while (Input.GetKey(KeyCode.Mouse1) && IsHasManaToCast(spell))
+            {
+                currentWaitTime -= Time.deltaTime;
+                if (currentWaitTime <= 0)
+                {
+                    spell.SpellLogic();
+                    PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
+
+                    currentWaitTime = spell.Interval;
+                }
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        else if (IsHasManaToCast(spell))
+        {
+            spell.SpellLogic();
+            PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
+        }
+
+        yield return null;
+    }
+
+    private bool IsHasManaToCast(Spell spell)
+    {
+        return spell.ManaCost <= PlayerManager.Singleton.GetMana().GiveMana();
     }
 }

@@ -13,6 +13,8 @@ public class Spell : ScriptableObject
     public int Length;
     public List<Rune> Runes = new List<Rune>();
     public GameObject Prefab;
+    public InputModeType InputMode = InputModeType.Down;
+    public float Interval;
 
     public List<SpellNodeData> SpellNodes = new List<SpellNodeData>();
     public List<GroupData> Groups = new List<GroupData>();

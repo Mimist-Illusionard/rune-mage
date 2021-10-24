@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class DamageNodeLogic : NodeLogic
@@ -14,9 +16,11 @@ public class DamageNodeLogic : NodeLogic
             Debug.LogError($"Can't parse <b>Damage</b>:{value} into <b>Damage</b> in <b>DamageNodeLogic</b>");
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("DamageNode logic");
         spell.GetComponent<IDamage>().Damage = _damage;
+
+        return;
     }
 }

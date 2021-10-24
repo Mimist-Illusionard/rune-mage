@@ -66,7 +66,8 @@ public class Enemy : Ai
             bulletScript.Speed = _bulletSpeed;
 
             bulletScript.SetSpawnPoint(spawnPoint);
-            bulletScript.Logic();
+            bullet.GetComponent<IInitialize>().Initialize();
+
             _currentShootTime = _shootTime + Random.Range(-0.3f, 0.3f);
         }
     }

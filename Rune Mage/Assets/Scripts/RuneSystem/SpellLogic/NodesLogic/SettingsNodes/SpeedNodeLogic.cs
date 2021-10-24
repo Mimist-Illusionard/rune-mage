@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class SpeedNodeLogic : NodeLogic
@@ -14,11 +16,12 @@ public class SpeedNodeLogic : NodeLogic
             Debug.LogError($"Can't parse <b>Speed</b>:{value} into <b>Speed</b> in <b>SpeedNodeLogic</b>");
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("SpeedNode logic");
         var speedComponent = spell.GetComponent<ISpeed>();
         speedComponent.Speed = _speed;
-        speedComponent.Logic();
+
+        return;
     }
 }

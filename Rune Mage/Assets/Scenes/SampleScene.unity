@@ -806,10 +806,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 811052645}
   - {fileID: 1991721917}
   - {fileID: 1679933021}
   - {fileID: 903391332}
-  - {fileID: 811052645}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2009,7 +2009,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 328078750}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2189,7 +2189,7 @@ RectTransform:
   - {fileID: 1643905496}
   - {fileID: 1862069549}
   m_Father: {fileID: 328078750}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -2808,7 +2808,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 187356d0666c1234b96343d73fad6518, type: 2}
   - {fileID: 11400000, guid: e237547e7e2ef5b4e92ffc00dd0ff769, type: 2}
   - {fileID: 11400000, guid: 01a41702e8cbdcb4c9543474f439c7a2, type: 2}
-  - {fileID: 11400000, guid: 9d076490faa237642987e045af2c2564, type: 2}
+  - {fileID: 11400000, guid: f4cd80656f4115a46aadd35248be7ae7, type: 2}
   _maxRunesAmount: 5
   _currentRunes: []
 --- !u!114 &1168624024
@@ -3799,7 +3799,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 328078750}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4173,7 +4173,7 @@ RectTransform:
   - {fileID: 2115742012}
   - {fileID: 224360059}
   m_Father: {fileID: 328078750}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

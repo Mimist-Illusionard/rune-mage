@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 using UnityEngine;
 
@@ -15,17 +16,21 @@ public class LoopNodeLogic : NodeLogic
 
     public override void GenerateFields(SerilializedDictionary<string, string> fields)
     {
+        LogicType = LogicType.Durable;
+
         string fieldResult = "";
         fields.TryGetValue("LoopAmount", out fieldResult);
 
         if (!float.TryParse(fieldResult, out LoopAmount))            
             Debug.LogError($"Can't parse <b>loopAmount</b>:{fieldResult} into <b>LoopAmount</b> in <b>Loop Node</b>");
 
-        if(!int.TryParse(fieldResult, out LoopPortsAmount))
+        fields.TryGetValue("LoopPortsAmount", out fieldResult);
+
+        if (!int.TryParse(fieldResult, out LoopPortsAmount))
             Debug.LogError($"Can't parse <b>loopPortsAmount</b>:{fieldResult} into <b>LoopPortsAmount</b> in <b>LoopNodeLogic</b>");
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("LoopNodeLogic");
 
@@ -71,12 +76,47 @@ public class LoopNodeLogic : NodeLogic
         //Use nodeLogic
         for (int i = 0; i < LoopAmount; i++)
         {
-            for (int j = 0; j < loopNodeLogic.Count; j++)
+            int spellCount = loopNodeLogic.Count;
+            int currentSpellCount = 0;
+
+            var spellNodeLogic = loopNodeLogic[currentSpellCount];
+            var spellLogic = loopNodeLogic[currentSpellCount].Logic(spell);
+
+            while (true)
             {
-                var nodeLogic = loopNodeLogic[j];
-                nodeLogic.Logic(spell);
+                if (spellNodeLogic.LogicType == LogicType.Durable)
+                {
+                    await Task.Yield();
+                }
+
+                if (spellLogic.IsCompleted)
+                {
+                    currentSpellCount++;
+
+                    if (currentSpellCount == spellCount)
+                    {                        
+                        break;
+                    }
+
+                    spellNodeLogic = loopNodeLogic[currentSpellCount];
+                    if (spellNodeLogic.GetType() == typeof(PrefabNodeLogic)) //Stupid resolve :/
+                    {
+                        var prefabSpellLogic = (PrefabNodeLogic)spellNodeLogic;
+                        prefabSpellLogic.CreateSpell(out spell);
+
+                        spellLogic = spellNodeLogic.Logic(spell);
+                    }
+                    else
+                    {
+                        spellLogic = loopNodeLogic[currentSpellCount].Logic(spell);
+                    }
+                }
             }
+
+            spell.GetComponent<IInitialize>().Initialize();
         }
+
+        return;
     }
 
     public void SetSpellNodes(SpellNodeData currentLoopNode, List<SpellNodeData> spellNodeDatas)
