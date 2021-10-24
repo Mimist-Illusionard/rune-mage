@@ -19,7 +19,6 @@ public class PrefabNodeLogic : NodeLogic
     public async override Task Logic(GameObject spell)
     {
         Debug.Log("PrefabNode Logic");
-        Debug.LogWarning(spell);
         return;
     }
 

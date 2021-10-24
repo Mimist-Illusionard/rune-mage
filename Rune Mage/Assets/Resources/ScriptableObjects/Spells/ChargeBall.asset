@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: ChargeBall
+  m_EditorClassIdentifier: 
+  Name: Charge Ball
+  ManaCost: 15
+  Length: 2
+  Runes:
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  Prefab: {fileID: 1597648706924790914, guid: 5ebda99082b517349a52b46cf9f57647, type: 3}
+  InputMode: 1
+  Interval: 0
+  SpellNodes:
+  - Name: Start Node
+    ID: 13eb6878-69a9-42dc-b1df-a366ede3e32e
+    Type: 1
+    GroupID: 
+    Position: {x: 254, y: 495}
+    Fields:
+      _data: []
+    Ports:
+    - Name: Output
+      ID: f6b4c9e5-8ac5-4b9a-8d3b-a954e975f64a
+      Direction: 1
+      ConnectedNodeID: e07c5437-73ff-4430-8a03-a837d58bc403
+  - Name: Charge Node
+    ID: e07c5437-73ff-4430-8a03-a837d58bc403
+    Type: 10
+    GroupID: 
+    Position: {x: 474, y: 494}
+    Fields:
+      _data:
+      - Key: Charge
+        Value: 1
+    Ports:
+    - Name: Output
+      ID: 0703047c-26cd-47ca-884e-61f0a433a154
+      Direction: 1
+      ConnectedNodeID: 3d00a425-e7b4-4c9d-878a-5772e0bf252f
+    - Name: Input
+      ID: 53032b50-f419-4746-815d-1fb9460d62bc
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Prefab Node
+    ID: 3d00a425-e7b4-4c9d-878a-5772e0bf252f
+    Type: 9
+    GroupID: 
+    Position: {x: 624, y: 493}
+    Fields:
+      _data:
+      - Key: AssetPath
+        Value: Assets/Resources/Prefabs/Bullets/Bullet_2.prefab
+    Ports:
+    - Name: Output
+      ID: b22eb297-9179-4a7b-b723-714f720293b9
+      Direction: 1
+      ConnectedNodeID: b25698ec-0776-4fcc-9dcf-1ab6bcefe134
+    - Name: Input
+      ID: f067ba04-a9de-4445-947a-a826d3ba7cf7
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Spawn Point Node
+    ID: b25698ec-0776-4fcc-9dcf-1ab6bcefe134
+    Type: 6
+    GroupID: 
+    Position: {x: 779, y: 494}
+    Fields:
+      _data:
+      - Key: SpawnPointType
+        Value: Bullet_Spawn_Point
+    Ports:
+    - Name: Output
+      ID: d48c82d6-6b97-431c-a09a-85b5883033be
+      Direction: 1
+      ConnectedNodeID: 3a9f3af8-ec7f-448b-b5ec-f0104539c596
+    - Name: Input
+      ID: ce6aef09-ce2e-448f-9977-ff1a60bf9220
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: LifeTime Node
+    ID: 3a9f3af8-ec7f-448b-b5ec-f0104539c596
+    Type: 7
+    GroupID: 
+    Position: {x: 967, y: 492}
+    Fields:
+      _data:
+      - Key: LifeTime
+        Value: 3
+    Ports:
+    - Name: Output
+      ID: 8b972674-27d4-436e-8831-de998b12dad3
+      Direction: 1
+      ConnectedNodeID: f80bfe60-0d9a-4870-94d6-bc74c1f3c059
+    - Name: Input
+      ID: c1e8bd48-3a08-42a7-9970-01885f7b52a4
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Damage Node
+    ID: f80bfe60-0d9a-4870-94d6-bc74c1f3c059
+    Type: 4
+    GroupID: 
+    Position: {x: 1132, y: 492}
+    Fields:
+      _data:
+      - Key: Damage
+        Value: 10
+    Ports:
+    - Name: Output
+      ID: c14aea69-6e12-4516-870d-3763bdcd39c7
+      Direction: 1
+      ConnectedNodeID: 7703c5dd-f7cb-465c-8c3c-e72a8392e4e7
+    - Name: Input
+      ID: 90230cb1-7092-42fb-b3fd-c814ef893ffc
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Speed Node
+    ID: 7703c5dd-f7cb-465c-8c3c-e72a8392e4e7
+    Type: 5
+    GroupID: 
+    Position: {x: 1291, y: 486}
+    Fields:
+      _data:
+      - Key: Speed
+        Value: 1100
+    Ports:
+    - Name: Output
+      ID: 6bc9a606-fee5-4c4b-b1ee-7e9eae8bcfc5
+      Direction: 1
+      ConnectedNodeID: 3753ab5e-51b7-404e-9b3c-1d42bb58fd51
+    - Name: Input
+      ID: 46cd13d6-6d0b-43d2-8e91-f2c32f66ffe2
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: End Node
+    ID: 3753ab5e-51b7-404e-9b3c-1d42bb58fd51
+    Type: 2
+    GroupID: 
+    Position: {x: 1466, y: 489}
+    Fields:
+      _data: []
+    Ports:
+    - Name: Input
+      ID: ada4a918-287d-4529-83c8-8aae879823e7
+      Direction: 0
+      ConnectedNodeID: 
+  Groups: []
