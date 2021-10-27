@@ -12,7 +12,7 @@ public class StartNodeLogic : NodeLogic
     public async override Task Logic(GameObject spell)
     {
         Debug.Log("StartNode Logic");
-
+        SpellsSystem.Singleton.IsSpellCasting(true);
         return;
     }
 }

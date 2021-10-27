@@ -1,8 +1,6 @@
 This txt file need to write down some notes here.
 
 Scripts:
-	TODO:
-	- Implement WaitTimeNode logic
 
 	Ideas:
 	- Think about another nodeLogic create

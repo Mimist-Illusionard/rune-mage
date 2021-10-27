@@ -9,6 +9,7 @@ public class SpellsSystem : MonoBehaviour
     [SerializeField] private int _maxRunesAmount;
 
     private int _currentRunesInSpell;
+    private bool _isSpellCasting;
 
     public List<Rune> _currentRunes = new List<Rune>();
     public static SpellsSystem Singleton { get; private set; }
@@ -58,7 +59,7 @@ public class SpellsSystem : MonoBehaviour
                 }
             }
 
-            if (correctRunes == spellLength)
+            if (correctRunes == spellLength && !_isSpellCasting)
             {
                 Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Length} Spell Cost: {spell.ManaCost}");
                 StartCoroutine(SpellLogic(spell));
@@ -103,5 +104,10 @@ public class SpellsSystem : MonoBehaviour
     private bool IsHasManaToCast(Spell spell)
     {
         return spell.ManaCost <= PlayerManager.Singleton.GetMana().GiveMana();
+    }
+
+    public void IsSpellCasting(bool value)
+    {
+        _isSpellCasting = value;
     }
 }

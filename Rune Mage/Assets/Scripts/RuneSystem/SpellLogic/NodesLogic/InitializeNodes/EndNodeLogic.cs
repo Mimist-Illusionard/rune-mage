@@ -15,6 +15,7 @@ public class EndNodeLogic : NodeLogic
 
         spell.GetComponent<IInitialize>().Initialize();
 
+        SpellsSystem.Singleton.IsSpellCasting(false);
         return;
     }
 }
