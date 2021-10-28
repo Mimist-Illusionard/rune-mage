@@ -12,10 +12,9 @@ public class EndNodeLogic : NodeLogic
     public async override Task Logic(GameObject spell)
     {
         Debug.Log("EndNode Logic");
+        SpellsSystem.Singleton.IsSpellCasting(false);
 
         spell.GetComponent<IInitialize>().Initialize();
-
-        SpellsSystem.Singleton.IsSpellCasting(false);
         return;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4014955614773499555}
   - component: {fileID: 4014955614773499558}
   - component: {fileID: 4014955614773499557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 33bf88bf45a24344e94372169cdd29ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1653694090567119716}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4592628937929537396}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,10 +155,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5061959815467956125}
   - component: {fileID: 5922812514671473971}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawnpoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7487575442816440861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.43301615, y: 0, z: 1.1726027}
+  m_LocalPosition: {x: -0.078, y: 0, z: 1.411}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1653694090567119716}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 8784189115312867094}
   - component: {fileID: 8784189115312867088}
   - component: {fileID: 8784189115312867089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -283,7 +283,8 @@ GameObject:
   - component: {fileID: 8286700575785996925}
   - component: {fileID: 29594071974763132}
   - component: {fileID: 6039289751986682994}
-  m_Layer: 2
+  - component: {fileID: 4014955615561464762}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -316,7 +317,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.5
   m_Radius: 0.5
   m_SlopeLimit: 0
   m_StepOffset: 0
@@ -339,7 +340,7 @@ MonoBehaviour:
   _mouseSensitivity: 1.5
   _walkSpeed: 6
   _sprintSpeed: 9
-  _jumpForce: 6
+  _jumpForce: 9
   _gravityForce: -9.8
   _staminaRegen: 1
   _staminaSpent: 2
@@ -356,3 +357,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dcba0ee8b340904b80df9fd13b6053e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4014955615561464762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8784189115719356151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5a7579d7f38554ca8dde775685fbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstRune: {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  SecondRune: {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  ThirdRune: {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
