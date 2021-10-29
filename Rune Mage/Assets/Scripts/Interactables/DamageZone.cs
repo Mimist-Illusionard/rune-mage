@@ -11,11 +11,15 @@ public class DamageZone : Interactable, IDamage, ILifeTime, IInitialize
         Object.Destroy(this.gameObject, LifeTime);
     }
 
-    protected override void Interact(Collider other)
+    protected override void OnEnter(Collider other)
     {
         if (other.gameObject.GetComponentInObject<Health>())
         {
             other.gameObject.GetComponentInObject<Health>().RemoveHealth(Damage);
         }
+    }
+
+    protected override void OnExit(Collider other)
+    {
     }
 }

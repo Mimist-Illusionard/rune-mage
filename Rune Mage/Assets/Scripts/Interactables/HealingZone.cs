@@ -11,7 +11,7 @@ public class HealingZone : Interactable, ILifeTime, IDamage, IInitialize
         Destroy(gameObject, LifeTime);
     }
 
-    protected override void Interact(Collider other)
+    protected override void OnEnter(Collider other)
     {
         if (other.gameObject.GetComponentInObject<Health>())
         {
@@ -19,5 +19,9 @@ public class HealingZone : Interactable, ILifeTime, IDamage, IInitialize
 
             health.StartRegenHealing(0.5f, Damage, 3f);
         }
+    }
+
+    protected override void OnExit(Collider other)
+    {
     }
 }

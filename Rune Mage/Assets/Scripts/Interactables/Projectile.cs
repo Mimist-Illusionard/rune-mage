@@ -17,7 +17,7 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
         transform.rotation = _spawnPoint.rotation;
     }
 
-    protected override void Interact(Collider other)
+    protected override void OnEnter(Collider other)
     {
         if (other.gameObject.GetComponentInObject<Health>())
         {
@@ -30,5 +30,9 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
     public void SetSpawnPoint(Transform spawnPoint)
     {
         _spawnPoint = spawnPoint;
+    }
+
+    protected override void OnExit(Collider other)
+    {
     }
 }

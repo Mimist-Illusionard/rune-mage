@@ -5,8 +5,14 @@ public abstract class Interactable : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Interact(other);
+        OnEnter(other);
     }
 
-    protected abstract void Interact(Collider other);    
+    private void OnTriggerExit(Collider other)
+    {
+        OnExit(other);
+    }
+
+    protected abstract void OnEnter(Collider other);    
+    protected abstract void OnExit(Collider other);    
 }
