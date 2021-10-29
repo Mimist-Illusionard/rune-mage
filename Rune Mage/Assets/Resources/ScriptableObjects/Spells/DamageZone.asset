@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
   m_Name: DamageZone
   m_EditorClassIdentifier: 
-  Name: Spell_5
+  Name: Damage Zone
   ManaCost: 40
   Length: 3
   Runes:
@@ -20,6 +20,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Prefab: {fileID: 6714257348929866549, guid: c67dfa3797a00bb468f6053ed11f2dff, type: 3}
+  InputMode: 1
+  Interval: 0
   SpellNodes:
   - Name: End Node
     ID: 8c8e63ce-1c2a-402f-ab2c-ba48434a53ef

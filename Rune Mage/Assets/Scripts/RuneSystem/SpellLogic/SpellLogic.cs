@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -53,12 +53,33 @@ public class SpellLogic
         }
     }
 
-    public void Logic(GameObject spell)
+    public async void Logic(GameObject spell)
     {
-        for (int i = 0; i < _spellNodeLogics.Count; i++)
+        int spellCount = _spellNodeLogics.Count;
+        int currentSpellCount = 0;
+
+        var spellNodeLogic = _spellNodeLogics[currentSpellCount];
+        var spellLogic = _spellNodeLogics[currentSpellCount].Logic(spell);
+
+        while (true)
         {
-            var spellNodeLogic = _spellNodeLogics[i];
-            spellNodeLogic.Logic(spell);
+            if (spellNodeLogic.LogicType == LogicType.Durable)
+            {
+                await Task.Yield();
+            }
+
+            if (spellLogic.IsCompleted)
+            {
+                currentSpellCount++;
+
+                if (currentSpellCount == spellCount)
+                {
+                    break;
+                }
+
+                spellNodeLogic = _spellNodeLogics[currentSpellCount];
+                spellLogic = _spellNodeLogics[currentSpellCount].Logic(spell);
+            }
         }
     }
 

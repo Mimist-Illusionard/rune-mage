@@ -27,7 +27,7 @@ public class LoopNode : SpellNodeWithPorts
 
         var button = NodeElementsUtility.CreateButton("Add loop", () => {
 
-            var outputPort = CreateLoop("Loop" + LoopPortsAmount);
+            var outputPort = CreateLoop("Loop" + LoopPortsAmount, LoopPortsAmount);
 
             outputContainer.Add(outputPort);
         });
@@ -37,7 +37,7 @@ public class LoopNode : SpellNodeWithPorts
         CustomDataContainer.Add(button);
     }
 
-    private Port CreateLoop(string name)
+    private Port CreateLoop(string name, int currentIndex)
     {
         Port loopPort = this.CreatePort(name);
 
@@ -81,13 +81,12 @@ public class LoopNode : SpellNodeWithPorts
         fieldResult = "";
         spellNodeData.Fields.TryGetValue("LoopPortsAmount", out fieldResult);
 
-        int.TryParse(fieldResult, out LoopPortsAmount);
+        int loopPortsAmount = 0;
+        int.TryParse(fieldResult, out loopPortsAmount);
 
-        int loopAmount = LoopPortsAmount;
-
-        for (int i = 0; i < loopAmount; i++)
+        for (int i = 0; i < loopPortsAmount; i++)
         {
-            var loop = CreateLoop("Loop" + i);
+            var loop = CreateLoop("Loop" + i, i);
             outputContainer.Add(loop);
         }
     }

@@ -12,10 +12,10 @@ public class TestAsync : MonoBehaviour
         var waitSixtyFramesTokenSource = CreateCancellationTokenSource();
         var whatTaskFasterTokenSource = CreateCancellationTokenSource();
 
-        WaitOneSecond(waitOneSecondTokenSource.Token);
-        WaitSixtyFrames(waitSixtyFramesTokenSource.Token);
+        WaitOneSecond(waitOneSecondTokenSource);
+        WaitSixtyFrames(waitSixtyFramesTokenSource);
 
-        WhatTaskFasterAsync(whatTaskFasterTokenSource.Token, WaitOneSecond(waitOneSecondTokenSource.Token), WaitSixtyFrames(waitSixtyFramesTokenSource.Token));
+        WhatTaskFasterAsync(whatTaskFasterTokenSource, WaitOneSecond(waitOneSecondTokenSource), WaitSixtyFrames(waitSixtyFramesTokenSource));
     }
 
     private CancellationTokenSource CreateCancellationTokenSource()
@@ -25,20 +25,20 @@ public class TestAsync : MonoBehaviour
         return cancelTokenSource;
     }
 
-    private async Task WaitOneSecond(CancellationToken token)
+    private async Task WaitOneSecond(CancellationTokenSource cancelTokenSource)
     {
         Debug.LogError("Start WaitOneSecond Task");
         await Task.Delay(1000);
         Debug.LogError("End WaitOneSecond Task");        
     }
 
-    private async Task WaitSixtyFrames(CancellationToken token)
+    private async Task WaitSixtyFrames(CancellationTokenSource cancelTokenSource)
     {
         Debug.LogWarning("Start WaitSixtyFrames Task");
         var framesCount = 0;
         while (framesCount <= 60)
         {
-            if (token.IsCancellationRequested)
+            if (cancelTokenSource.Token.IsCancellationRequested)
             {
                 Debug.LogWarning("WaitSixtyFrames end becouse token");
                 break;
@@ -54,12 +54,12 @@ public class TestAsync : MonoBehaviour
         return;
     }
 
-    private async Task<bool> WhatTaskFasterAsync(CancellationToken token, Task task1, Task task2)
+    private async Task<bool> WhatTaskFasterAsync(CancellationTokenSource cancelTokenSource, Task task1, Task task2)
     {
         Debug.Log("What task faster Start");
         while (true)
         {
-            if (token.IsCancellationRequested)
+            if (cancelTokenSource.Token.IsCancellationRequested)
             {
                 Debug.LogError("WhatTaskFasterAsync ended by token");
                 return false;

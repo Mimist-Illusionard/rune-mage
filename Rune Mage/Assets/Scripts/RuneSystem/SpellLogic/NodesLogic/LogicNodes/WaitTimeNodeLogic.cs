@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class WaitTimeNodeLogic : NodeLogic
@@ -7,6 +9,8 @@ public class WaitTimeNodeLogic : NodeLogic
 
     public override void GenerateFields(SerilializedDictionary<string, string> fields)
     {
+        LogicType = LogicType.Durable;
+
         var value = "";
         fields.TryGetValue("WaitTime", out value);
 
@@ -14,8 +18,23 @@ public class WaitTimeNodeLogic : NodeLogic
             Debug.LogError($"Can't parse <b>waitTimeValue</b>:{value} into <b>WaitIime</b> in <b>WaitTimeLogic</b>");
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("WaitTimeNode logic");
+        var currentWaitTime = _waitTime;
+
+        while (true)
+        {
+            currentWaitTime -= Time.deltaTime;
+
+            if (currentWaitTime <= 0)
+            {
+                break;
+            }
+
+            await Task.Yield();
+        }
+
+        return;
     }
 }

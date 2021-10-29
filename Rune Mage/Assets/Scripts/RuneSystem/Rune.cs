@@ -1,7 +1,6 @@
 using UnityEngine;
 
 using System;
-using System.Collections.Generic;
 
 
 [CreateAssetMenu(fileName = "Rune", menuName = "Data/SpellSystem/Rune")]

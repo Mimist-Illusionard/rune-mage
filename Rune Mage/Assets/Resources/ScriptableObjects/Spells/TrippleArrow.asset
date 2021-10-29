@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: TrippleArrow
+  m_EditorClassIdentifier: 
+  Name: Tripple Arrow
+  ManaCost: 20
+  Length: 3
+  Runes:
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
+  InputMode: 1
+  Interval: 0.5
+  SpellNodes:
+  - Name: Start Node
+    ID: 3dd1fdd1-a876-4948-9a03-a7caceee8b90
+    Type: 1
+    GroupID: 
+    Position: {x: 391, y: 502}
+    Fields:
+      _data: []
+    Ports:
+    - Name: Output
+      ID: 65fd7675-05bf-4aac-bdb1-629cdc663dcf
+      Direction: 1
+      ConnectedNodeID: e5b6f6d8-a46d-4d8c-a200-e5be92485111
+  - Name: End Node
+    ID: ec8fac19-3add-49c6-8621-a52345f8d9a5
+    Type: 2
+    GroupID: 
+    Position: {x: 799, y: 374}
+    Fields:
+      _data: []
+    Ports:
+    - Name: Input
+      ID: e94cfe04-d911-4818-b3a4-16c2d2651a70
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Wait Node
+    ID: 58411b83-6ba7-4160-aedf-090bcd174a6c
+    Type: 3
+    GroupID: 
+    Position: {x: 798, y: 551}
+    Fields:
+      _data:
+      - Key: WaitTime
+        Value: 0,25
+    Ports:
+    - Name: Input
+      ID: 30f2e005-0610-46f9-996d-ab6ac407427a
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Loop Node
+    ID: e5b6f6d8-a46d-4d8c-a200-e5be92485111
+    Type: 8
+    GroupID: 
+    Position: {x: 594, y: 497}
+    Fields:
+      _data:
+      - Key: LoopAmount
+        Value: 3
+      - Key: LoopPortsAmount
+        Value: 6
+    Ports:
+    - Name: Output
+      ID: 5581e9cb-2359-4651-8075-0f505f800366
+      Direction: 1
+      ConnectedNodeID: ec8fac19-3add-49c6-8621-a52345f8d9a5
+    - Name: Loop0
+      ID: fe4d77a8-1dc0-4f4d-9600-64e3eeee724d
+      Direction: 1
+      ConnectedNodeID: 58411b83-6ba7-4160-aedf-090bcd174a6c
+    - Name: Loop1
+      ID: ccb21863-fa89-4952-9f9b-1ffc7c5ac35d
+      Direction: 1
+      ConnectedNodeID: 07ac0739-3063-41fc-92b3-dba3f5e17f2a
+    - Name: Loop2
+      ID: 6c001e16-b750-458a-881c-4885a3be7da0
+      Direction: 1
+      ConnectedNodeID: da12a1d9-f804-49d2-adb2-798a7cba099d
+    - Name: Loop3
+      ID: 93e8ae2d-bac0-4a7d-8d43-8dd2f8522e6f
+      Direction: 1
+      ConnectedNodeID: 81cca111-681d-45cd-a8fd-9537c65e819d
+    - Name: Loop4
+      ID: c4f7aa6d-655c-4e34-805c-8f7db59ec2bf
+      Direction: 1
+      ConnectedNodeID: 9b599aa8-e547-47f8-b80f-543a91a3319f
+    - Name: Loop5
+      ID: 17792bc6-9357-4d04-b9be-47a2e620eb77
+      Direction: 1
+      ConnectedNodeID: 3a9ab601-db5d-4cd9-9574-96bc83bb03fd
+    - Name: Input
+      ID: ce2cfbb3-3a62-4a06-814a-524182954481
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Prefab Node
+    ID: 07ac0739-3063-41fc-92b3-dba3f5e17f2a
+    Type: 9
+    GroupID: 
+    Position: {x: 953, y: 548}
+    Fields:
+      _data:
+      - Key: AssetPath
+        Value: Assets/Resources/Prefabs/Bullets/Bullet_3.prefab
+    Ports:
+    - Name: Input
+      ID: e9e6284b-6bb6-43fc-b0f6-a65a58151491
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Speed Node
+    ID: 9b599aa8-e547-47f8-b80f-543a91a3319f
+    Type: 5
+    GroupID: 
+    Position: {x: 952, y: 722}
+    Fields:
+      _data:
+      - Key: Speed
+        Value: 900
+    Ports:
+    - Name: Input
+      ID: d1505e6f-fa13-40ff-a1f2-bf84557a05f0
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Damage Node
+    ID: 81cca111-681d-45cd-a8fd-9537c65e819d
+    Type: 4
+    GroupID: 
+    Position: {x: 797, y: 724}
+    Fields:
+      _data:
+      - Key: Damage
+        Value: 4
+    Ports:
+    - Name: Input
+      ID: da5eca14-f4c0-490a-9c92-99fbe2d08510
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: LifeTime Node
+    ID: 3a9ab601-db5d-4cd9-9574-96bc83bb03fd
+    Type: 7
+    GroupID: 
+    Position: {x: 1110, y: 717}
+    Fields:
+      _data:
+      - Key: LifeTime
+        Value: 4
+    Ports:
+    - Name: Input
+      ID: e83606fa-3a4f-4823-a119-4df680987fb4
+      Direction: 0
+      ConnectedNodeID: 
+  - Name: Spawn Point Node
+    ID: da12a1d9-f804-49d2-adb2-798a7cba099d
+    Type: 6
+    GroupID: 
+    Position: {x: 1110, y: 551}
+    Fields:
+      _data:
+      - Key: SpawnPointType
+        Value: Bullet_Spawn_Point
+    Ports:
+    - Name: Input
+      ID: f20f43a5-c214-4389-8484-c6f3501f79d6
+      Direction: 0
+      ConnectedNodeID: 
+  Groups: []

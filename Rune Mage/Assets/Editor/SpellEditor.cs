@@ -40,6 +40,12 @@ public class SpellEditor : Editor
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Name"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("ManaCost"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Prefab"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("InputMode"));
+
+            if(_spell.InputMode == InputModeType.Hold)
+            {
+                EditorGUILayout.PropertyField(serializedObject.FindProperty("Interval"));
+            }
 
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, true, false, GUILayout.Height(200));
             GUILayout.BeginHorizontal();

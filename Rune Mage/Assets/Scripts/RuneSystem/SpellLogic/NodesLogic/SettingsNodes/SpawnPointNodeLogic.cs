@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class SpawnPointNodeLogic : NodeLogic
@@ -15,7 +17,7 @@ public class SpawnPointNodeLogic : NodeLogic
         _spawnPointType = (SpawnPointType)enumType;
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("SpawnPointNode logic");
         switch (_spawnPointType)
@@ -37,5 +39,7 @@ public class SpawnPointNodeLogic : NodeLogic
             default:
                 break;
         }
+
+        return;
     }
 }

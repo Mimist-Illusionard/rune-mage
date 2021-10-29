@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+
+using UnityEngine;
 
 
 public class LifeTimeNodeLogic : NodeLogic
@@ -14,9 +16,11 @@ public class LifeTimeNodeLogic : NodeLogic
             Debug.LogError($"Can't parse <b>LifeTime</b>:{value} into <b>LifeTime</b> in <b>{this}</b>");
     }
 
-    public override void Logic(GameObject spell)
+    public async override Task Logic(GameObject spell)
     {
         Debug.Log("LifeTimeNode logic");
         spell.GetComponent<ILifeTime>().LifeTime = _lifeTime;
+
+        return;
     }
 }
