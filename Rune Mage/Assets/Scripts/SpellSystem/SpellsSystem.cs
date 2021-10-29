@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpellsSystem : MonoBehaviour
 {
-    [SerializeField] private List<Spell> _spells = new List<Spell>();
+    [SerializeField] private List<SpellInfo> _spells = new List<SpellInfo>();
     [SerializeField] private int _maxRunesAmount;
 
     private int _currentRunesInSpell;
@@ -40,9 +40,9 @@ public class SpellsSystem : MonoBehaviour
         for (int i = 0; i < _spells.Count; i++)
         {
             var spell = _spells[i];
-            if (spell.Length == _currentRunes.Count)
+            if (spell.Spell.Length == _currentRunes.Count)
             {
-                appropriateSpells.Add(spell);
+                appropriateSpells.Add(spell.Spell);
             }           
         }
 
@@ -109,5 +109,10 @@ public class SpellsSystem : MonoBehaviour
     public void IsSpellCasting(bool value)
     {
         _isSpellCasting = value;
+    }
+
+    public List<SpellInfo> GetSpells()
+    {
+        return _spells;
     }
 }
