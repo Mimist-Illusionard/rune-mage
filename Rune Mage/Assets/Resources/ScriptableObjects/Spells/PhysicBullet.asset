@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
   m_Name: PhysicBullet
   m_EditorClassIdentifier: 
-  Name: Physic Bullet
-  ManaCost: 15
-  Length: 2
+  Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
-  Prefab: {fileID: 3158263401477300172, guid: b565dfc12d35f25498a8ab763e7f30b4, type: 3}
   InputMode: 1
+  Name: Physic Bullet
+  ManaCost: 15
+  Length: 2
   Interval: 0
   SpellNodes:
   - Name: Damage Node

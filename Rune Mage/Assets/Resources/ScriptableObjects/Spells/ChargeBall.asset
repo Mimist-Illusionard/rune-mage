@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
   m_Name: ChargeBall
   m_EditorClassIdentifier: 
-  Name: Charge Ball
-  ManaCost: 15
-  Length: 2
+  Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 1597648706924790914, guid: 5ebda99082b517349a52b46cf9f57647, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  Prefab: {fileID: 1597648706924790914, guid: 5ebda99082b517349a52b46cf9f57647, type: 3}
   InputMode: 1
+  Name: Charge Ball
+  ManaCost: 15
+  Length: 2
   Interval: 0
   SpellNodes:
   - Name: Start Node

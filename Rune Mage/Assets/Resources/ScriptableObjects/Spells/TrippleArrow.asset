@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
   m_Name: TrippleArrow
   m_EditorClassIdentifier: 
-  Name: Tripple Arrow
-  ManaCost: 20
-  Length: 3
+  Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
   InputMode: 1
+  Name: Tripple Arrow
+  ManaCost: 20
+  Length: 3
   Interval: 0.5
   SpellNodes:
   - Name: Start Node

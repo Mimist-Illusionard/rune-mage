@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
   m_Name: HealingZone
   m_EditorClassIdentifier: 
-  Name: Healing Zone
-  ManaCost: 50
-  Length: 3
+  Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 6714257348929866549, guid: 2e23cd10ebad7eb488c8007773309163, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
-  Prefab: {fileID: 6714257348929866549, guid: 2e23cd10ebad7eb488c8007773309163, type: 3}
+  InputMode: 1
+  Name: Healing Zone
+  ManaCost: 50
+  Length: 3
+  Interval: 0
   SpellNodes:
   - Name: Spawn Point Node
     ID: ef6217f7-3b84-40fe-8b70-ee355dd4b4d8

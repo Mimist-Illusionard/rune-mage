@@ -37,6 +37,8 @@ public class SpellEditor : Editor
 
         if (_isSpellGenerated == true)
         {
+            _spell.Sprite = (Sprite)EditorGUILayout.ObjectField("Sprite", _spell.Sprite, typeof(Sprite), allowSceneObjects: false);
+
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Name"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("ManaCost"));
             EditorGUILayout.PropertyField(serializedObject.FindProperty("Prefab"));
@@ -106,6 +108,7 @@ public class SpellEditor : Editor
         if (GUI.changed)
         {
             serializedObject.ApplyModifiedProperties();
+            EditorUtility.SetDirty(_spell);
         }
     }
 
