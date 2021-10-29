@@ -6,8 +6,10 @@ public class EnemyMain : MonoBehaviour, IEnemys
 {
     public EnemyData data;
 
-
-    public MonoBehaviour Target;
+    [Header("ActionSystem")]
+    private List<IEnemyAction> enemyActions = new List<IEnemyAction>();
+    public int currentAction;
+    
     public float TargetDistance { get; set; }
     public bool TargetVisible { get; set; }
     public Vector3 TargetPos { get; set; }
@@ -16,44 +18,39 @@ public class EnemyMain : MonoBehaviour, IEnemys
 
     private void Start()
     {
-        
+        FindObjectOfType<AIController>().enemys.Add(this);
+        enemyActions.AddRange(gameObject.GetComponents<IEnemyAction>());
+        ActionPoint = true;
+        GetAction();
     }
+
 
     public void GetTargetInfo()
     {
         CurretPos = gameObject.transform.position;
-        TargetPos = Target.gameObject.transform.position;
+        TargetPos = data.target.gameObject.transform.position;
         TargetDistance = Vector3.Distance(CurretPos, TargetPos);
         TargetVisible = Physics.Linecast(CurretPos, TargetPos) ?  false : true;
+        if (data.Health <= 0) Death();
     }
 
     public void GetAction()
     {
         if (!ActionPoint) return;
-        
+        enemyActions[currentAction].PlayAction();
     }
 
-    private void StartActon(string status)
+    public void ReturnAction()
     {
-        if (status == "Move") MovingToPlayer();
-        if (status == "Attack") ClassicAttack();
-        if (status == "Melee") MeleeAtack();
-        ActionPoint = false;
+        ActionPoint = true;
+        currentAction++;
+        if (currentAction == enemyActions.Count) currentAction = 0;
+        GetAction();
     }
 
-    private void MovingToPlayer()
+    public void Death()
     {
-
-    }
-
-    private void ClassicAttack()
-    {
-
-    }
-
-    private void MeleeAtack()
-    {
-        //Use for Ranged units or static enemys
-        //if Classic attack is melee - dont use
+        FindObjectOfType<AIController>().enemys.Remove(this);
+        Destroy(gameObject);
     }
 }

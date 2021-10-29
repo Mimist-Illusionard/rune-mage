@@ -11,4 +11,5 @@ public interface IEnemys
     bool ActionPoint { get; set; }
     void GetTargetInfo();
     void GetAction();
+    void Death();
 }
