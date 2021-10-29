@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RedLaser
+  m_Shader: {fileID: -6465566751694194690, guid: 4dcf00cccb0ac2f438261ad4ef674d53,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_0dbe32407cb64e58a459c575cf7b3b92:
+        m_Texture: {fileID: 2800000, guid: a72e0b73c21f15e4b9fef22877219d78, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3117a22328f34daead452cff5dc2130b: -0.3
+    - Vector1_c02a827543ef47ec9660ca47ca3c71d9: 0.25
+    - Vector1_c02a827543ef47ec9660ca47ca3c71d9_1: 0.25
+    m_Colors:
+    - Color_9b96f733a8424fc19e58c21753b2395b: {r: 1, g: 0, b: 0.39316654, a: 1}
+  m_BuildTextureStacks: []
