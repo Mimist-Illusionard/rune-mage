@@ -72,14 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77d2fbb39ad568642bd87bec73ce1b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spells:
-  - {fileID: 11400000, guid: 39db3afc7d14af345ab32bf73ffb798c, type: 2}
-  - {fileID: 11400000, guid: 187356d0666c1234b96343d73fad6518, type: 2}
-  - {fileID: 11400000, guid: e237547e7e2ef5b4e92ffc00dd0ff769, type: 2}
-  - {fileID: 11400000, guid: 01a41702e8cbdcb4c9543474f439c7a2, type: 2}
-  - {fileID: 11400000, guid: f4cd80656f4115a46aadd35248be7ae7, type: 2}
-  - {fileID: 11400000, guid: 05338fb4914cd0c47ba4e779d4653778, type: 2}
-  _maxRunesAmount: 5
+  _spells: []
+  _maxRunesAmount: 4
   _currentRunes: []
 --- !u!114 &7493413119269156087
 MonoBehaviour:

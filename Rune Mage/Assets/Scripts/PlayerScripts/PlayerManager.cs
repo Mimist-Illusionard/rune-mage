@@ -4,6 +4,7 @@
 public class PlayerManager : MonoBehaviour, IExecute
 {
     private Player _player;
+	private MainCamera _camera;
 
 	private Health _health;
 	private Mana _mana => GetComponent<Mana>();
@@ -31,6 +32,7 @@ public class PlayerManager : MonoBehaviour, IExecute
 		_player = player;
 
 		_health = _player.GetComponent<Health>();
+		_camera = _player.gameObject.GetComponentInObject<MainCamera>();
 	}
 
 	public RaycastHit Raycast()
@@ -53,5 +55,10 @@ public class PlayerManager : MonoBehaviour, IExecute
 	public Health GetHealth()
     {
 		return _health;
+    }
+
+	public MainCamera GetCamera()
+    {
+		return _camera;
     }
 }

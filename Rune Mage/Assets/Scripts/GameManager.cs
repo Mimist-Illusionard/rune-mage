@@ -41,4 +41,9 @@ public class GameManager : MonoBehaviour
     {
         _executes.Clear();
     }
+
+    private void OnDestroy()
+    {
+        ClearAllExecuteObjects();
+    }
 }
