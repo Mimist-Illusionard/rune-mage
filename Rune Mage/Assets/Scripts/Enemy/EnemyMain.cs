@@ -19,6 +19,7 @@ public class EnemyMain : MonoBehaviour, IEnemys
     private void Start()
     {
         FindObjectOfType<AIController>().enemys.Add(this);
+        gameObject.GetComponent<Health>().OnHealthZero += Death;
         enemyActions.AddRange(gameObject.GetComponents<IEnemyAction>());
         ActionPoint = true;
         GetAction();
@@ -31,7 +32,6 @@ public class EnemyMain : MonoBehaviour, IEnemys
         TargetPos = data.target.gameObject.transform.position;
         TargetDistance = Vector3.Distance(CurretPos, TargetPos);
         TargetVisible = Physics.Linecast(CurretPos, TargetPos) ?  false : true;
-        if (data.Health <= 0) Death();
     }
 
     public void GetAction()

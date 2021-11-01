@@ -2,18 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuneAttack : MonoBehaviour,IEnemyAction
+public class MultiRuneAttack : MonoBehaviour, IEnemyAction
 {
+    public int AttackCount;
+    public float AttackTime;
     private EnemyData enemyData;
 
     public void ExitToMain()
     {
-        gameObject.GetComponent<EnemyMain>().ReturnAction();
+        
     }
 
     public void PlayAction()
     {
-       
+        
+    }
+
+    private IEnumerator tt()
+    {
+        yield return new WaitForEndOfFrame();
+        for (int i = 0; i < AttackCount; i++)
+        {
+            
+            Atttack();
+        }
+
+    }
+    private void Atttack()
+    {
         enemyData = gameObject.GetComponent<EnemyData>();
         var spawnPoint = gameObject.GetComponentInObject<Spawnpoint>().transform;
         var bullet = Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -26,6 +42,5 @@ public class RuneAttack : MonoBehaviour,IEnemyAction
 
         bulletScript.SetSpawnPoint(spawnPoint);
         bulletScript.GetComponent<IInitialize>().Initialize();
-        ExitToMain();
     }
 }

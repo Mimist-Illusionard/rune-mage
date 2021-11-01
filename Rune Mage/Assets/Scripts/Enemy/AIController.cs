@@ -2,19 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIController : MonoBehaviour
+public class AIController : MonoBehaviour,IExecute
 {
     public List<IEnemys> enemys = new List<IEnemys>();
 
     private void Start()
     {
-        StartCoroutine(FXUpdate());
-    }
-
-    private IEnumerator FXUpdate()
-    {
-        yield return new WaitForSeconds(0.01f);
-        StartCoroutine(FXUpdate());
+        GameManager.Singleton.AddExecuteObject(this);
     }
 
     private void EnemyActionInfo()
@@ -23,5 +17,10 @@ public class AIController : MonoBehaviour
         {
             enemys[i].GetTargetInfo();
         }
+    }
+
+    public void Execute()
+    {
+        EnemyActionInfo();
     }
 }
