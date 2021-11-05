@@ -42,7 +42,7 @@ MonoBehaviour:
     Fields:
       _data:
       - Key: Damage
-        Value: 2
+        Value: 10
     Ports:
     - Name: Output
       ID: e417fe48-701c-4ad4-9d83-0243350c9169
@@ -108,7 +108,7 @@ MonoBehaviour:
     Fields:
       _data:
       - Key: Speed
-        Value: 800
+        Value: 1400
     Ports:
     - Name: Output
       ID: 3edb4adf-cbbd-479d-9001-988fb625f662

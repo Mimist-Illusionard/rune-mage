@@ -38,7 +38,6 @@ public class MultiRuneAttack : MonoBehaviour, IEnemyAction
         bulletScript.Damage = enemyData._bulletDamage;
         bulletScript.LifeTime = enemyData._bulletLifeTime;
         bulletScript.Speed = enemyData._bulletSpeed;
-        Debug.Log(bulletScript.Speed);
 
         bulletScript.SetSpawnPoint(spawnPoint);
         bulletScript.GetComponent<IInitialize>().Initialize();

@@ -8,13 +8,13 @@ public class RuneAttack : MonoBehaviour,IEnemyAction
 
     public void ExitToMain()
     {
-        gameObject.GetComponent<EnemyMain>().ReturnAction();
+        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
     public void PlayAction()
     {
        
-        enemyData = gameObject.GetComponent<EnemyData>();
+        enemyData = gameObject.GetComponentInObject<EnemyData>();
         var spawnPoint = gameObject.GetComponentInObject<Spawnpoint>().transform;
         var bullet = Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletScript = bullet.GetComponentInObject<Projectile>();
@@ -22,7 +22,6 @@ public class RuneAttack : MonoBehaviour,IEnemyAction
         bulletScript.Damage = enemyData._bulletDamage;
         bulletScript.LifeTime = enemyData._bulletLifeTime;
         bulletScript.Speed = enemyData._bulletSpeed;
-        Debug.Log(bulletScript.Speed);
 
         bulletScript.SetSpawnPoint(spawnPoint);
         bulletScript.GetComponent<IInitialize>().Initialize();

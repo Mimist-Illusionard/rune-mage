@@ -7,14 +7,14 @@ public class ClassicMove : MonoBehaviour, IEnemyAction
 {
     public void ExitToMain()
     {
-        gameObject.GetComponent<EnemyMain>().ReturnAction();
+        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
     public void PlayAction()
     {
-        gameObject.GetComponent<NavMeshAgent>().isStopped = false;
-        gameObject.GetComponent<NavMeshAgent>().destination = gameObject.GetComponent<EnemyData>().target.transform.position;
-        gameObject.GetComponent<NavMeshAgent>().speed = gameObject.GetComponent<EnemyData>().Speed;
+        gameObject.GetComponentInObject<NavMeshAgent>().isStopped = false;
+        gameObject.GetComponentInObject<NavMeshAgent>().destination = gameObject.GetComponentInObject<EnemyData>().target.transform.position;
+        gameObject.GetComponentInObject<NavMeshAgent>().speed = gameObject.GetComponentInObject<EnemyData>().Speed;
         StartCoroutine(tt());
     }
     
@@ -23,7 +23,7 @@ public class ClassicMove : MonoBehaviour, IEnemyAction
         for(; ; )
         {
             yield return new WaitForSeconds(0.1f);
-            if (gameObject.GetComponent<NavMeshAgent>().remainingDistance <= 0.3f + gameObject.GetComponent<NavMeshAgent>().stoppingDistance)
+            if (gameObject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + gameObject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
             {
                 break;
             }

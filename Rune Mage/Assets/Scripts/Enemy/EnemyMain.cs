@@ -31,7 +31,13 @@ public class EnemyMain : MonoBehaviour, IEnemys
         CurretPos = gameObject.transform.position;
         TargetPos = data.target.gameObject.transform.position;
         TargetDistance = Vector3.Distance(CurretPos, TargetPos);
-        TargetVisible = Physics.Linecast(CurretPos, TargetPos) ?  false : true;
+        RaycastHit hit;
+        if (Physics.Raycast(new Vector3(CurretPos.x,CurretPos.y + 1,CurretPos.z),TargetPos - CurretPos,out hit))
+        {
+             TargetVisible = hit.collider.GetComponent<Player>();
+        }
+        Debug.DrawRay(new Vector3(CurretPos.x, CurretPos.y + 1, CurretPos.z), TargetPos - CurretPos, Color.red);
+        Debug.Log(TargetVisible);
     }
 
     public void GetAction()
