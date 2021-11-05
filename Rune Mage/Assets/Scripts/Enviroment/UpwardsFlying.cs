@@ -8,6 +8,7 @@ public class UpwardsFlying : MonoBehaviour
     [SerializeField] private float _randomFlyingInterval;
     [SerializeField] private float _duration;
     [SerializeField] private float _randomDurationInterval;
+    [SerializeField] private Ease Ease = Ease.Linear;
 
     private float _moveAmount = 0;
 
@@ -21,11 +22,11 @@ public class UpwardsFlying : MonoBehaviour
     {
         _moveAmount = Random.Range(_upwardsFlying, _upwardsFlying + _randomFlyingInterval);
 
-        transform.DOMoveY(transform.position.y + _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).OnComplete(() => DownwardsDoMove());
+        transform.DOMoveY(transform.position.y + _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => DownwardsDoMove());
     }
 
     private void DownwardsDoMove()
     {
-        transform.DOMoveY(transform.position.y - _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).OnComplete(() => UpwardsDoMove());
+        transform.DOMoveY(transform.position.y - _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => UpwardsDoMove());
     }
 }

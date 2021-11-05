@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 
 public class MainCamera : MonoBehaviour, IExecute
@@ -20,6 +21,7 @@ public class MainCamera : MonoBehaviour, IExecute
     public void Execute()
     {
         Look();
+        Raycast();
     }
 
     private void Look()
@@ -32,6 +34,23 @@ public class MainCamera : MonoBehaviour, IExecute
         _verticalLookRotation = Mathf.Clamp(_verticalLookRotation, -90f, 90f);
 
         _cameraHolder.localEulerAngles = Vector3.left * _verticalLookRotation;
+    }
+
+    private void Raycast()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, 2))
+            {
+                IPointerClickHandler clickHandler = hit.collider.gameObject.GetComponent<IPointerClickHandler>();
+                if (clickHandler != null)
+                {                   
+                    PointerEventData pointerEventData = new PointerEventData(EventSystem.current);
+                    clickHandler.OnPointerClick(pointerEventData);
+                }
+            }
+        }
     }
 
     public void SwitchCursorMode(bool isCursorLocked)

@@ -1,0 +1,711 @@
+fileFormatVersion: 2
+guid: b2c4b2498bf5fe44b90f0670ff7b91d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3891454479863943783
+    second: RunicAlphabet_0
+  - first:
+      213: -5369576198430837205
+    second: RunicAlphabet_1
+  - first:
+      213: 129292448027488368
+    second: RunicAlphabet_2
+  - first:
+      213: 706759742261878509
+    second: RunicAlphabet_3
+  - first:
+      213: -658434965165036932
+    second: RunicAlphabet_4
+  - first:
+      213: -5893203944694162895
+    second: RunicAlphabet_5
+  - first:
+      213: 2606745102987734119
+    second: RunicAlphabet_6
+  - first:
+      213: 5837951439200902638
+    second: RunicAlphabet_7
+  - first:
+      213: 1927972048350296378
+    second: RunicAlphabet_8
+  - first:
+      213: 3229997745458284856
+    second: RunicAlphabet_9
+  - first:
+      213: 754765890214018553
+    second: RunicAlphabet_10
+  - first:
+      213: -6779336315674914843
+    second: RunicAlphabet_11
+  - first:
+      213: -2957118172226223064
+    second: RunicAlphabet_12
+  - first:
+      213: 5115640757890489791
+    second: RunicAlphabet_13
+  - first:
+      213: -7411664145912867370
+    second: RunicAlphabet_14
+  - first:
+      213: 3788761397646204972
+    second: RunicAlphabet_15
+  - first:
+      213: 367905193099149115
+    second: RunicAlphabet_16
+  - first:
+      213: 8416108542638621360
+    second: RunicAlphabet_18
+  - first:
+      213: -3333494043326603470
+    second: RunicAlphabet_19
+  - first:
+      213: -5260292272948266717
+    second: RunicAlphabet_20
+  - first:
+      213: -3198732559711472656
+    second: RunicAlphabet_21
+  - first:
+      213: -1440015328999608377
+    second: RunicAlphabet_22
+  - first:
+      213: -1591483149504855697
+    second: RunicAlphabet_23
+  - first:
+      213: 3298102523519832207
+    second: RunicAlphabet_24
+  - first:
+      213: 4234542997952751602
+    second: RunicAlphabet_25
+  - first:
+      213: 2949257723434117012
+    second: RunicAlphabet_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RunicAlphabet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 532
+        width: 104
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d6b14b4c6cef9c0800000000000000
+      internalID: -3891454479863943783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 537
+        width: 142
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b26332295ee6b75b0800000000000000
+      internalID: -5369576198430837205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 532
+        width: 97
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 070b1d4ebc65bc100800000000000000
+      internalID: 129292448027488368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_3
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 532
+        width: 71
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deed013bd3aeec900800000000000000
+      internalID: 706759742261878509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 532
+        width: 94
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a24a143e4ccd6f0800000000000000
+      internalID: -658434965165036932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_5
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 562
+        width: 101
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ad29f5c32273ea0800000000000000
+      internalID: -5893203944694162895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_7
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 537
+        width: 121
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeddc8537e1940150800000000000000
+      internalID: 5837951439200902638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_8
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 532
+        width: 80
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a393dc6fc5881ca10800000000000000
+      internalID: 1927972048350296378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_9
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 268
+        width: 159
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8398a5316d143dc20800000000000000
+      internalID: 3229997745458284856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_10
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 268
+        width: 96
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fdb9c60497797a00800000000000000
+      internalID: 754765890214018553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_11
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 268
+        width: 19
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef8a431a85fae1a0800000000000000
+      internalID: -6779336315674914843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_12
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 268
+        width: 134
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8248a9990b436f6d0800000000000000
+      internalID: -2957118172226223064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_13
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 268
+        width: 97
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd929c5a286ef640800000000000000
+      internalID: 5115640757890489791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_14
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 268
+        width: 161
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d55d5c5aba742990800000000000000
+      internalID: -7411664145912867370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_15
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 496
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c202a6dda62649430800000000000000
+      internalID: 3788761397646204972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_16
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 270
+        width: 88
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f32b9e2df0b1500800000000000000
+      internalID: 367905193099149115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_18
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 291
+        width: 151
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b20b1b01260cc470800000000000000
+      internalID: 8416108542638621360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 5
+        width: 154
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f13a644dc0db1d0800000000000000
+      internalID: -3333494043326603470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_20
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 5
+        width: 99
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329bf284c00bff6b0800000000000000
+      internalID: -5260292272948266717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_21
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 5
+        width: 158
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3fbee3fa1db93d0800000000000000
+      internalID: -3198732559711472656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_22
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 5
+        width: 160
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf6cd310b9040ce0800000000000000
+      internalID: -1440015328999608377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_23
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 5
+        width: 95
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f614ebfe18ae9e9e0800000000000000
+      internalID: -1591483149504855697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_24
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 59
+        width: 125
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80183365c635cd20800000000000000
+      internalID: 3298102523519832207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_25
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 5
+        width: 159
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7671bcb6e14ca30800000000000000
+      internalID: 4234542997952751602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RunicAlphabet_26
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 0
+        width: 158
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4972e5c064edde820800000000000000
+      internalID: 2949257723434117012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
