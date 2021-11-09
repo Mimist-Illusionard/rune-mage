@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: ChargeBall
+  m_Name: Fireball
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -39,7 +39,16 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|SpeedLogic, Assembly-CSharp
+      Data: 2|LifeTimeLogic, Assembly-CSharp
+    - Name: _lifeTime
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
       Data: 1200
@@ -48,19 +57,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|LifeTimeLogic, Assembly-CSharp
-    - Name: _lifeTime
+      Data: 4|DamageLogic, Assembly-CSharp
+    - Name: _damage
       Entry: 4
-      Data: 600
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|ChargeLogic, Assembly-CSharp
-    - Name: _charge
-      Entry: 4
-      Data: 1
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
@@ -70,12 +70,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Sprite: {fileID: 8416108542638621360, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
-  Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
+  Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  Prefab: {fileID: 8394959165212597424, guid: fc3386152d1e9c947a75628c1a8c0165, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
   InputMode: 1
-  Name: Call
+  Name: Fireball
   Description: 
   ManaCost: 15
   Interval: 0

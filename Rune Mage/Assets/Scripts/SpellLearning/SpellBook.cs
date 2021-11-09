@@ -47,7 +47,7 @@ public class SpellBook : MonoBehaviour
         _book.SetActive(false);
     }
 
-    public void SetSpellInfo(SpellInfo spell)
+    public void SetSpellInfo(Spell spell)
     {
         _spellInformation.SetSpellInfo(spell);
     }

@@ -1,31 +1,145 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEditor;
+
+using Sirenix.OdinInspector;
 
 
 [CreateAssetMenu(fileName = "Spell", menuName = "Data/SpellSystem/Spell")]
 [Serializable]
-public class Spell : ScriptableObject
+public class Spell : SerializedScriptableObject
 {
+    [PreviewField(80f, Alignment = ObjectFieldAlignment.Left), HideLabel, HorizontalGroup("Split",80)]
     public Sprite Sprite;
+
+    [LabelText("Bullet"), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(3)]
     public GameObject Prefab;
+
+    [HideInInspector()]
     public List<Rune> Runes = new List<Rune>();
+
+    [LabelText("Input"), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(4)]
     public InputModeType InputMode = InputModeType.Down;
 
+    [LabelText("Name"), VerticalGroup("Split/Right"), LabelWidth(60)]
     public string Name;
+
+    [TextArea(), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(5)]
+    public string Description;
+
+    [LabelText("Cost"), VerticalGroup("Split/Right"), LabelWidth(60)]
     public float ManaCost;
-    public int Length;
+
+    [HideInInspector]
     public float Interval;
 
-    public List<SpellNodeData> SpellNodes = new List<SpellNodeData>();
-    public List<GroupData> Groups = new List<GroupData>();
+    public List<ISpellLogic> SpellLogics = new List<ISpellLogic>();
+
+    private Vector2 _scrollPosition = Vector2.zero;
 
     public void SpellLogic()
     {
         var spell = Instantiate(Prefab);
 
-        var spellLogic = new SpellLogic(SpellNodes);
-        spellLogic.Logic(spell);       
+        for (int i = 0; i < SpellLogics.Count; i++)
+        {
+            var spellLogic = SpellLogics[i];
+            spellLogic.Initialize();
+        }
+
+        Logic(spell);
     }
+
+    public async void Logic(GameObject spell)
+    {
+        int spellCount = SpellLogics.Count;
+        int currentSpellCount = 0;
+
+        var spellNodeLogic = SpellLogics[currentSpellCount];
+        var spellLogic = SpellLogics[currentSpellCount].Logic(spell);
+
+        while (true)
+        {
+            if (spellNodeLogic.LogicType == LogicType.Durable)
+            {
+                await Task.Yield();
+            }
+
+            if (spellLogic.IsCompleted)
+            {
+                spellLogic.Dispose();
+
+                currentSpellCount++;
+
+                if (currentSpellCount == spellCount)
+                {
+                    break;
+                }
+
+                spellNodeLogic = SpellLogics[currentSpellCount];
+                spellLogic = SpellLogics[currentSpellCount].Logic(spell);
+            }
+        }
+
+        spell.GetComponent<IInitialize>().Initialize();
+    }
+
+    #region Inspector
+#if UNITY_EDITOR
+
+    [OnInspectorGUI(), PropertyOrder(6)]
+    private void DrawRunes()
+    {
+        if (GUILayout.Button("Add Rune", GUILayout.MaxWidth(120f)))
+        {
+            Runes.Add(null);
+        }
+
+        _scrollPosition = GUILayout.BeginScrollView(_scrollPosition, true, false, GUILayout.Height(200));
+        GUILayout.BeginHorizontal("box");
+        for (int i = 0; i < Runes.Count; i++)
+        {
+            if (Runes[i] == null)
+            {
+                EditorGUILayout.BeginVertical("box");
+                GUILayout.Box("None", GUILayout.Width(100), GUILayout.Height(100));
+                DrawChooseButton(Runes, i);
+                if (GUILayout.Button("Delete", GUILayout.Width(100)))
+                {
+                    Runes.Remove(Runes[i]);
+                }
+                EditorGUILayout.EndVertical();
+            }
+            else
+            {
+                EditorGUILayout.BeginVertical("box", GUILayout.Width(100));
+                GUILayout.Label($"{Runes[i].Name}");
+                GUILayout.Box(Runes[i].Sprite.texture, GUILayout.Width(100), GUILayout.Height(100));
+
+                DrawChooseButton(Runes, i);
+                if (GUILayout.Button("Delete", GUILayout.Width(100)))
+                {
+                    Runes.Remove(Runes[i]);
+                }
+                EditorGUILayout.EndVertical();
+            }
+        }
+        GUILayout.EndHorizontal();
+        GUILayout.EndScrollView();
+    }
+
+    private void DrawChooseButton(List<Rune> runes, int index)
+    {
+        if (GUILayout.Button("Choose", GUILayout.Width(100)))
+        {
+            AssetDatabase.LoadAllAssetsAtPath("Assets/Resources/ScriptableObjects");
+            var list = Resources.FindObjectsOfTypeAll(typeof(Rune));
+            ReferenceObjectWindow.Open(list, $"ScriptableObjects/Spells/{name}", "Runes", index, true);
+        }
+    }
+#endif
+    #endregion
 }

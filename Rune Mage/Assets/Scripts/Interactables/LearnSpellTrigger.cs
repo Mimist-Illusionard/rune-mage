@@ -2,7 +2,7 @@
 
 public class LearnSpellTrigger : Interactable
 {
-    [SerializeField] private SpellInfo _spell;
+    [SerializeField] private Spell _spell;
 
     protected override void OnEnter(Collider other)
     {

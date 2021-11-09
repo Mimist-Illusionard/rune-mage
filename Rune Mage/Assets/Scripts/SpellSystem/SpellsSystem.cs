@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 
 public class SpellsSystem : MonoBehaviour
 {
-    [SerializeField] private List<SpellInfo> _spells = new List<SpellInfo>();
+    [SerializeField] private List<Spell> _spells = new List<Spell>();
     [SerializeField] private int _maxRunesAmount;
 
     private int _currentRunesInSpell;
@@ -40,9 +41,9 @@ public class SpellsSystem : MonoBehaviour
         for (int i = 0; i < _spells.Count; i++)
         {
             var spell = _spells[i];
-            if (spell.Spell.Length == _currentRunes.Count)
+            if (spell.Runes.Count == _currentRunes.Count)
             {
-                appropriateSpells.Add(spell.Spell);
+                appropriateSpells.Add(spell);
             }           
         }
 
@@ -61,7 +62,7 @@ public class SpellsSystem : MonoBehaviour
 
             if (correctRunes == spellLength && !_isSpellCasting)
             {
-                Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Length} Spell Cost: {spell.ManaCost}");
+                Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Runes.Count} Spell Cost: {spell.ManaCost}");
                 StartCoroutine(SpellLogic(spell));
                 break;
             }
@@ -111,7 +112,7 @@ public class SpellsSystem : MonoBehaviour
         _isSpellCasting = value;
     }
 
-    public List<SpellInfo> GetSpells()
+    public List<Spell> GetSpells()
     {
         return _spells;
     }

@@ -12,5 +12,6 @@ public enum SpellNodeType
     LifeTime   = 7,
     Loop       = 8,
     Prefab     = 9,
-    Charge     = 10
+    Charge     = 10,
+    ScriptableObject = 11
 }
