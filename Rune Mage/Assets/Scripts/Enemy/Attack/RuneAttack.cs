@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class RuneAttack : MonoBehaviour,IEnemyAction
+public class RuneAttack :IEnemyAction
 {
     private EnemyData enemyData;
 
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
+        bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
-       
-        enemyData = gameObject.GetComponentInObject<EnemyData>();
-        var spawnPoint = gameObject.GetComponentInObject<Spawnpoint>().transform;
-        var bullet = Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        bject = @object;
+        enemyData = bject.GetComponentInObject<EnemyData>();
+        var spawnPoint = bject.GetComponentInObject<Spawnpoint>().transform;
+        var bullet = Object.Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletScript = bullet.GetComponentInObject<Projectile>();
 
         bulletScript.Damage = enemyData._bulletDamage;

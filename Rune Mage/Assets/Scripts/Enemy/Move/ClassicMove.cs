@@ -2,32 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System.Threading.Tasks;
+using System.Threading;
 
-public class ClassicMove : MonoBehaviour, IEnemyAction
+public class ClassicMove : IEnemyAction
 {
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
+        bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
-        gameObject.GetComponentInObject<NavMeshAgent>().isStopped = false;
-        gameObject.GetComponentInObject<NavMeshAgent>().destination = gameObject.GetComponentInObject<EnemyData>().target.transform.position;
-        gameObject.GetComponentInObject<NavMeshAgent>().speed = gameObject.GetComponentInObject<EnemyData>().Speed;
-        StartCoroutine(tt());
+        bject = @object;
+        @object.GetComponentInObject<NavMeshAgent>().isStopped = false;
+        @object.GetComponentInObject<NavMeshAgent>().destination = @object.GetComponentInObject<EnemyData>().target.transform.position;
+        @object.GetComponentInObject<NavMeshAgent>().speed = @object.GetComponentInObject<EnemyData>().Speed;
+        WaitForStop(token);
     }
     
-    private IEnumerator tt()
+    private async void WaitForStop(CancellationToken cancellation)
     {
         for(; ; )
         {
-            yield return new WaitForSeconds(0.1f);
-            if (gameObject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + gameObject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
+            await Task.Yield();
+            if (cancellation.IsCancellationRequested) return;
+            if (bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
             {
                 break;
             }
+            
         }
         ExitToMain();
     }
+
+
 }

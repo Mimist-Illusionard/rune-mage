@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public enum Buff
@@ -11,23 +12,26 @@ public enum Buff
     AttackRadius
 }
 
-public class SimpleBonus : MonoBehaviour, IEnemyAction
+public class SimpleBonus : IEnemyAction
 {
     public Buff buff;
     public float BuffPW;
 
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
+        bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
-        if (buff == Buff.Health) gameObject.GetComponentInObject<EnemyData>().Health += BuffPW;
-        else if (buff == Buff.Speed) gameObject.GetComponentInObject<EnemyData>().Speed += BuffPW;
-        else if (buff == Buff.Damage) gameObject.GetComponentInObject<EnemyData>()._bulletDamage += BuffPW;
-        else if (buff == Buff.BulletSpeed) gameObject.GetComponentInObject<EnemyData>()._bulletSpeed += BuffPW;
-        else if (buff == Buff.AttackRadius) gameObject.GetComponentInObject<EnemyData>().AttackRadius += BuffPW;
+        bject = @object;
+        if (buff == Buff.Health) bject.GetComponentInObject<EnemyData>().Health += BuffPW;
+        else if (buff == Buff.Speed) bject.GetComponentInObject<EnemyData>().Speed += BuffPW;
+        else if (buff == Buff.Damage) bject.GetComponentInObject<EnemyData>()._bulletDamage += BuffPW;
+        else if (buff == Buff.BulletSpeed) bject.GetComponentInObject<EnemyData>()._bulletSpeed += BuffPW;
+        else if (buff == Buff.AttackRadius) bject.GetComponentInObject<EnemyData>().AttackRadius += BuffPW;
         ExitToMain();
     }
 }

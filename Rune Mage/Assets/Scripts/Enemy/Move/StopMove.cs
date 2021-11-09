@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class StopMove : MonoBehaviour, IEnemyAction
+public class StopMove : IEnemyAction
 {
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        gameObject.GetComponent<EnemyMain>().ReturnAction();
+        bject.GetComponent<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
-        gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        bject = @object;
+        bject.GetComponent<NavMeshAgent>().isStopped = true;
         ExitToMain();
     }
 }

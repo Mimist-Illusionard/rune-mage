@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public class EnemyMain : MonoBehaviour, IEnemys
+public class EnemyMain : SerializedMonoBehaviour, IEnemys
 {
     public EnemyData data;
 
     [Header("ActionSystem")]
-    private List<IEnemyAction> enemyActions = new List<IEnemyAction>();
+    public List<IEnemyAction> enemyActions = new List<IEnemyAction>();
     public int currentAction;
     
     public float TargetDistance { get; set; }
@@ -20,7 +21,6 @@ public class EnemyMain : MonoBehaviour, IEnemys
     {
         FindObjectOfType<AIController>().enemys.Add(this);
         gameObject.GetComponent<Health>().OnHealthZero += Death;
-        enemyActions.AddRange(gameObject.GetComponents<IEnemyAction>());
         ActionPoint = true;
         GetAction();
     }
@@ -37,13 +37,13 @@ public class EnemyMain : MonoBehaviour, IEnemys
              TargetVisible = hit.collider.GetComponent<Player>();
         }
         Debug.DrawRay(new Vector3(CurretPos.x, CurretPos.y + 1, CurretPos.z), TargetPos - CurretPos, Color.red);
-        Debug.Log(TargetVisible);
     }
 
     public void GetAction()
     {
         if (!ActionPoint) return;
-        enemyActions[currentAction].PlayAction();
+        var tokenSource = GameManager.Singleton.CreateCancellationTokenSource();
+        enemyActions[currentAction].PlayAction(gameObject, tokenSource.Token);
     }
 
     public void ReturnAction()

@@ -1,19 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class HardSpawnAttack : MonoBehaviour, IEnemyAction
+public class HardSpawnAttack : IEnemyAction
 {
     public float TickTime;
+
+    public GameObject bject { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     public void ExitToMain()
     {
         
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
-        
+        throw new System.NotImplementedException();
     }
 
     IEnumerator tt()

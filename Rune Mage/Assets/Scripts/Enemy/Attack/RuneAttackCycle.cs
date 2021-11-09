@@ -1,38 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using System.Threading;
 
-public class RuneAttackCycle : MonoBehaviour, IEnemyAction
+public class RuneAttackCycle :IEnemyAction
 {
     public int AttackCount;
     public float AttackTime;
     private EnemyData enemyData;
 
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        gameObject.GetComponentInObject<EnemyMain>().ReturnAction();
+        bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction()
+    public void PlayAction(GameObject @object, CancellationToken token)
     {
+        bject = @object;
         ExitToMain();
-        StartCoroutine(tt());
+        tt();
     }
 
-    private IEnumerator tt()
+    private async void tt()
     {
         for (int i = 0;i<AttackCount ;i++ )
         {
-            yield return new WaitForSeconds(AttackTime);
+            await Task.Delay(10);
             Atttack();
         }
         
     }
     private void Atttack()
     {
-        enemyData = gameObject.GetComponentInObject<EnemyData>();
-        var spawnPoint = gameObject.GetComponentInObject<Spawnpoint>().transform;
-        var bullet = Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemyData = bject.GetComponentInObject<EnemyData>();
+        var spawnPoint = bject.GetComponentInObject<Spawnpoint>().transform;
+        var bullet = Object.Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletScript = bullet.GetComponentInObject<Projectile>();
 
         bulletScript.Damage = enemyData._bulletDamage;

@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class MultiRuneAttack : MonoBehaviour, IEnemyAction
+public class MultiRuneAttack :IEnemyAction
 {
     public int AttackCount;
     public float AttackTime;
     private EnemyData enemyData;
 
+    public GameObject bject { get; set; }
+
     public void ExitToMain()
     {
-        
-    }
-
-    public void PlayAction()
-    {
-        
+        bject.GetComponent<EnemyMain>().ReturnAction();
     }
 
     private IEnumerator tt()
@@ -30,9 +28,9 @@ public class MultiRuneAttack : MonoBehaviour, IEnemyAction
     }
     private void Atttack()
     {
-        enemyData = gameObject.GetComponent<EnemyData>();
-        var spawnPoint = gameObject.GetComponentInObject<Spawnpoint>().transform;
-        var bullet = Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemyData = bject.GetComponent<EnemyData>();
+        var spawnPoint = bject.GetComponentInObject<Spawnpoint>().transform;
+        var bullet = Object.Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);
         var bulletScript = bullet.GetComponentInObject<Projectile>();
 
         bulletScript.Damage = enemyData._bulletDamage;
@@ -41,5 +39,10 @@ public class MultiRuneAttack : MonoBehaviour, IEnemyAction
 
         bulletScript.SetSpawnPoint(spawnPoint);
         bulletScript.GetComponent<IInitialize>().Initialize();
+    }
+
+    public void PlayAction(GameObject @object, CancellationToken token)
+    {
+        throw new System.NotImplementedException();
     }
 }
