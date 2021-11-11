@@ -11,7 +11,7 @@ public class CoroutineManager : MonoBehaviour
         Singleton = this;
     }
 
-    public static void RunCoroutine(IEnumerator coroutine)
+    public void RunCoroutine(IEnumerator coroutine)
     {
         var createdCorutine = new GameObject($"CorutineRunner: {coroutine}");
         DontDestroyOnLoad(createdCorutine);

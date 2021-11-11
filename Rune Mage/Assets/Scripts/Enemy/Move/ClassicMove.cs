@@ -20,7 +20,8 @@ public class ClassicMove : IEnemyAction
         @object.GetComponentInObject<NavMeshAgent>().isStopped = false;
         @object.GetComponentInObject<NavMeshAgent>().destination = @object.GetComponentInObject<EnemyData>().target.transform.position;
         @object.GetComponentInObject<NavMeshAgent>().speed = @object.GetComponentInObject<EnemyData>().Speed;
-        WaitForStop(token);
+        //WaitForStop(token);
+        CoroutineManager.Singleton.RunCoroutine(CorutineWaitForStop());
     }
     
     private async void WaitForStop(CancellationToken cancellation)
@@ -38,5 +39,17 @@ public class ClassicMove : IEnemyAction
         ExitToMain();
     }
 
+    private IEnumerator CorutineWaitForStop()
+    {
+        for (; ; )
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
+            {
+                break;
+            }
+        }
+        ExitToMain();
+    }
 
 }
