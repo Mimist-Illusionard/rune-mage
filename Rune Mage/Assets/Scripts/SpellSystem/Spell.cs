@@ -58,20 +58,18 @@ public class Spell : SerializedScriptableObject
         int spellCount = SpellLogics.Count;
         int currentSpellCount = 0;
 
-        var spellNodeLogic = SpellLogics[currentSpellCount];
-        var spellLogic = SpellLogics[currentSpellCount].Logic(spell);
+        var nextSpellLogic = SpellLogics[currentSpellCount];
+        var currentSpellLogic = SpellLogics[currentSpellCount].Logic(spell);
 
         while (true)
         {
-            if (spellNodeLogic.LogicType == LogicType.Durable)
+            if (nextSpellLogic.LogicType == LogicType.Durable)
             {
                 await Task.Yield();
             }
 
-            if (spellLogic.IsCompleted)
+            if (currentSpellLogic.IsCompleted)
             {
-                spellLogic.Dispose();
-
                 currentSpellCount++;
 
                 if (currentSpellCount == spellCount)
@@ -79,8 +77,18 @@ public class Spell : SerializedScriptableObject
                     break;
                 }
 
-                spellNodeLogic = SpellLogics[currentSpellCount];
-                spellLogic = SpellLogics[currentSpellCount].Logic(spell);
+                nextSpellLogic = SpellLogics[currentSpellCount];
+                if (nextSpellLogic.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
+                {
+                    var prefabSpellLogic = (PrefabLogic)nextSpellLogic;
+                    prefabSpellLogic.CreateSpell(out spell);
+
+                    currentSpellLogic = nextSpellLogic.Logic(spell);
+                }
+                else
+                {
+                    currentSpellLogic = SpellLogics[currentSpellCount].Logic(spell);
+                }
             }
         }
 

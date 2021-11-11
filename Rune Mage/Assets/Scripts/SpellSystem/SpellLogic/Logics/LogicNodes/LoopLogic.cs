@@ -9,6 +9,8 @@ public class LoopLogic : ISpellLogic
     [SerializeField] private List<ISpellLogic> _spellLogics = new List<ISpellLogic>();
     [SerializeField] private float LoopAmount;
 
+    private GameObject _spell;
+
     public LogicType LogicType { get; set; }
 
     public void Initialize()
@@ -18,39 +20,34 @@ public class LoopLogic : ISpellLogic
 
     public async Task Logic(GameObject spell)
     {
-        Debug.Log("LoopNodeLogic");
+        _spell = spell;
 
         for (int i = 0; i < LoopAmount; i++)
         {
+            Debug.Log("test");
+
             int spellCount = _spellLogics.Count;
             int currentSpellCount = 0;
 
-            var spellNodeLogic = _spellLogics[currentSpellCount];
-            var spellLogic = _spellLogics[currentSpellCount].Logic(spell);
+            var currentSpell = _spellLogics[currentSpellCount];
+
+            SpellLogic(currentSpell, _spell, currentSpellCount, out var currentSpellLogic);
 
             while (true)
             {
-                if (spellLogic.IsCompleted)
+                await Task.Yield();
+
+                if (currentSpellLogic.IsCompleted)
                 {
                     currentSpellCount++;
 
                     if (currentSpellCount == spellCount)
-                    {                        
+                    {
                         break;
                     }
 
-                    spellNodeLogic = _spellLogics[currentSpellCount];
-                    if (spellNodeLogic.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
-                    {
-                        var prefabSpellLogic = (PrefabLogic)spellNodeLogic;
-                        prefabSpellLogic.CreateSpell(out spell);
-
-                        spellLogic = spellNodeLogic.Logic(spell);
-                    }
-                    else
-                    {
-                        spellLogic = _spellLogics[currentSpellCount].Logic(spell);
-                    }
+                    currentSpell = _spellLogics[currentSpellCount];
+                    SpellLogic(currentSpell, _spell, currentSpellCount, out currentSpellLogic);
                 }
             }
 
@@ -58,5 +55,20 @@ public class LoopLogic : ISpellLogic
         }
 
         return;
+    }
+
+    private void SpellLogic(ISpellLogic currentSpell, GameObject spell, int currentSpellCount , out Task currentSpellLogic)
+    {
+        if (currentSpell.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
+        {
+            var prefabSpellLogic = (PrefabLogic)currentSpell;
+            prefabSpellLogic.CreateSpell(out spell);
+
+            currentSpellLogic = currentSpell.Logic(spell);
+        }
+        else
+        {
+            currentSpellLogic = _spellLogics[currentSpellCount].Logic(spell);
+        }
     }
 }
