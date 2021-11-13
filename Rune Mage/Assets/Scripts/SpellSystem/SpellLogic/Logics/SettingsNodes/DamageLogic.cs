@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -13,11 +13,12 @@ public class DamageLogic : ISpellLogic
         LogicType = LogicType.Immediately;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell iSpell)
     {
         Debug.Log("DamageNode logic");
         spell.GetComponent<IDamage>().Damage = _damage;
 
-        return;
+        iSpell.IsLogicEnded = true;
+        yield return null;
     }
 }

@@ -3,6 +3,5 @@ This txt file need to write down some notes here.
 Scripts:
 
 	Ideas:
-	- Think about another nodeLogic create
 	- Think about general value for spell system
 	- Think about general implementation for Ui slider

@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class SpawnPointLogic : ISpellLogic
         LogicType = LogicType.Immediately;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
         Debug.Log("SpawnPointNode logic");
         switch (_spawnPointType)
@@ -37,6 +37,7 @@ public class SpawnPointLogic : ISpellLogic
                 break;
         }
 
-        return;
+        ISpell.IsLogicEnded = true;
+        yield return null;
     }
 }

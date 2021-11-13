@@ -15,8 +15,7 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
+    ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -38,28 +37,19 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 5
+      Data: 4
     - Name: 
       Entry: 7
       Data: 3|DelayLogic, Assembly-CSharp
     - Name: _delay
       Entry: 4
-      Data: 0.2
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|PrefabLogic, Assembly-CSharp
-    - Name: _prefab
-      Entry: 10
-      Data: 0
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|SpawnPointLogic, Assembly-CSharp
+      Data: 4|SpawnPointLogic, Assembly-CSharp
     - Name: _spawnPointType
       Entry: 3
       Data: 2
@@ -68,7 +58,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|LifeTimeLogic, Assembly-CSharp
+      Data: 5|LifeTimeLogic, Assembly-CSharp
     - Name: _lifeTime
       Entry: 4
       Data: 3
@@ -77,7 +67,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 7|SpeedLogic, Assembly-CSharp
+      Data: 6|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
       Data: 1000

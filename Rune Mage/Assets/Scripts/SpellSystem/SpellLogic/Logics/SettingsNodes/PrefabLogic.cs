@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -14,10 +14,12 @@ public class PrefabLogic : ISpellLogic
         LogicType = LogicType.Immediately;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell iSpell)
     {
         Debug.Log("PrefabNode Logic");
-        return;
+
+        iSpell.IsLogicEnded = true;
+        yield return null;
     }
 
     public void CreateSpell(out GameObject spell)
