@@ -41,7 +41,7 @@ public class MultiRuneAttack :IEnemyAction
         bulletScript.GetComponent<IInitialize>().Initialize();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         throw new System.NotImplementedException();
     }

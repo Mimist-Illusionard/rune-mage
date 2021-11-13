@@ -24,7 +24,7 @@ public class SimpleBonus : IEnemyAction
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         if (buff == Buff.Health) bject.GetComponentInObject<EnemyData>().Health += BuffPW;

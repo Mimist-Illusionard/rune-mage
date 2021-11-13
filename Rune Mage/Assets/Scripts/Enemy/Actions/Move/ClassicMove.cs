@@ -14,29 +14,13 @@ public class ClassicMove : IEnemyAction
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         @object.GetComponentInObject<NavMeshAgent>().isStopped = false;
         @object.GetComponentInObject<NavMeshAgent>().destination = @object.GetComponentInObject<EnemyData>().target.transform.position;
         @object.GetComponentInObject<NavMeshAgent>().speed = @object.GetComponentInObject<EnemyData>().Speed;
-        //WaitForStop(token);
         CoroutineManager.Singleton.RunCoroutine(CorutineWaitForStop());
-    }
-    
-    private async void WaitForStop(CancellationToken cancellation)
-    {
-        for(; ; )
-        {
-            await Task.Yield();
-            if (cancellation.IsCancellationRequested) return;
-            if (bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
-            {
-                break;
-            }
-            
-        }
-        ExitToMain();
     }
 
     private IEnumerator CorutineWaitForStop()

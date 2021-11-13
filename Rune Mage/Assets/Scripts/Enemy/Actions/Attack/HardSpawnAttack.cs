@@ -14,7 +14,7 @@ public class HardSpawnAttack : IEnemyAction
         
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         throw new System.NotImplementedException();
     }

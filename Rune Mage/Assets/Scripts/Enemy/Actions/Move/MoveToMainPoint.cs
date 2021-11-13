@@ -16,22 +16,22 @@ public class MoveToMainPoint : IEnemyAction
         bject.GetComponent<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         bject.GetComponent<NavMeshAgent>().isStopped = false;
-        points = GameObject.FindGameObjectsWithTag("MainPoint");
-        bject.GetComponent<NavMeshAgent>().destination = points[Random.Range(0, points.Length)].transform.position;
+        //points = GameObject.FindGameObjectsWithTag("MainPoint");
+        bject.GetComponent<NavMeshAgent>().destination = GameObject.FindGameObjectWithTag("MainPoint").transform.parent.GetChild(Random.Range(0, GameObject.FindGameObjectWithTag("MainPoint").transform.childCount)).transform.position;
+        //bject.GetComponent<NavMeshAgent>().destination = points[Random.Range(0, points.Length)].transform.position;
         bject.GetComponent<NavMeshAgent>().speed = bject.GetComponent<EnemyData>().Speed;
-        tt(token);
+        CoroutineManager.Singleton.RunCoroutine(tt());
     }
 
-    private async void tt(CancellationToken cancellation)
+    private IEnumerator tt()
     {
         for (; ; )
         {
-            await Task.Yield();
-            if (cancellation.IsCancellationRequested) return;
+            yield return new WaitForSeconds(0.1f);
             if (bject.GetComponent<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponent<NavMeshAgent>().stoppingDistance)
             {
                 break;

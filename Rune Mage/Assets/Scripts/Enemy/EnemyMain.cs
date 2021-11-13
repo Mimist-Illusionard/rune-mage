@@ -42,8 +42,7 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
     public void GetAction()
     {
         if (!ActionPoint) return;
-        var tokenSource = GameManager.Singleton.CreateCancellationTokenSource();
-        enemyActions[currentAction].PlayAction(gameObject, tokenSource.Token);
+        enemyActions[currentAction].PlayAction(gameObject);
     }
 
     public void ReturnAction()

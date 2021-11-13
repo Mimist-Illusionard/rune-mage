@@ -14,7 +14,7 @@ public class RuneAttack :IEnemyAction
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         enemyData = bject.GetComponentInObject<EnemyData>();

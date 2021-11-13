@@ -27,7 +27,7 @@ public class SimpleQ : IEnemyAction
         }
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         Quest.PlayQuest(this);

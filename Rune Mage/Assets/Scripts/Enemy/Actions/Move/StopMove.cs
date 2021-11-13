@@ -13,7 +13,7 @@ public class StopMove : IEnemyAction
         bject.GetComponent<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         bject.GetComponent<NavMeshAgent>().isStopped = true;

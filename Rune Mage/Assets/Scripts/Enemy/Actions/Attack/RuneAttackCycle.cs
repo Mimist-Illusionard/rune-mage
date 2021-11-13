@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using System.Threading;
 
-public class RuneAttackCycle :IEnemyAction
+public class RuneAttackCycle : IEnemyAction
 {
     public int AttackCount;
     public float AttackTime;
@@ -17,22 +17,23 @@ public class RuneAttackCycle :IEnemyAction
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object, CancellationToken token)
+    public void PlayAction(GameObject @object)
     {
         bject = @object;
         ExitToMain();
-        tt();
+        CoroutineManager.Singleton.RunCoroutine(tt());
     }
 
-    private async void tt()
+    private IEnumerator tt()
     {
         for (int i = 0;i<AttackCount ;i++ )
         {
-            await Task.Delay(10);
+            yield return new WaitForSeconds(0.1F);
             Atttack();
         }
         
     }
+
     private void Atttack()
     {
         enemyData = bject.GetComponentInObject<EnemyData>();
