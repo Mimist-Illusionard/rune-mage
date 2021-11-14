@@ -17,11 +17,10 @@ public class DelayLogic : ISpellLogic
     {
         Debug.Log("Delay logic");
         var currentWaitTime = _delay;
-
+       
         while (true)
         {
             currentWaitTime -= Time.deltaTime;
-
             if (currentWaitTime <= 0)
             {
                 break;

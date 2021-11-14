@@ -16,7 +16,7 @@ public class Spell : SerializedScriptableObject, ISpell
     public Sprite Sprite;
 
     [LabelText("Bullet"), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(3)]
-    public GameObject Prefab;
+    public GameObject _Prefab;
 
     [HideInInspector()]
     public List<Rune> Runes = new List<Rune>();
@@ -40,6 +40,7 @@ public class Spell : SerializedScriptableObject, ISpell
 
     private Vector2 _scrollPosition = Vector2.zero;
 
+    public GameObject Prefab => _Prefab;
     public bool IsLogicEnded { get; set; }
 
     public void SpellLogic()
@@ -64,7 +65,7 @@ public class Spell : SerializedScriptableObject, ISpell
 
         var nextSpellLogic = SpellLogics[currentSpellCount];
 
-        SpellLogic(nextSpellLogic, spell);
+        CoroutineManager.Singleton.RunCoroutine(nextSpellLogic.Logic(spell, this));
 
         while (true)
         {
@@ -84,27 +85,12 @@ public class Spell : SerializedScriptableObject, ISpell
 
                 IsLogicEnded = false;
                 nextSpellLogic = SpellLogics[currentSpellCount];
-                SpellLogic(nextSpellLogic, spell);
+                CoroutineManager.Singleton.RunCoroutine(nextSpellLogic.Logic(spell, this));
             }
         }
 
         spell.GetComponent<IInitialize>().Initialize();
         IsLogicEnded = false;
-    }
-
-    private void SpellLogic(ISpellLogic currentSpell, GameObject spell)
-    {
-        if (currentSpell.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
-        {
-            var prefabSpellLogic = (PrefabLogic)currentSpell;
-            prefabSpellLogic.CreateSpell(out spell);
-
-            CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(spell, this));
-        }
-        else
-        {
-            CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(spell, this));
-        }
     }
 
     #region Inspector

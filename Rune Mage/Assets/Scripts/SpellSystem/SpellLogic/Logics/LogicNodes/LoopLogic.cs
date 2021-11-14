@@ -14,6 +14,9 @@ public class LoopLogic : ISpellLogic, ISpell
     public LogicType LogicType { get; set; }
     public bool IsLogicEnded { get; set; }
 
+    private GameObject _prefab;
+    public GameObject Prefab => _prefab;
+
     public void Initialize()
     {
         LogicType = LogicType.Durable;
@@ -27,17 +30,21 @@ public class LoopLogic : ISpellLogic, ISpell
 
     public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
-        _spell = Object.Instantiate(spell);
+        _prefab = ISpell.Prefab;
 
-        for (int i = 0; i < LoopAmount; i++)
+        for (int i = 0; i < LoopAmount;)
         {
-            var createdSpell = Object.Instantiate(_spell);
+            var createdSpell = spell;
+
+            if (i >= 1) createdSpell = Object.Instantiate(_prefab);
             int spellCount = _spellLogics.Count;
             int currentSpellCount = 0;
 
-            var currentSpell = _spellLogics[currentSpellCount];
+            var spellLogics = new ISpellLogic[_spellLogics.Count];
+            _spellLogics.CopyTo(spellLogics);
 
-            SpellLogic(currentSpell, createdSpell, currentSpellCount);
+            var currentSpell = spellLogics[currentSpellCount];
+            CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(createdSpell, this));
 
             while (true)
             {
@@ -52,29 +59,16 @@ public class LoopLogic : ISpellLogic, ISpell
                         break;
                     }
 
-                    currentSpell = _spellLogics[currentSpellCount];
-                    SpellLogic(currentSpell, createdSpell, currentSpellCount);
+                    currentSpell = spellLogics[currentSpellCount];
+                    CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(createdSpell, this));
                 }
             }
 
             createdSpell.GetComponent<IInitialize>().Initialize();
+            IsLogicEnded = false;
+            i++;
         }
 
         ISpell.IsLogicEnded = true;
-    }
-
-    private void SpellLogic(ISpellLogic currentSpell, GameObject spell, int currentSpellCount)
-    {
-        if (currentSpell.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
-        {
-            var prefabSpellLogic = (PrefabLogic)currentSpell;
-            prefabSpellLogic.CreateSpell(out spell);
-
-            CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(spell, this));
-        }
-        else
-        {
-           CoroutineManager.Singleton.RunCoroutine(_spellLogics[currentSpellCount].Logic(spell, this));
-        }
     }
 }

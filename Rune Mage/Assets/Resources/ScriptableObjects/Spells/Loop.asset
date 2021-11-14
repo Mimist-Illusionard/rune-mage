@@ -43,22 +43,13 @@ MonoBehaviour:
       Data: 3|DelayLogic, Assembly-CSharp
     - Name: _delay
       Entry: 4
-      Data: 1
+      Data: 0.2
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 4|SpawnPointLogic, Assembly-CSharp
-    - Name: _spawnPointType
-      Entry: 3
-      Data: 2
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|LifeTimeLogic, Assembly-CSharp
+      Data: 4|LifeTimeLogic, Assembly-CSharp
     - Name: _lifeTime
       Entry: 4
       Data: 3
@@ -67,10 +58,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 6|SpeedLogic, Assembly-CSharp
+      Data: 5|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
       Data: 1000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|SpawnPointLogic, Assembly-CSharp
+    - Name: _spawnPointType
+      Entry: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
@@ -93,7 +93,7 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Sprite: {fileID: 706759742261878509, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
-  Prefab: {fileID: 8394959165212597424, guid: fc3386152d1e9c947a75628c1a8c0165, type: 3}
+  _Prefab: {fileID: 1515739984047690601, guid: f10475c34bcb18845a6c88b698a1ea4d, type: 3}
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}

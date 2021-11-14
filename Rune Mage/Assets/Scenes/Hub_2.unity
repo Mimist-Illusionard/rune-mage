@@ -266,7 +266,7 @@ PrefabInstance:
     - target: {fileID: 4855201177711971875, guid: 5180d4f0557f73a44870cb7b0e89a440,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4855201177711971875, guid: 5180d4f0557f73a44870cb7b0e89a440,
         type: 3}
@@ -6852,19 +6852,19 @@ PrefabInstance:
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 73513b7ed927eb040a63cf672f11b4bf,
+      objectReference: {fileID: 11400000, guid: 9bc93d0effd2d204a9848b53402e86f6,
         type: 2}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 9bc93d0effd2d204a9848b53402e86f6,
+      objectReference: {fileID: 11400000, guid: 475b0f8205237e142a15d62cfc5fd3f8,
         type: 2}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
