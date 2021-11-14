@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 using UnityEngine;
+
 
 public interface ISpellLogic
 {
     public LogicType LogicType { get; set; }
 
     void Initialize();
-    Task Logic(GameObject spell);
+    IEnumerator Logic(GameObject spell, ISpell iSpell);
 }

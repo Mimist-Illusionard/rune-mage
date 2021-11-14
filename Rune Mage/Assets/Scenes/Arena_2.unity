@@ -535,6 +535,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bc93d0effd2d204a9848b53402e86f6,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 475b0f8205237e142a15d62cfc5fd3f8,
+        type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: m_RootOrder
@@ -6395,12 +6412,48 @@ PrefabInstance:
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
       value: '"path":"enemyActions","length":2'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[1]
+      value: '"path":"enemyActions.[1]","value":{"$id":0,"$type":"SimpleQ, Assembly-CSharp","Quest":{"$id":1,"$type":"Vision,
+        Assembly-CSharp"},"True":{"$id":2,"$type":"RuneAttackCycle, Assembly-CSharp","AttackCount":3,"AttackTime":0.1},"False":{"$id":3,"$type":"MoveToMainPoint,
+        Assembly-CSharp"},"tt":false}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[2]
+      value: '"path":"enemyActions.[1].False","value":{"$id":0,"$type":"MoveToMainPoint,
+        Assembly-CSharp"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[3]
+      value: '"path":"enemyActions.[1].Quest","value":{"$id":0,"$type":"Vision, Assembly-CSharp"}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[4]
+      value: '"path":"enemyActions.[1].True","value":{"$id":0,"$type":"RuneAttackCycle,
+        Assembly-CSharp","AttackCount":3,"AttackTime":0.1}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[5]
+      value: '"path":"enemyActions.[1].True.AttackCount","value":{"$id":0,"$type":"System.Int32,
+        mscorlib",3}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[6]
+      value: '"path":"enemyActions.[1].True.AttackTime","value":{"$id":0,"$type":"System.Single,
+        mscorlib",0.1}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
@@ -6412,6 +6465,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1989178124}
+    - target: {fileID: 3696900579012108358, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: behavior
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108415, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: m_Name

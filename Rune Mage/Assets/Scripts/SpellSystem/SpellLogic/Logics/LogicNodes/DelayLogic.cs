@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -13,23 +13,22 @@ public class DelayLogic : ISpellLogic
         LogicType = LogicType.Durable;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
         Debug.Log("Delay logic");
         var currentWaitTime = _delay;
-
+       
         while (true)
         {
             currentWaitTime -= Time.deltaTime;
-
             if (currentWaitTime <= 0)
             {
                 break;
             }
 
-            await Task.Yield();
+            yield return new WaitForEndOfFrame();
         }
 
-        return;
+        ISpell.IsLogicEnded = true;
     }
 }

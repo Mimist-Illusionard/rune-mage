@@ -1,43 +1,54 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Collections;
 
 using UnityEngine;
 
 
-public class LoopLogic : ISpellLogic
+public class LoopLogic : ISpellLogic, ISpell
 {
     [SerializeField] private List<ISpellLogic> _spellLogics = new List<ISpellLogic>();
     [SerializeField] private float LoopAmount;
 
-    private GameObject _spell;
-
     public LogicType LogicType { get; set; }
+    public bool IsLogicEnded { get; set; }
+
+    private GameObject _prefab;
+    public GameObject Prefab => _prefab;
 
     public void Initialize()
     {
         LogicType = LogicType.Durable;
-    }    
 
-    public async Task Logic(GameObject spell)
-    {
-        _spell = spell;
-
-        for (int i = 0; i < LoopAmount; i++)
+        for (int i = 0; i < _spellLogics.Count; i++)
         {
-            Debug.Log("test");
+            var spellLogic = _spellLogics[i];
+            spellLogic.Initialize();
+        }
+    }
 
+    public IEnumerator Logic(GameObject spell, ISpell ISpell)
+    {
+        _prefab = ISpell.Prefab;
+
+        for (int i = 0; i < LoopAmount;)
+        {
+            var createdSpell = spell;
+
+            if (i >= 1) createdSpell = Object.Instantiate(_prefab);
             int spellCount = _spellLogics.Count;
             int currentSpellCount = 0;
 
-            var currentSpell = _spellLogics[currentSpellCount];
+            var spellLogics = new ISpellLogic[_spellLogics.Count];
+            _spellLogics.CopyTo(spellLogics);
 
-            SpellLogic(currentSpell, _spell, currentSpellCount, out var currentSpellLogic);
+            var currentSpell = spellLogics[currentSpellCount];
+            CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(createdSpell, this));
 
             while (true)
             {
-                await Task.Yield();
+                yield return new WaitForEndOfFrame();
 
-                if (currentSpellLogic.IsCompleted)
+                if (IsLogicEnded)
                 {
                     currentSpellCount++;
 
@@ -46,29 +57,16 @@ public class LoopLogic : ISpellLogic
                         break;
                     }
 
-                    currentSpell = _spellLogics[currentSpellCount];
-                    SpellLogic(currentSpell, _spell, currentSpellCount, out currentSpellLogic);
+                    currentSpell = spellLogics[currentSpellCount];
+                    CoroutineManager.Singleton.RunCoroutine(currentSpell.Logic(createdSpell, this));
                 }
             }
 
-            spell.GetComponent<IInitialize>().Initialize();
+            createdSpell.GetComponent<IInitialize>().Initialize();
+            IsLogicEnded = false;
+            i++;
         }
 
-        return;
-    }
-
-    private void SpellLogic(ISpellLogic currentSpell, GameObject spell, int currentSpellCount , out Task currentSpellLogic)
-    {
-        if (currentSpell.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
-        {
-            var prefabSpellLogic = (PrefabLogic)currentSpell;
-            prefabSpellLogic.CreateSpell(out spell);
-
-            currentSpellLogic = currentSpell.Logic(spell);
-        }
-        else
-        {
-            currentSpellLogic = _spellLogics[currentSpellCount].Logic(spell);
-        }
+        ISpell.IsLogicEnded = true;
     }
 }

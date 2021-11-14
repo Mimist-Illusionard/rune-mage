@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Distance : Quest
+
+public class Distance : IQuest
 {
     public float Dst;
 
-    public override void ExitToMain(SimpleQ i)
+    public void ExitToMain(SimpleQ i)
     {
         if(Dst > 0)
         {
-            if (gameObject.GetComponent<EnemyMain>().TargetDistance <= Dst)
+            if (i.bject.GetComponent<EnemyMain>().TargetDistance <= Dst)
             {
                 i.tt = true;
                 i.ExitToMain();
@@ -23,7 +21,7 @@ public class Distance : Quest
         }
         else
         {
-            if (gameObject.GetComponent<EnemyMain>().TargetDistance <= gameObject.GetComponent<EnemyData>().AttackRadius)
+            if (i.bject.GetComponent<EnemyMain>().TargetDistance <= i.bject.GetComponent<EnemyData>().AttackRadius)
             {
                 i.tt = true;
                 i.ExitToMain();
@@ -37,7 +35,7 @@ public class Distance : Quest
         
     }
 
-    public override void PlayQuest(SimpleQ i)
+    public void PlayQuest(SimpleQ i)
     {
         ExitToMain(i);
     }

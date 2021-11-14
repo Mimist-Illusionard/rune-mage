@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -10,13 +10,13 @@ using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "Spell", menuName = "Data/SpellSystem/Spell")]
 [Serializable]
-public class Spell : SerializedScriptableObject
+public class Spell : SerializedScriptableObject, ISpell
 {
     [PreviewField(80f, Alignment = ObjectFieldAlignment.Left), HideLabel, HorizontalGroup("Split",80)]
     public Sprite Sprite;
 
     [LabelText("Bullet"), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(3)]
-    public GameObject Prefab;
+    public GameObject _Prefab;
 
     [HideInInspector()]
     public List<Rune> Runes = new List<Rune>();
@@ -40,8 +40,13 @@ public class Spell : SerializedScriptableObject
 
     private Vector2 _scrollPosition = Vector2.zero;
 
+    public GameObject Prefab => _Prefab;
+    public bool IsLogicEnded { get; set; }
+
     public void SpellLogic()
     {
+        IsLogicEnded = false;
+
         var spell = Instantiate(Prefab);
 
         for (int i = 0; i < SpellLogics.Count; i++)
@@ -50,25 +55,26 @@ public class Spell : SerializedScriptableObject
             spellLogic.Initialize();
         }
 
-        Logic(spell);
+        CoroutineManager.Singleton.RunCoroutine(Logic(spell));
     }
 
-    public async void Logic(GameObject spell)
+    private IEnumerator Logic(GameObject spell)
     {
         int spellCount = SpellLogics.Count;
         int currentSpellCount = 0;
 
         var nextSpellLogic = SpellLogics[currentSpellCount];
-        var currentSpellLogic = SpellLogics[currentSpellCount].Logic(spell);
+
+        CoroutineManager.Singleton.RunCoroutine(nextSpellLogic.Logic(spell, this));
 
         while (true)
         {
             if (nextSpellLogic.LogicType == LogicType.Durable)
             {
-                await Task.Yield();
+                yield return new WaitForEndOfFrame();
             }
 
-            if (currentSpellLogic.IsCompleted)
+            if (IsLogicEnded)
             {
                 currentSpellCount++;
 
@@ -77,22 +83,14 @@ public class Spell : SerializedScriptableObject
                     break;
                 }
 
+                IsLogicEnded = false;
                 nextSpellLogic = SpellLogics[currentSpellCount];
-                if (nextSpellLogic.GetType() == typeof(PrefabLogic)) //Stupid resolve :/
-                {
-                    var prefabSpellLogic = (PrefabLogic)nextSpellLogic;
-                    prefabSpellLogic.CreateSpell(out spell);
-
-                    currentSpellLogic = nextSpellLogic.Logic(spell);
-                }
-                else
-                {
-                    currentSpellLogic = SpellLogics[currentSpellCount].Logic(spell);
-                }
+                CoroutineManager.Singleton.RunCoroutine(nextSpellLogic.Logic(spell, this));
             }
         }
 
-        spell.GetComponent<IInitialize>().Initialize();
+        if (spell) spell.GetComponent<IInitialize>().Initialize();
+        IsLogicEnded = false;
     }
 
     #region Inspector

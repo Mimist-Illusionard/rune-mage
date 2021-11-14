@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -14,12 +14,13 @@ public class SpeedLogic : ISpellLogic
         LogicType = LogicType.Immediately;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
         Debug.Log("SpeedNode logic");
         var speedComponent = spell.GetComponent<ISpeed>();
         speedComponent.Speed = _speed;
 
-        return;
+        ISpell.IsLogicEnded = true;
+        yield return null;
     }
 }

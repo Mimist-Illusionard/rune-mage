@@ -1,23 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TimLess : Quest
+
+public class TimLess : IQuest
 {
     public float time;
 
-    public override void ExitToMain(SimpleQ i)
+    public void ExitToMain(SimpleQ i)
     {
         i.tt = true;
         i.ExitToMain();
     }
 
-    public override void PlayQuest(SimpleQ i)
+    public void PlayQuest(SimpleQ i)
     {
-        StartCoroutine(tt(i));
+        CoroutineManager.Singleton.RunCoroutine(tt(i));
     }
 
-    IEnumerator tt(SimpleQ i)
+    private IEnumerator tt(SimpleQ i)
     {
         yield return new WaitForSeconds(time);
         ExitToMain(i);

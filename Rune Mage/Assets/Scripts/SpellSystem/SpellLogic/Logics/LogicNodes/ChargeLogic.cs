@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
 
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class ChargeLogic : ISpellLogic
         LogicType = LogicType.Durable;
     }
 
-    public async Task Logic(GameObject spell)
+    public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
         Debug.Log("ChargeNode logic");
 
@@ -32,10 +32,10 @@ public class ChargeLogic : ISpellLogic
                 break;
             }
 
-            await Task.Yield();
+            yield return new WaitForEndOfFrame();
         }
 
+        ISpell.IsLogicEnded = true;
         chargeSlider.Hide();
-        return;
     }
 }

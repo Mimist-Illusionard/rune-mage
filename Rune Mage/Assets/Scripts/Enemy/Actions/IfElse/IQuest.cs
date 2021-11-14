@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Quest : MonoBehaviour
+public interface IQuest 
 {
-   public virtual void PlayQuest(SimpleQ i) { }
-   public virtual void ExitToMain(SimpleQ i) { }
+    public void PlayQuest(SimpleQ i);
+    public void ExitToMain(SimpleQ i);
 }

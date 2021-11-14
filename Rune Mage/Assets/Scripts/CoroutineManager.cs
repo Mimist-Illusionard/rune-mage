@@ -11,13 +11,15 @@ public class CoroutineManager : MonoBehaviour
         Singleton = this;
     }
 
-    public void RunCoroutine(IEnumerator coroutine)
+    public Coroutine RunCoroutine(IEnumerator coroutine)
     {
         var createdCorutine = new GameObject($"CorutineRunner: {coroutine}");
         DontDestroyOnLoad(createdCorutine);
 
         var runner = createdCorutine.AddComponent<CoroutineRunner>();
 
-        runner.StartCoroutine(runner.MonitorRunning(coroutine));
+        var corutine = runner.StartCoroutine(runner.MonitorRunning(coroutine));
+
+        return corutine;
     }   
 }
