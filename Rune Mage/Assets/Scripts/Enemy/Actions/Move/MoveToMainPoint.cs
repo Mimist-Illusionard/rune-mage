@@ -7,7 +7,7 @@ using System.Threading;
 
 public class MoveToMainPoint : IEnemyAction
 {
-    private GameObject[] points;
+    private GameObject point;
 
     public GameObject bject { get; set; }
 
@@ -20,9 +20,8 @@ public class MoveToMainPoint : IEnemyAction
     {
         bject = @object;
         bject.GetComponent<NavMeshAgent>().isStopped = false;
-        //points = GameObject.FindGameObjectsWithTag("MainPoint");
-        bject.GetComponent<NavMeshAgent>().destination = GameObject.FindGameObjectWithTag("MainPoint").transform.parent.GetChild(Random.Range(0, GameObject.FindGameObjectWithTag("MainPoint").transform.childCount)).transform.position;
-        //bject.GetComponent<NavMeshAgent>().destination = points[Random.Range(0, points.Length)].transform.position;
+        point = GameObject.FindGameObjectWithTag("MainPoint");
+        bject.GetComponent<NavMeshAgent>().destination = point.transform.GetChild(Random.Range(0, point.transform.childCount)).transform.position;
         bject.GetComponent<NavMeshAgent>().speed = bject.GetComponent<EnemyData>().Speed;
         CoroutineManager.Singleton.RunCoroutine(tt());
     }
