@@ -89,7 +89,7 @@ public class Spell : SerializedScriptableObject, ISpell
             }
         }
 
-        spell.GetComponent<IInitialize>().Initialize();
+        if (spell) spell.GetComponent<IInitialize>().Initialize();
         IsLogicEnded = false;
     }
 

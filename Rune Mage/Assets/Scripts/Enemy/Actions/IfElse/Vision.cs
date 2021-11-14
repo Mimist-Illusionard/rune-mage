@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
-public class Vision : Quest
+
+public class Vision : IQuest
 {
-    public override void ExitToMain(SimpleQ i)
+    public void ExitToMain(SimpleQ i)
     {
-        i.tt = gameObject.GetComponentInObject<EnemyMain>().TargetVisible;
+        i.tt = i.bject.GetComponentInObject<EnemyMain>().TargetVisible;
         i.ExitToMain();
     }
 
-    public override void PlayQuest(SimpleQ i)
+    public void PlayQuest(SimpleQ i)
     {
         ExitToMain(i);
     }

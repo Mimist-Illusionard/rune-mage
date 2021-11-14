@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks;
-using System.Threading;
+
 
 public class RuneAttackCycle : IEnemyAction
 {
@@ -28,7 +26,7 @@ public class RuneAttackCycle : IEnemyAction
     {
         for (int i = 0;i<AttackCount ;i++ )
         {
-            yield return new WaitForSeconds(0.1F);
+            yield return new WaitForSeconds(AttackTime);
             Atttack();
         }
         

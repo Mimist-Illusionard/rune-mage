@@ -9,8 +9,6 @@ public class LoopLogic : ISpellLogic, ISpell
     [SerializeField] private List<ISpellLogic> _spellLogics = new List<ISpellLogic>();
     [SerializeField] private float LoopAmount;
 
-    private GameObject _spell;
-
     public LogicType LogicType { get; set; }
     public bool IsLogicEnded { get; set; }
 

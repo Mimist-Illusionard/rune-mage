@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading;
-using System.Threading.Tasks;
+
 using UnityEngine;
 
 
@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Application.targetFrameRate = 100;
-        AplicationStator();
     }
 
     private void Update()
@@ -48,31 +47,5 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         ClearAllExecuteObjects();
-    }
-
-    public CancellationTokenSource CreateCancellationTokenSource()
-    {
-        CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
-        _cancellations.Add(cancelTokenSource);
-        return cancelTokenSource;
-    }
-
-    private async void AplicationStator()
-    {
-        
-        while (true)
-        {
-            await Task.Yield();
-            if (!Application.isPlaying)
-            {
-                break;
-            }
-        }
-        foreach (var item in _cancellations)
-        {
-            item.Cancel();
-            item.Dispose();
-        }
-        _cancellations.Clear();
-    }
+    }  
 }
