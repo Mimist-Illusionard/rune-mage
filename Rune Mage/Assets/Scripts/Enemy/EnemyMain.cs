@@ -10,6 +10,7 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
     [Header("ActionSystem")]
     public List<IEnemyAction> enemyActions = new List<IEnemyAction>();
     public int currentAction;
+    private int _actionsCout;
     
     public float TargetDistance { get; set; }
     public bool TargetVisible { get; set; }
@@ -41,14 +42,13 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
 
     public void GetAction()
     {
-        if (!ActionPoint) return;
         enemyActions[currentAction].PlayAction(gameObject);
     }
 
-    public void ReturnAction()
+    public void ReturnAction(/*bool isParallel*/)
     {
-        ActionPoint = true;
         currentAction++;
+        Debug.Log(currentAction);
         if (currentAction == enemyActions.Count) currentAction = 0;
         GetAction();
     }

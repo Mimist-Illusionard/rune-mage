@@ -8,8 +8,9 @@ public class MultiRuneAttack :IEnemyAction
     public int AttackCount;
     public float AttackTime;
     private EnemyData enemyData;
-
+    private IEnemyAction _parent;
     public GameObject bject { get; set; }
+    public bool _isParellel { get; set; }
 
     public void ExitToMain()
     {
@@ -41,8 +42,9 @@ public class MultiRuneAttack :IEnemyAction
         bulletScript.GetComponent<IInitialize>().Initialize();
     }
 
-    public void PlayAction(GameObject @object)
+    public void PlayAction(GameObject @object, IEnemyAction _Parent)
     {
+        _parent = _Parent;
         throw new System.NotImplementedException();
     }
 }

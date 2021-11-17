@@ -8,14 +8,17 @@ using System.Threading;
 public class ClassicMove : IEnemyAction
 {
     public GameObject bject { get; set; }
+    public bool _isParellel { get; set; }
+    private IEnemyAction _parent;
 
     public void ExitToMain()
     {
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object)
+    public void PlayAction(GameObject @object, IEnemyAction _Parent)
     {
+        _parent = _Parent;
         bject = @object;
         @object.GetComponentInObject<NavMeshAgent>().isStopped = false;
         @object.GetComponentInObject<NavMeshAgent>().destination = @object.GetComponentInObject<EnemyData>().target.transform.position;
@@ -33,7 +36,9 @@ public class ClassicMove : IEnemyAction
                 break;
             }
         }
-        ExitToMain();
+        if (_parent != null)
+        { _parent.ExitToMain(); }
+        else { ExitToMain(); }
     }
 
 }

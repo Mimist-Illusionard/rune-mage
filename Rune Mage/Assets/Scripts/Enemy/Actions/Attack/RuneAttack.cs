@@ -6,16 +6,18 @@ using UnityEngine;
 public class RuneAttack :IEnemyAction
 {
     private EnemyData enemyData;
-
+    private IEnemyAction _parent;
     public GameObject bject { get; set; }
+    public bool _isParellel { get; set; }
 
     public void ExitToMain()
     {
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object)
+    public void PlayAction(GameObject @object, IEnemyAction _Parent)
     {
+        _parent = _Parent;
         bject = @object;
         enemyData = bject.GetComponentInObject<EnemyData>();
         var spawnPoint = bject.GetComponentInObject<Spawnpoint>().transform;
@@ -28,6 +30,8 @@ public class RuneAttack :IEnemyAction
 
         bulletScript.SetSpawnPoint(spawnPoint);
         bulletScript.GetComponent<IInitialize>().Initialize();
-        ExitToMain();
+        if (_parent != null)
+        { _parent.ExitToMain(); }
+        else { ExitToMain(); }
     }
 }

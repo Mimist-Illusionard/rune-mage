@@ -7,18 +7,19 @@ public class RuneAttackCycle : IEnemyAction
     public int AttackCount;
     public float AttackTime;
     private EnemyData enemyData;
-
+    private IEnemyAction _parent;
     public GameObject bject { get; set; }
+    public bool _isParellel { get; set; }
 
     public void ExitToMain()
     {
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
-    public void PlayAction(GameObject @object)
+    public void PlayAction(GameObject @object, IEnemyAction _Parent)
     {
+        _parent = _Parent;
         bject = @object;
-        ExitToMain();
         CoroutineManager.Singleton.RunCoroutine(tt());
     }
 
@@ -29,11 +30,14 @@ public class RuneAttackCycle : IEnemyAction
             yield return new WaitForSeconds(AttackTime);
             Atttack();
         }
-        
+        if (_parent != null)
+        { _parent.ExitToMain(); }
+        else { ExitToMain(); }
     }
 
     private void Atttack()
     {
+        if (!bject) return;
         enemyData = bject.GetComponentInObject<EnemyData>();
         var spawnPoint = bject.GetComponentInObject<Spawnpoint>().transform;
         var bullet = Object.Instantiate(enemyData._bulletPrefab, spawnPoint.position, spawnPoint.rotation);

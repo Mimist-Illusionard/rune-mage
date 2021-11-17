@@ -6412,53 +6412,86 @@ PrefabInstance:
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.size
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[0]
-      value: '"path":"enemyActions","length":2'
+      value: '"path":"enemyActions","length":3'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[1]
-      value: '"path":"enemyActions.[1]","value":{"$id":0,"$type":"SimpleQ, Assembly-CSharp","Quest":{"$id":1,"$type":"Vision,
-        Assembly-CSharp"},"True":{"$id":2,"$type":"RuneAttackCycle, Assembly-CSharp","AttackCount":3,"AttackTime":0.1},"False":{"$id":3,"$type":"MoveToMainPoint,
-        Assembly-CSharp"},"tt":false}'
+      value: '"path":"enemyActions.[1]","value":{"$id":0,"$type":"Parallel, Assembly-CSharp","actions":{"$id":1,"$type":"IEnemyAction[],
+        Assembly-CSharp","$rlength":3,"$rcontent":[{"$id":2,"$type":"ClassicMove,
+        Assembly-CSharp"},{"$id":3,"$type":"RuneAttackCycle, Assembly-CSharp","AttackCount":3,"AttackTime":2},{"$id":4,"$type":"SimpleBonus,
+        Assembly-CSharp","buff":1,"BuffPW":5}]}}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[2]
-      value: '"path":"enemyActions.[1].False","value":{"$id":0,"$type":"MoveToMainPoint,
-        Assembly-CSharp"}'
+      value: '"path":"enemyActions.[1].actions","value":{"$id":0,"$type":"IEnemyAction[],
+        Assembly-CSharp","$rlength":3,"$rcontent":[{"$id":1,"$type":"ClassicMove,
+        Assembly-CSharp"},{"$id":2,"$type":"RuneAttackCycle, Assembly-CSharp","AttackCount":3,"AttackTime":2},{"$id":3,"$type":"SimpleBonus,
+        Assembly-CSharp","buff":1,"BuffPW":5}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[3]
-      value: '"path":"enemyActions.[1].Quest","value":{"$id":0,"$type":"Vision, Assembly-CSharp"}'
+      value: '"path":"enemyActions.[1].actions.[0]","value":{"$id":0,"$type":"ClassicMove,
+        Assembly-CSharp"}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[4]
-      value: '"path":"enemyActions.[1].True","value":{"$id":0,"$type":"RuneAttackCycle,
-        Assembly-CSharp","AttackCount":3,"AttackTime":0.1}'
+      value: '"path":"enemyActions.[1].actions.[1]","value":{"$id":0,"$type":"RuneAttackCycle,
+        Assembly-CSharp","AttackCount":3,"AttackTime":2}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[5]
-      value: '"path":"enemyActions.[1].True.AttackCount","value":{"$id":0,"$type":"System.Int32,
+      value: '"path":"enemyActions.[1].actions.[1].AttackCount","value":{"$id":0,"$type":"System.Int32,
         mscorlib",3}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModifications.Array.data[6]
-      value: '"path":"enemyActions.[1].True.AttackTime","value":{"$id":0,"$type":"System.Single,
-        mscorlib",0.1}'
+      value: '"path":"enemyActions.[1].actions.[1].AttackTime","value":{"$id":0,"$type":"System.Single,
+        mscorlib",2}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[7]
+      value: '"path":"enemyActions.[1].actions.[2]","value":{"$id":0,"$type":"SimpleBonus,
+        Assembly-CSharp","buff":1,"BuffPW":5}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[8]
+      value: '"path":"enemyActions.[1].actions.[2].buff","value":{"$id":0,"$type":"Buff,
+        Assembly-CSharp",1}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[9]
+      value: '"path":"enemyActions.[1].actions.[2].BuffPW","value":{"$id":0,"$type":"System.Single,
+        mscorlib",5}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: serializationData.PrefabModifications.Array.data[10]
+      value: '"path":"enemyActions.[2]","value":{"$id":0,"$type":"MoveToMainPoint,
+        Assembly-CSharp"}'
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108356, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
       propertyPath: serializationData.PrefabModificationsReferencedUnityObjects.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3696900579012108357, guid: e720b1c1c15c91c43b54da7b5c7c3051,
+        type: 3}
+      propertyPath: m_Acceleration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3696900579012108358, guid: e720b1c1c15c91c43b54da7b5c7c3051,
         type: 3}
