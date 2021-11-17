@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 
 
@@ -11,6 +12,12 @@ public class CoroutineRunner : MonoBehaviour
             yield return coroutine.Current;
         }
 
+        Destroy(gameObject);
+    }
+
+    public void StopAllCorotines()
+    {
+        StopAllCoroutines();
         Destroy(gameObject);
     }
 }

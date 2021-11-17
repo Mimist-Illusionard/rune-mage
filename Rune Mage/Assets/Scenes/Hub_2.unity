@@ -6852,7 +6852,7 @@ PrefabInstance:
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
@@ -6870,7 +6870,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _spells.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 475b0f8205237e142a15d62cfc5fd3f8,
+      objectReference: {fileID: 11400000, guid: 654cc019472b595408b360fccca983af,
         type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
