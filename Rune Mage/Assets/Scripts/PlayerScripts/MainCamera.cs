@@ -11,10 +11,14 @@ public class MainCamera : MonoBehaviour, IExecute
     private float _verticalLookRotation;
     private bool _isLocked;
 
-    private void Start()
+    private void Awake()
     {
         SwitchCursorMode(true);
+    }
 
+    private void Start()
+    {
+        //SwitchCursorMode(true);
         GameManager.Singleton.AddExecuteObject(this);
     }
 

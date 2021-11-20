@@ -39,6 +39,7 @@ public class ClassicMove : IEnemyAction
         if (_parent != null)
         { _parent.ExitToMain(); }
         else { ExitToMain(); }
+        _parent = null;
     }
 
 }

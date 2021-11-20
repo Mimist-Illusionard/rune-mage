@@ -27,5 +27,6 @@ public class SimpleQ : IEnemyAction
         _parent = _Parent;
         bject = @object;
         Quest.PlayQuest(this);
+        _parent = null;
     }
 }

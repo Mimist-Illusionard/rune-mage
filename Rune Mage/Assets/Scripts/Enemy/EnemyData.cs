@@ -22,6 +22,6 @@ public enum behavior
 {
     none,
     agressive,
-    offensive,
+    defense,
     piu_piu
 }

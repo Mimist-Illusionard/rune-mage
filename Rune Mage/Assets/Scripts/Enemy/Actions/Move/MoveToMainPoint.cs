@@ -12,6 +12,7 @@ public class MoveToMainPoint : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         bject.GetComponent<EnemyMain>().ReturnAction();
     }
 
@@ -20,8 +21,7 @@ public class MoveToMainPoint : IEnemyAction
         _parent = _Parent;
         bject = @object;
         bject.GetComponent<NavMeshAgent>().isStopped = false;
-        point = GameObject.FindGameObjectWithTag("MainPoint");
-        bject.GetComponent<NavMeshAgent>().destination = point.transform.GetChild(Random.Range(0, point.transform.childCount)).transform.position;
+        bject.GetComponent<NavMeshAgent>().destination = AIController.Singleton.GetPointToDistination(bject.GetComponent<EnemyData>().behavior);
         bject.GetComponent<NavMeshAgent>().speed = bject.GetComponent<EnemyData>().Speed;
         CoroutineManager.Singleton.RunCoroutine(tt());
     }
@@ -32,13 +32,12 @@ public class MoveToMainPoint : IEnemyAction
         {
             if (!bject) break;
             yield return new WaitForSeconds(0.1f);
-            if (bject.GetComponent<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponent<NavMeshAgent>().stoppingDistance)
-            {
-                break;
-            }
+            if(!bject) break;
+            if (bject.TryGetComponent<NavMeshAgent>(out var navMeshAgent) && navMeshAgent.remainingDistance <= 0.3f + navMeshAgent.stoppingDistance) break;
         }
         if (_parent != null)
         { _parent.ExitToMain(); }
         else { ExitToMain(); }
+        _parent = null;
     }
 }

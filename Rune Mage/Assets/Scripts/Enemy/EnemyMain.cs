@@ -20,6 +20,7 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
 
     private void Start()
     {
+        data.target = GameObject.FindGameObjectWithTag("Player").GetComponent<MonoBehaviour>();
         FindObjectOfType<AIController>().enemys.Add(this);
         gameObject.GetComponent<Health>().OnHealthZero += Death;
         ActionPoint = true;
@@ -48,14 +49,13 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
     public void ReturnAction(/*bool isParallel*/)
     {
         currentAction++;
-        Debug.Log(currentAction);
         if (currentAction == enemyActions.Count) currentAction = 0;
         GetAction();
     }
 
     public void Death()
     {
-        FindObjectOfType<AIController>().enemys.Remove(this);
+        FindObjectOfType<AIController>().RemoveEnemy(this);
         Destroy(gameObject);
     }
 }
