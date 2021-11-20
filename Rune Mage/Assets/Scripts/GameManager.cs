@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
 
 using UnityEngine;
 
@@ -7,7 +6,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private List<IExecute> _executes = new List<IExecute>();
-    private List<CancellationTokenSource> _cancellations = new List<CancellationTokenSource>();
     public static GameManager Singleton { get; private set; }
 
     private void Awake()

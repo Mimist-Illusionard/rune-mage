@@ -28,6 +28,7 @@ public class LoopLogic : ISpellLogic, ISpell
 
     public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
+        Debug.Log("Loop logic");
         _prefab = ISpell.Prefab;
 
         for (int i = 0; i < LoopAmount;)
@@ -35,7 +36,7 @@ public class LoopLogic : ISpellLogic, ISpell
             var createdSpell = spell;
 
             if (i >= 1) createdSpell = Object.Instantiate(_prefab);
-            int spellCount = _spellLogics.Count;
+
             int currentSpellCount = 0;
 
             var spellLogics = new ISpellLogic[_spellLogics.Count];
@@ -52,7 +53,7 @@ public class LoopLogic : ISpellLogic, ISpell
                 {
                     currentSpellCount++;
 
-                    if (currentSpellCount == spellCount)
+                    if (currentSpellCount == _spellLogics.Count)
                     {
                         break;
                     }
