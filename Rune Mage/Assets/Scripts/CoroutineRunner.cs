@@ -7,6 +7,8 @@ public class CoroutineRunner : MonoBehaviour
 {
     public IEnumerator MonitorRunning(IEnumerator coroutine)
     {
+        Debug.LogWarning($"Monitoring Started: {coroutine}");
+
         while (coroutine.MoveNext())
         {
             yield return coroutine.Current;

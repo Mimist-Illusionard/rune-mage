@@ -7,7 +7,7 @@ using UnityEngine;
 public class LoopLogic : ISpellLogic, ISpell
 {
     [SerializeField] private List<ISpellLogic> _spellLogics = new List<ISpellLogic>();
-    [SerializeField] private float LoopAmount;
+    [SerializeField] private float _loopAmount;
 
     public LogicType LogicType { get; set; }
     public bool IsLogicEnded { get; set; }
@@ -31,7 +31,7 @@ public class LoopLogic : ISpellLogic, ISpell
         Debug.Log("Loop logic");
         _prefab = ISpell.Prefab;
 
-        for (int i = 0; i < LoopAmount;)
+        for (int i = 0; i < _loopAmount;)
         {
             var createdSpell = spell;
 

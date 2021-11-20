@@ -29,6 +29,7 @@ public class ChainLogic : ISpellLogic, ISpell
     {
         Debug.Log("Chain logic");
         _prefab = iSpell.Prefab;
+
         var createdSpell = spell;
 
         int currentSpellCount = 0;
@@ -38,7 +39,8 @@ public class ChainLogic : ISpellLogic, ISpell
 
         while (true)
         {
-            yield return new WaitForEndOfFrame();
+            if (currentSpell.LogicType == LogicType.Durable)
+                yield return new WaitForEndOfFrame();
 
             if (IsLogicEnded)
             {

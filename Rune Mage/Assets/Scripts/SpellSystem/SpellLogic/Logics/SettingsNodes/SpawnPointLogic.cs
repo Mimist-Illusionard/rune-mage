@@ -33,6 +33,10 @@ public class SpawnPointLogic : ISpellLogic
                 spell.GetComponent<Projectile>().SetSpawnPoint(spawnPoint);
                 break;
 
+            case SpawnPointType.PlayerPosition:
+                spell.transform.position = PlayerManager.Singleton.GetPlayer().transform.position;
+                break;
+
             default:
                 break;
         }

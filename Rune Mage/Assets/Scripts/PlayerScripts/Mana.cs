@@ -34,7 +34,7 @@ public class Mana : MonoBehaviour, IExecute
         }
     }
 
-    public float GiveMana()
+    public float GetCurrentMana()
     {
         return _currentMane;
     }

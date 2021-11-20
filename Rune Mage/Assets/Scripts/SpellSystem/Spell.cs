@@ -21,9 +21,6 @@ public class Spell : SerializedScriptableObject, ISpell
     [HideInInspector()]
     public List<Rune> Runes = new List<Rune>();
 
-    [LabelText("Input"), VerticalGroup("Split/Right"), LabelWidth(60), PropertyOrder(4)]
-    public InputModeType InputMode = InputModeType.Down;
-
     [LabelText("Name"), VerticalGroup("Split/Right"), LabelWidth(60)]
     public string Name;
 
@@ -32,9 +29,6 @@ public class Spell : SerializedScriptableObject, ISpell
 
     [LabelText("Cost"), VerticalGroup("Split/Right"), LabelWidth(60)]
     public float ManaCost;
-
-    [HideInInspector]
-    public float Interval;
 
     public List<ISpellLogic> SpellLogics = new List<ISpellLogic>();
 

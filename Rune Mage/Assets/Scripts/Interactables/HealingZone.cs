@@ -3,6 +3,8 @@
 
 public class HealingZone : Interactable, ILifeTime, IDamage, IInitialize
 {
+    [SerializeField] private bool _isIgnorePlayer;
+
     public float LifeTime { get; set; }
     public float Damage { get; set; }
 
@@ -13,12 +15,10 @@ public class HealingZone : Interactable, ILifeTime, IDamage, IInitialize
 
     protected override void OnEnter(Collider other)
     {
-        if (other.gameObject.GetComponentInObject<Health>())
-        {
-            var health = other.gameObject.GetComponentInObject<Health>();
+        if (!other.TryGetComponent<Health>(out var health)) return;
+        if (_isIgnorePlayer && other.CompareTag("Player")) return;
 
-            health.StartRegenHealing(0.5f, Damage, 3f);
-        }
+        health.StartRegenHealing(0.5f, Damage, 3f);
     }
 
     protected override void OnExit(Collider other)

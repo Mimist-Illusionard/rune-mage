@@ -76,24 +76,7 @@ public class SpellsSystem : MonoBehaviour
 
     private IEnumerator SpellLogic(Spell spell)
     {
-        float currentWaitTime = spell.Interval;
-        if (spell.InputMode == InputModeType.Hold)
-        {
-            while (Input.GetKey(KeyCode.Mouse1) && IsHasManaToCast(spell))
-            {
-                currentWaitTime -= Time.deltaTime;
-                if (currentWaitTime <= 0)
-                {
-                    spell.SpellLogic();
-                    PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
-
-                    currentWaitTime = spell.Interval;
-                }
-
-                yield return new WaitForEndOfFrame();
-            }
-        }
-        else if (IsHasManaToCast(spell))
+        if (IsHasManaToCast(spell))
         {
             spell.SpellLogic();
             PlayerManager.Singleton.GetMana().ManaChange(-spell.ManaCost);
@@ -104,7 +87,7 @@ public class SpellsSystem : MonoBehaviour
 
     private bool IsHasManaToCast(Spell spell)
     {
-        return spell.ManaCost <= PlayerManager.Singleton.GetMana().GiveMana();
+        return spell.ManaCost <= PlayerManager.Singleton.GetMana().GetCurrentMana();
     }
 
     public void IsSpellCasting(bool value)

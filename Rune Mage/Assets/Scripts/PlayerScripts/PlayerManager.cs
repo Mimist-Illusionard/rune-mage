@@ -42,6 +42,11 @@ public class PlayerManager : MonoBehaviour, IExecute
 		return hitInfo;
 	}
 
+	public Player GetPlayer()
+    {
+		return _player;
+    }
+
 	public Mana GetMana()
     {
 		return _mana;

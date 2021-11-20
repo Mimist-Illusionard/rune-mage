@@ -1,7 +1,8 @@
 ﻿
 public enum SpawnPointType
 {
-    None               = 0,
+    None              = 0,
     RaycastPoint      = 1,
-    BulletSpawnPoint = 2
+    BulletSpawnPoint  = 2,
+    PlayerPosition    = 3
 }

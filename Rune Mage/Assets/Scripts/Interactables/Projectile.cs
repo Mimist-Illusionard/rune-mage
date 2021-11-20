@@ -13,8 +13,11 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
     public void Initialize()
     {
         Object.Destroy(this.gameObject, LifeTime);
-        _rigidbody.AddForce(_spawnPoint.forward * Speed);
-        transform.rotation = _spawnPoint.rotation;
+        if (_spawnPoint)
+        {
+            _rigidbody.AddForce(_spawnPoint.forward * Speed);
+            transform.rotation = _spawnPoint.rotation;
+        }
     }
 
     protected override void OnEnter(Collider other)

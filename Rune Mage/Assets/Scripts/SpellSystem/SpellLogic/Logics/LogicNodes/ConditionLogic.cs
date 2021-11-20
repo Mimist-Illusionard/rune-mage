@@ -30,15 +30,16 @@ public class ConditionLogic : ISpellLogic, ISpell
 
         while (true)
         {
-            Debug.Log("Condition logic");
             yield return new WaitForEndOfFrame();
 
             if (Condition.Condition())
             {
                 if (IsLogicEnded)
                 {
-                    Debug.LogError($"Is logic ended: {IsLogicEnded}");
-                    var createdSpell = Object.Instantiate(_prefab);
+                    if(_coroutineRunner) _coroutineRunner.StopAllCorotines();
+                    _coroutineRunner = null;
+
+                    var createdSpell = Object.Instantiate(_prefab);                 
                     _coroutineRunner = CoroutineManager.Singleton.RunCoroutine(SpellLogic.Logic(createdSpell, this));
                     IsLogicEnded = false;
                 }
