@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: ConditionalSpell
+  m_Name: Firestream
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -33,44 +33,74 @@ MonoBehaviour:
       Data: 1|ConditionLogic, Assembly-CSharp
     - Name: Condition
       Entry: 7
-      Data: 2|InputCondition, Assembly-CSharp
+      Data: 2|AllConditions, Assembly-CSharp
+    - Name: Conditions
+      Entry: 7
+      Data: 3|ICondition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 4|InputCondition, Assembly-CSharp
     - Name: Key
       Entry: 3
       Data: 324
     - Name: 
       Entry: 8
       Data: 
-    - Name: SpellLogic
-      Entry: 7
-      Data: 3|ChainLogic, Assembly-CSharp
-    - Name: _spellLogics
-      Entry: 7
-      Data: 4|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 4
     - Name: 
       Entry: 7
-      Data: 5|DelayLogic, Assembly-CSharp
-    - Name: _delay
+      Data: 5|IsManaEqualValue, Assembly-CSharp
+    - Name: Value
       Entry: 4
-      Data: 1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 6|LifeTimeLogic, Assembly-CSharp
-    - Name: _lifeTime
-      Entry: 4
+      Data: 1.5
+    - Name: EqualType
+      Entry: 3
       Data: 3
     - Name: 
       Entry: 8
       Data: 
     - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SpellLogic
       Entry: 7
-      Data: 7|SpeedLogic, Assembly-CSharp
+      Data: 6|ChainLogic, Assembly-CSharp
+    - Name: _spellLogics
+      Entry: 7
+      Data: 7|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 8|DelayLogic, Assembly-CSharp
+    - Name: _delay
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|SpawnPointLogic, Assembly-CSharp
+    - Name: _spawnPointType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
       Data: 600
@@ -79,8 +109,29 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|SpawnPointLogic, Assembly-CSharp
-    - Name: _spawnPointType
+      Data: 11|LifeTimeLogic, Assembly-CSharp
+    - Name: _lifeTime
+      Entry: 4
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|DamageLogic, Assembly-CSharp
+    - Name: _damage
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|ModifyMana, Assembly-CSharp
+    - Name: _modifier
+      Entry: 4
+      Data: 1.5
+    - Name: _type
       Entry: 3
       Data: 2
     - Name: 
@@ -104,12 +155,12 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  Sprite: {fileID: 5837951439200902638, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
-  _Prefab: {fileID: 1515739984047690601, guid: f10475c34bcb18845a6c88b698a1ea4d, type: 3}
+  Sprite: {fileID: 129292448027488368, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
+  _Prefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0, type: 3}
   Runes:
-  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  InputMode: 1
-  Name: Conditional Spell
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  Name: Firestream
   Description: 
   ManaCost: 0
-  Interval: 0
