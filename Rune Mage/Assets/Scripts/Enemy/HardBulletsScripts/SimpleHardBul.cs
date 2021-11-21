@@ -28,9 +28,12 @@ public class SimpleHardBul : Interactable, IExecute
 
     void Start()
     {
+        if (!Target){
+            Target = PlayerManager.Singleton.GetPlayer().gameObject;
+            transform.Rotate(new Vector3(Random.Range(-180, 0), Random.Range(-180, 180), Random.Range(-180, 180)));
+        }
         GameManager.Singleton.AddExecuteObject(this);
-        StartCoroutine(AIMTiming());
-        
+        StartCoroutine(AIMTiming()); 
     }
 
     protected override void OnEnter(Collider other)

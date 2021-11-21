@@ -51,7 +51,7 @@ MonoBehaviour:
       Data: 3|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
-      Data: 600
+      Data: 1200
     - Name: 
       Entry: 8
       Data: 
@@ -76,4 +76,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Name: Fireball
   Description: 
-  ManaCost: 15
+  ManaCost: 0

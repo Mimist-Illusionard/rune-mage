@@ -538,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
@@ -551,6 +551,18 @@ PrefabInstance:
       propertyPath: _spells.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 475b0f8205237e142a15d62cfc5fd3f8,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: e7a216031c9d22f419edabb8269b6c21,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 46e85e4edebf2f34988f9a9f88848b63,
         type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}

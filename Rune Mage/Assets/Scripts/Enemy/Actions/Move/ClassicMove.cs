@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using System.Threading.Tasks;
-using System.Threading;
 
 public class ClassicMove : IEnemyAction
 {
@@ -13,6 +11,7 @@ public class ClassicMove : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
@@ -31,6 +30,7 @@ public class ClassicMove : IEnemyAction
         for (; ; )
         {
             yield return new WaitForSeconds(0.1f);
+            if (!bject) yield return null;
             if (bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
             {
                 break;

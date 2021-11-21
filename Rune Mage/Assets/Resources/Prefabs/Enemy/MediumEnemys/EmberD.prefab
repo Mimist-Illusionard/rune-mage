@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 5917626318675892794}
   - component: {fileID: 5917626318675892793}
   - component: {fileID: 5917626318675892792}
+  - component: {fileID: 7394489316814352664}
   - component: {fileID: 5917626318675892738}
   m_Layer: 8
   m_Name: EmberD
@@ -306,25 +307,10 @@ MonoBehaviour:
       Data: 3|IEnemyAction[], Assembly-CSharp
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 4|HardSpawnAttack, Assembly-CSharp
-    - Name: HardBulletPref
-      Entry: 10
-      Data: 0
-    - Name: AttacksCount
-      Entry: 3
-      Data: 2
-    - Name: TickTime
-      Entry: 4
-      Data: 0.1
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 5|HardSpawnAttack, Assembly-CSharp
     - Name: HardBulletPref
       Entry: 10
       Data: 0
@@ -389,6 +375,69 @@ MonoBehaviour:
   _bulletDamage: 5
   _bulletLifeTime: 10
   _bulletSpeed: 1400
+--- !u!114 &7394489316814352664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917626318675892737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7161f643d758bfd448fbc98989899ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 4055061768526408636, guid: 12e2244c0f3500548b767ee3026c29b7, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: actions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[IDeadAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|CreateAfterDead, Assembly-CSharp
+    - Name: objects
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!114 &5917626318675892738
 MonoBehaviour:
   m_ObjectHideFlags: 0
