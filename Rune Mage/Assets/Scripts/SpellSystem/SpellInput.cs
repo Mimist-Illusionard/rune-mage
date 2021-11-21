@@ -1,8 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+
+using UnityEngine;
 
 
 public class SpellInput : MonoBehaviour, IExecute
 {
+    [SerializeField] private Animator _castAnimator;
+
     public Rune FirstRune;
     public Rune SecondRune;
     public Rune ThirdRune;
@@ -19,6 +23,7 @@ public class SpellInput : MonoBehaviour, IExecute
             if (SpellsSystem.Singleton.AddNewRune(FirstRune))
             {
                 CreateIcon(FirstRune);
+                PlayCastAnimation();
             }
         }
 
@@ -27,6 +32,7 @@ public class SpellInput : MonoBehaviour, IExecute
             if (SpellsSystem.Singleton.AddNewRune(SecondRune))
             {
                 CreateIcon(SecondRune);
+                PlayCastAnimation();
             }
         }
 
@@ -35,6 +41,7 @@ public class SpellInput : MonoBehaviour, IExecute
             if (SpellsSystem.Singleton.AddNewRune(ThirdRune))
             {
                 CreateIcon(ThirdRune);
+                PlayCastAnimation();
             }
         }
 
@@ -42,12 +49,44 @@ public class SpellInput : MonoBehaviour, IExecute
         {
             SpellsSystem.Singleton.UseSpell();
             RunesUi.Singleton.DeleteRuneIcons();
+
+            _castAnimator.CrossFade("RuneUse", 0.1f);
+
+            StopAllCoroutines();
+            StartCoroutine(AnimationEndListener());
         }
     }
 
     private void CreateIcon(Rune rune)
     {
         RunesUi.Singleton.CreateRuneIcon(rune);
+    }
+
+    private void PlayCastAnimation()
+    {
+        if (SpellsSystem.Singleton._currentRunes.Count / 2 == 0) _castAnimator.CrossFade("CastRune_L", 0.1f);
+        else _castAnimator.CrossFade("CastRune_R", 0.1f);
+
+        StopAllCoroutines();
+        StartCoroutine(AnimationEndListener());
+    }
+
+    public IEnumerator AnimationEndListener()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+
+        var animation = _castAnimator.GetNextAnimatorClipInfo(0)[0].clip;
+        var animationTime = animation.length;
+        Debug.LogWarning($"Wait end of: {animation.name}");
+
+        while (animationTime >= 0)
+        {
+            yield return new WaitForEndOfFrame();
+            animationTime -= Time.deltaTime;
+        }
+
+        _castAnimator.CrossFade("Idle", 0.2f);
     }
 
     private void OnDestroy()

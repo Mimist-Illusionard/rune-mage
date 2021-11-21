@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: TrippleArrow
+  m_Name: IceSpikes
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -97,6 +97,6 @@ MonoBehaviour:
   Runes:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
-  Name: TrippleArrow
+  Name: Ice spikes
   Description: fsdf
   ManaCost: 10
