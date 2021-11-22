@@ -17,28 +17,44 @@ public class SpawnPointLogic : ISpellLogic
     public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
         Debug.Log("SpawnPointNode logic");
-        switch (_spawnPointType)
+
+        if (spell)
         {
-            case SpawnPointType.None:
-                break;
+            switch (_spawnPointType)
+            {
+                case SpawnPointType.None:
+                    break;
 
-            case SpawnPointType.RaycastPoint:
-                spell.transform.position = PlayerManager.Singleton.Raycast().point;
-                break;
+                case SpawnPointType.RaycastPoint:
+                    spell.transform.position = PlayerManager.Singleton.Raycast().point;
+                    break;
 
-            case SpawnPointType.BulletSpawnPoint:
-                var spawnPoint = GameObject.FindObjectOfType<Player>().gameObject.GetComponentInObject<Spawnpoint>().transform;
+                case SpawnPointType.BulletSpawnPoint:
+                    var spawnPoint = GameObject.FindObjectOfType<Player>().gameObject.GetComponentInObject<Spawnpoint>().transform;
 
-                spell.transform.position = spawnPoint.position;
-                spell.GetComponent<Projectile>().SetSpawnPoint(spawnPoint);
-                break;
+                    spell.transform.position = spawnPoint.position;
+                    spell.transform.rotation = spawnPoint.rotation;
 
-            case SpawnPointType.PlayerPosition:
-                spell.transform.position = PlayerManager.Singleton.GetPlayer().transform.position;
-                break;
+                    if (spell.TryGetComponent<ISpawnPoint>(out var spawnpoint)) spawnpoint.SetSpawnPoint(spawnPoint);
 
-            default:
-                break;
+                    break;
+
+                case SpawnPointType.PlayerPosition:
+                    spell.transform.position = PlayerManager.Singleton.GetPlayer().transform.position;
+                    break;
+
+                case SpawnPointType.ForwardSpawnPoint:
+                    var forwardSpawnPoint = GameObject.FindObjectOfType<Player>().gameObject.GetComponentInObject<ForwardSpawnpoint>().transform;
+
+                    spell.transform.position = forwardSpawnPoint.position;
+                    spell.transform.rotation = forwardSpawnPoint.rotation;
+
+                    if (spell.TryGetComponent<ISpawnPoint>(out var forwardspawnPoint)) forwardspawnPoint.SetSpawnPoint(forwardSpawnPoint);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         ISpell.IsLogicEnded = true;

@@ -106,7 +106,7 @@ public class Spell : SerializedScriptableObject, ISpell
             {
                 EditorGUILayout.BeginVertical("box");
                 GUILayout.Box("None", GUILayout.Width(100), GUILayout.Height(100));
-                DrawChooseButton(Runes, i);
+                DrawChooseButton(i);
                 if (GUILayout.Button("Delete", GUILayout.Width(100)))
                 {
                     Runes.Remove(Runes[i]);
@@ -119,7 +119,7 @@ public class Spell : SerializedScriptableObject, ISpell
                 GUILayout.Label($"{Runes[i].Name}");
                 GUILayout.Box(Runes[i].Sprite.texture, GUILayout.Width(100), GUILayout.Height(100));
 
-                DrawChooseButton(Runes, i);
+                DrawChooseButton(i);
                 if (GUILayout.Button("Delete", GUILayout.Width(100)))
                 {
                     Runes.Remove(Runes[i]);
@@ -129,9 +129,14 @@ public class Spell : SerializedScriptableObject, ISpell
         }
         GUILayout.EndHorizontal();
         GUILayout.EndScrollView();
+
+        if (GUI.changed)
+        {
+            EditorUtility.SetDirty(this);
+        }
     }
 
-    private void DrawChooseButton(List<Rune> runes, int index)
+    private void DrawChooseButton(int index)
     {
         if (GUILayout.Button("Choose", GUILayout.Width(100)))
         {

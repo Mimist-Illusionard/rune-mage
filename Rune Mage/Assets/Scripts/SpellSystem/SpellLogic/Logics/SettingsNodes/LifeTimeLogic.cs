@@ -18,7 +18,8 @@ public class LifeTimeLogic : ISpellLogic
     public IEnumerator Logic(GameObject spell, ISpell iSpell)
     {
         Debug.Log("LifeTimeNode logic");
-        spell.GetComponent<ILifeTime>().LifeTime = _lifeTime;
+
+        if (spell) spell.GetComponent<ILifeTime>().LifeTime = _lifeTime;
 
         iSpell.IsLogicEnded = true;
         yield return null;

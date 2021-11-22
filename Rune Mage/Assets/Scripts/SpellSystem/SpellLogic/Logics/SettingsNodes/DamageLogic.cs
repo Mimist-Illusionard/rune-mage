@@ -16,7 +16,7 @@ public class DamageLogic : ISpellLogic
     public IEnumerator Logic(GameObject spell, ISpell iSpell)
     {
         Debug.Log("DamageNode logic");
-        spell.GetComponent<IDamage>().Damage = _damage;
+        if (spell) spell.GetComponent<IDamage>().Damage = _damage;
 
         iSpell.IsLogicEnded = true;
         yield return null;

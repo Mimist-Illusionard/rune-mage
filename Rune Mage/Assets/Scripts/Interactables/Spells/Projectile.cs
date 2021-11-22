@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
+public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize, ISpawnPoint
 {
     private Rigidbody _rigidbody => GetComponent<Rigidbody>();
     private Transform _spawnPoint;
@@ -33,7 +33,6 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize
     public void SetSpawnPoint(Transform spawnPoint)
     {
         _spawnPoint = spawnPoint;
-        Debug.Log("SetSpawnPoint");
     }
 
     protected override void OnExit(Collider other)

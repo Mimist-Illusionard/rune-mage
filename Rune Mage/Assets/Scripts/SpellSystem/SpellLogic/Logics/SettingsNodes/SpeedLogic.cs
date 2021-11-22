@@ -16,9 +16,18 @@ public class SpeedLogic : ISpellLogic
 
     public IEnumerator Logic(GameObject spell, ISpell ISpell)
     {
+        if (!spell)
+        {
+            ISpell.IsLogicEnded = true;
+            yield return null;
+        }
+
         Debug.Log("SpeedNode logic");
-        var speedComponent = spell.GetComponent<ISpeed>();
-        speedComponent.Speed = _speed;
+        if (spell)
+        {
+            var speedComponent = spell.GetComponent<ISpeed>();
+            speedComponent.Speed = _speed;
+        }
 
         ISpell.IsLogicEnded = true;
         yield return null;

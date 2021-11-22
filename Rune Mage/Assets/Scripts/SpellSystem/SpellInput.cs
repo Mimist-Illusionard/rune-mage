@@ -78,7 +78,7 @@ public class SpellInput : MonoBehaviour, IExecute
 
         var animation = _castAnimator.GetNextAnimatorClipInfo(0)[0].clip;
         var animationTime = animation.length;
-        Debug.LogWarning($"Wait end of: {animation.name}");
+        Debug.LogWarning($"Wait end of animation: {animation.name}");
 
         while (animationTime >= 0)
         {
