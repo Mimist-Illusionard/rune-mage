@@ -34,8 +34,6 @@ public class ConditionLogic : ISpellLogic, ISpell
 
             if (Condition.Condition())
             {
-                Debug.Log("Conditions = true");
-                Debug.Log(IsLogicEnded);
                 if (IsLogicEnded)
                 {
                     if(_coroutineRunner) _coroutineRunner.StopAllCorotines();
