@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeUseParallel : MonoBehaviour
+public class TimeUseParallel : IEnemyAction
 {
-    // Start is called before the first frame update
-    void Start()
+    public float TimeToActive;
+    public float Tick;
+
+
+    public GameObject bject { get; set; }
+    private IEnemyAction _parent;
+
+    public void ExitToMain()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayAction(GameObject @object, IEnemyAction _Parent)
     {
-        
+        bject = @object;
+        _parent = _Parent;
     }
+
+    
 }
