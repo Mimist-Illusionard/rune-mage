@@ -26,6 +26,7 @@ public class ModifyMana : ISpellLogic
             PlayerManager.Singleton.GetMana().ManaChange(_modifier);
         }
 
+        iSpell.IsLogicEnded = true;
         yield return null;
     }
 }

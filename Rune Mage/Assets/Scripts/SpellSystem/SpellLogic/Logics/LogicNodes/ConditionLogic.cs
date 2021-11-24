@@ -34,6 +34,8 @@ public class ConditionLogic : ISpellLogic, ISpell
 
             if (Condition.Condition())
             {
+                Debug.Log("Conditions = true");
+                Debug.Log(IsLogicEnded);
                 if (IsLogicEnded)
                 {
                     if(_coroutineRunner) _coroutineRunner.StopAllCorotines();
@@ -53,7 +55,7 @@ public class ConditionLogic : ISpellLogic, ISpell
         IsLogicEnded = false;
         iSpell.IsLogicEnded = true;
 
-        _coroutineRunner.StopAllCorotines();
+        if(_coroutineRunner) _coroutineRunner.StopAllCorotines();
         _coroutineRunner = null;
     }
 }
