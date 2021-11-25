@@ -40,8 +40,6 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
         {
             StartCoroutine(DamageLogic(other));
         }
-
-        Destroy(this.gameObject);
     }
 
     protected override void OnExit(Collider other)

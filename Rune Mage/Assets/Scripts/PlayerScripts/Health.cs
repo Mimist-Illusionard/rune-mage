@@ -7,10 +7,13 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IHealth
 {
-    public float MaxHealth => 30f;
+    [SerializeField] private float _maxHealth = 30f;
+
+    public float MaxHealth => _maxHealth;
     public float CurrentHealth { get; set; }
 
     public Action<float, float> OnHealthChange;
+    public Action<float> OnValueGetted;
 
     public Action OnHealthZero;
 
@@ -27,6 +30,7 @@ public class Health : MonoBehaviour, IHealth
         MinMaxClamp();
 
         OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
+        OnValueGetted?.Invoke(value);
     }
 
     public void RemoveHealth(float value)
@@ -36,6 +40,7 @@ public class Health : MonoBehaviour, IHealth
         MinMaxClamp();
 
         OnHealthChange?.Invoke(CurrentHealth, MaxHealth);
+        OnValueGetted?.Invoke(value);
     }
 
     private void MinMaxClamp()
