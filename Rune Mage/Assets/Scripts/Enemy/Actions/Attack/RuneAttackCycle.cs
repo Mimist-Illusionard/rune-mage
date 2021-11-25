@@ -13,6 +13,7 @@ public class RuneAttackCycle : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
@@ -28,6 +29,7 @@ public class RuneAttackCycle : IEnemyAction
         for (int i = 0;i<AttackCount ;i++ )
         {
             yield return new WaitForSeconds(AttackTime);
+            if (!bject) yield return null;
             Atttack();
         }
         if (_parent != null)

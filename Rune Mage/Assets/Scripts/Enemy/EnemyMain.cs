@@ -34,11 +34,11 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
         TargetPos = data.target.gameObject.transform.position;
         TargetDistance = Vector3.Distance(CurretPos, TargetPos);
         RaycastHit hit;
-        if (Physics.Raycast(new Vector3(CurretPos.x,CurretPos.y + 1,CurretPos.z),TargetPos - CurretPos,out hit))
+        if (Physics.Raycast(new Vector3(CurretPos.x,CurretPos.y,CurretPos.z),TargetPos - CurretPos,out hit))
         {
              TargetVisible = hit.collider.GetComponent<Player>();
         }
-        Debug.DrawRay(new Vector3(CurretPos.x, CurretPos.y + 1, CurretPos.z), TargetPos - CurretPos, Color.red);
+        if (TargetVisible) { Debug.DrawRay(new Vector3(CurretPos.x, CurretPos.y, CurretPos.z), TargetPos - CurretPos, Color.green); } else { Debug.DrawRay(new Vector3(CurretPos.x, CurretPos.y, CurretPos.z), TargetPos - CurretPos, Color.red); }
     }
 
     public void GetAction()

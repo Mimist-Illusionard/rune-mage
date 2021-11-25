@@ -65,7 +65,9 @@ public class AIController : MonoBehaviour,IExecute
             {
                 objects.Add(MainPoints[i]);
             }
+            
         }
+        if(objects.Count == 0) { objects.Add(MainPoints[Random.Range(0, MainPoints.Count)]); }
         return objects[Random.Range(0, objects.Count)].transform.position;
     }
 
