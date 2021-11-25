@@ -4,7 +4,6 @@ using UnityEngine;
 public class DamageZone : Interactable, IDamage, ILifeTime, IInitialize
 {
     [SerializeField] private bool _isIgnorePlayer;
-    private Transform _spawnPoint;
 
     public float Damage { get; set; }
     public float LifeTime { get; set; }

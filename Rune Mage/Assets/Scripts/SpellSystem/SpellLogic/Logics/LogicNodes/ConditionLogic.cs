@@ -53,7 +53,7 @@ public class ConditionLogic : ISpellLogic, ISpell
         IsLogicEnded = false;
         iSpell.IsLogicEnded = true;
 
-        _coroutineRunner.StopAllCorotines();
+        if(_coroutineRunner) _coroutineRunner.StopAllCorotines();
         _coroutineRunner = null;
     }
 }
