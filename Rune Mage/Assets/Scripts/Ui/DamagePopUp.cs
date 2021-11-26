@@ -13,6 +13,7 @@ public class DamagePopUp : MonoBehaviour
     [SerializeField] private float _randomScaleValue;
     [SerializeField] private float _scaleDuration;
     [SerializeField] private float _randomPositionValue;
+    [SerializeField] private float _fadeTime;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class DamagePopUp : MonoBehaviour
         popUp.transform.position = new Vector3(popUp.transform.position.x + RandomNumber(-_randomPositionValue, _randomPositionValue), popUp.transform.position.y + RandomNumber(-_randomPositionValue, _randomPositionValue), popUp.transform.position.z);
 
         popUp.transform.DOScale(_scaleValue + RandomNumber(0, _randomScaleValue), _scaleDuration).OnComplete(() => Destroy(popUp));
+        popUp.GetComponent<CanvasGroup>().DOFade(0, _fadeTime);
     }
 
     private float RandomNumber(float min, float max)
