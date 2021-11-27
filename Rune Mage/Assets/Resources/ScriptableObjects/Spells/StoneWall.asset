@@ -54,7 +54,8 @@ MonoBehaviour:
       Data: 
   Sprite: {fileID: 0}
   _Prefab: {fileID: 6708401118600733816, guid: 6eef90c8d04b11e409ff2f655b3ac3e3, type: 3}
-  Runes: []
+  Runes:
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
   Name: Stone Wall
   Description: 
   ManaCost: 25
