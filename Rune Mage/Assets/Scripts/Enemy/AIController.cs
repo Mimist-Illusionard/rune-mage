@@ -7,7 +7,7 @@ public class AIController : MonoBehaviour,IExecute
     public List<IEnemys> enemys = new List<IEnemys>();
     public static AIController Singleton { get; private set; }
     private AISpawner aISpawner;
-    [SerializeField] private List<GameObject> MainPoints = new List<GameObject>();
+    [HideInInspector] public List<GameObject> MainPoints = new List<GameObject>();
     private GameObject _player;
     [Header("Settings")]
     public float AggresiveDistance;

@@ -35,4 +35,29 @@ public class TransformEngine : MonoBehaviour
         Quaternion quaternion = Quaternion.LookRotation(vector3, @object.transform.up);
         @object.transform.localRotation = Quaternion.Lerp(@object.transform.localRotation, quaternion, RotateSpeed * Time.deltaTime);
     }
+
+    public static void TeleportObj(GameObject @object, Vector3 vector)
+    {
+        @object.transform.position = vector;
+    }
+
+    public static void TransformPos(GameObject @object, Vector3 vector)
+    {
+        @object.transform.position += vector;
+    }
+
+    public static void TransformRot(GameObject @object, Vector3 vector)
+    {
+        @object.transform.rotation = Quaternion.Euler(vector);
+    }
+
+    public static void TransformScale(GameObject @object, Vector3 scale)
+    {
+        @object.transform.localScale += scale;
+    }
+
+    public static void CharasterControllerImpulse(GameObject @object,Vector3 Point, float Force)
+    {
+        @object.GetComponent<CCPhysics>().AddImpact(-(@object.transform.position - Point), Force);
+    }
 }

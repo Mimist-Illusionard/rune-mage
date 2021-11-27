@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 public class AISpawner : MonoBehaviour
 {
@@ -9,15 +8,15 @@ public class AISpawner : MonoBehaviour
     private AIController aIController;
 
     [Header("EnemysLists")]
-    [DrawWithUnity] public List<GameObject> PointsEnemys_1 = new List<GameObject>();
-    [DrawWithUnity] public List<GameObject> PointsEnemys_4 = new List<GameObject>();
-    [DrawWithUnity] public List<GameObject> PointsEnemys_8 = new List<GameObject>();
+    public List<GameObject> PointsEnemys_1 = new List<GameObject>();
+    public List<GameObject> PointsEnemys_4 = new List<GameObject>();
+    public List<GameObject> PointsEnemys_8 = new List<GameObject>();
 
     [Header("100% Summon in first wave")]
-    [DrawWithUnity] public List<GameObject> Summons = new List<GameObject>();
+    public List<GameObject> Summons = new List<GameObject>();
 
     [Header("SpawnSettings")]
-    [DrawWithUnity] public List<GameObject> SpawnPoints = new List<GameObject>();
+    private List<GameObject> SpawnPoints = new List<GameObject>();
     private int CurrentWave = 0;
 
     private void Awake()
@@ -27,6 +26,7 @@ public class AISpawner : MonoBehaviour
 
     void Start()
     {
+        SpawnPoints = AIController.Singleton.MainPoints;
         StartCoroutine(FirstWave());
     }
 
@@ -81,7 +81,7 @@ public class AISpawner : MonoBehaviour
 
     public void AddPoint()
     {
-        EnemyPoints++;
+        EnemyPoints += 2;
         if (aIController.enemys.Count <= 1) CheckWave();
     }
 

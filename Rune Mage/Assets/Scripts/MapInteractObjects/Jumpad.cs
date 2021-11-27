@@ -16,10 +16,10 @@ public class Jumpad : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           //other.gameObject.GetComponent<CharacterController>().enabled = false;
+            //other.gameObject.GetComponent<CharacterController>().enabled = false;
             //other.gameObject.GetComponent<CharacterController>().SimpleMove(-(other.gameObject.transform.position - p.position) * 1000);
             //Jump(other.gameObject.GetComponent<Rigidbody>());
-            other.gameObject.GetComponent<CCPhysics>().AddImpact(-(other.gameObject.transform.position - p.position), force);
+            TransformEngine.CharasterControllerImpulse(other.gameObject, p.position, force);
            //StartCoroutine(tt(other.gameObject.GetComponent<CharacterController>()));
         }
     }

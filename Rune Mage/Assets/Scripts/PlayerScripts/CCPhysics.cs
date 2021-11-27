@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CCPhysics : MonoBehaviour
+public class CCPhysics : MonoBehaviour,IExecute
 {
     float mass = 3.0f; // defines the character mass
     Vector3 impact = Vector3.zero;
@@ -10,6 +10,7 @@ public class CCPhysics : MonoBehaviour
  
     void Start()
     {
+        GameManager.Singleton.AddExecuteObject(this);
         character = gameObject.GetComponent<CharacterController>();
     }
 
@@ -21,11 +22,17 @@ public class CCPhysics : MonoBehaviour
         impact += dir.normalized * force / mass;
     }
 
-    void Update()
+
+    public void Execute()
     {
         // apply the impact force:
         if (impact.magnitude > 0.2) character.Move(impact * Time.deltaTime);
         // consumes the impact energy each cycle:
         impact = Vector3.Lerp(impact, Vector3.zero, 5 * Time.deltaTime);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Singleton.RemoveExecuteObject(this);
     }
 }
