@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: DarkRay
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: SpellLogics
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 1|SpawnPointLogic, Assembly-CSharp
+    - Name: _spawnPointType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|DamageLogic, Assembly-CSharp
+    - Name: _damage
+      Entry: 4
+      Data: 0.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|SpeedLogic, Assembly-CSharp
+    - Name: _speed
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|ConditionLogic, Assembly-CSharp
+    - Name: Condition
+      Entry: 7
+      Data: 5|AllConditions, Assembly-CSharp
+    - Name: Conditions
+      Entry: 7
+      Data: 6|ICondition[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 7|InputCondition, Assembly-CSharp
+    - Name: Key
+      Entry: 3
+      Data: 324
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 8|IsHealthEqualValue, Assembly-CSharp
+    - Name: Value
+      Entry: 4
+      Data: 0.1
+    - Name: EqualType
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: SpellLogic
+      Entry: 7
+      Data: 9|ChainLogic, Assembly-CSharp
+    - Name: _spellLogics
+      Entry: 7
+      Data: 10|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 11|DelayLogic, Assembly-CSharp
+    - Name: _delay
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|ModifyHealth, Assembly-CSharp
+    - Name: _modifier
+      Entry: 4
+      Data: 0.1
+    - Name: _type
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Sprite: {fileID: 0}
+  _Prefab: {fileID: 6984196371392499090, guid: 0949483eabec73b40a4426779d836422, type: 3}
+  Runes:
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  Name: Dark Ray
+  Description: 
+  ManaCost: 0

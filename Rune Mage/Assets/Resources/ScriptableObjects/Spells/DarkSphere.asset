@@ -72,7 +72,10 @@ MonoBehaviour:
       Data: 
   Sprite: {fileID: 0}
   _Prefab: {fileID: 5540109494221503495, guid: cde44968cafe0ca498dac4f3267acc98, type: 3}
-  Runes: []
+  Runes:
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
   Name: Dark Sphere
   Description: 
   ManaCost: 20

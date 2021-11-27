@@ -538,7 +538,7 @@ PrefabInstance:
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.size
-      value: 4
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
@@ -563,6 +563,48 @@ PrefabInstance:
       propertyPath: _spells.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 46e85e4edebf2f34988f9a9f88848b63,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 314716db317258a4988c9bf4ea105ce9,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: fae857a67ded12447920b175698a1388,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: d38ac16be2efeea4db750900d35f678c,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 89fb6cc383cea1647aa4350a9f06042d,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 475b0f8205237e142a15d62cfc5fd3f8,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: a34fa94c4fe8c2c4db82d30b84a397ca,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0056ed875e3ff9f419231cabae1fa8eb,
         type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
@@ -7433,7 +7475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e21702ad23dc644be833731fbdca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPoints: 4
+  EnemyPoints: 20
   PointsEnemys_1:
   - {fileID: 7620673544185104431, guid: 9ceaaac75a2a69d47920e257bb9252f3, type: 3}
   PointsEnemys_4:

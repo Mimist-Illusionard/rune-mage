@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: StoneWall
+  m_Name: FireSword
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 3e8afd771a047e64a99fec1ffd1f4efe, type: 2}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -30,19 +31,19 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 1|SpawnPointLogic, Assembly-CSharp
-    - Name: _spawnPointType
-      Entry: 3
-      Data: 4
+      Data: 1|DelayLogic, Assembly-CSharp
+    - Name: _delay
+      Entry: 4
+      Data: 0.1
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|LifeTimeLogic, Assembly-CSharp
-    - Name: _lifeTime
-      Entry: 4
-      Data: 5
+      Data: 2|SetWeapon, Assembly-CSharp
+    - Name: _weapon
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -53,9 +54,12 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Sprite: {fileID: 0}
-  _Prefab: {fileID: 6708401118600733816, guid: 6eef90c8d04b11e409ff2f655b3ac3e3, type: 3}
+  _Prefab: {fileID: 4089170736841881460, guid: 2fa5d496ac7907e4eb152184708794ef, type: 3}
   Runes:
-  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  Name: Stone Wall
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  Name: Fire Sword
   Description: 
-  ManaCost: 25
+  ManaCost: 15
