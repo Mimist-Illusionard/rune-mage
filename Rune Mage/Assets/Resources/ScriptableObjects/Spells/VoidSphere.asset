@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: DarkSphere
+  m_Name: VoidSphere
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -39,19 +39,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|SpeedLogic, Assembly-CSharp
-    - Name: _speed
+      Data: 2|DamageLogic, Assembly-CSharp
+    - Name: _damage
       Entry: 4
-      Data: 1200
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|DamageLogic, Assembly-CSharp
-    - Name: _damage
+      Data: 3|SpeedLogic, Assembly-CSharp
+    - Name: _speed
       Entry: 4
-      Data: 10
+      Data: 1200
     - Name: 
       Entry: 8
       Data: 
@@ -71,8 +71,11 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Sprite: {fileID: 0}
-  _Prefab: {fileID: 5540109494221503495, guid: cde44968cafe0ca498dac4f3267acc98, type: 3}
-  Runes: []
-  Name: Dark Sphere
+  _Prefab: {fileID: 5540109494221503495, guid: 9b380f87070de1547b2b0cefbeafbec0, type: 3}
+  Runes:
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  Name: Void Sphere
   Description: 
   ManaCost: 20

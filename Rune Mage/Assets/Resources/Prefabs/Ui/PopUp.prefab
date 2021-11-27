@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3920287803528530414}
   - component: {fileID: 3920287803528530408}
   - component: {fileID: 3920287803528530415}
+  - component: {fileID: 6471776046430716604}
   m_Layer: 0
   m_Name: PopUp
   m_TagString: Untagged
@@ -74,7 +75,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4279566550
   m_fontColor: {r: 0.8396226, g: 0, b: 0.08097907, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -134,3 +135,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &6471776046430716604
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3920287803528530413}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

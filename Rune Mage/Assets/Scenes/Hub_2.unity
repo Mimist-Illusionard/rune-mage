@@ -1710,6 +1710,7 @@ MonoBehaviour:
   _randomScaleValue: 1
   _scaleDuration: 1
   _randomPositionValue: 0.5
+  _fadeTime: 1
 --- !u!114 &501431691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5781,6 +5782,7 @@ MonoBehaviour:
   _randomScaleValue: 1
   _scaleDuration: 1
   _randomPositionValue: 0.5
+  _fadeTime: 1
 --- !u!114 &1493625313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7324,6 +7326,7 @@ MonoBehaviour:
   _randomScaleValue: 1
   _scaleDuration: 1
   _randomPositionValue: 0.5
+  _fadeTime: 1
 --- !u!1001 &1882642507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7886,7 +7889,7 @@ PrefabInstance:
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: _spells.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
@@ -7965,6 +7968,12 @@ PrefabInstance:
       propertyPath: _spells.Array.data[12]
       value: 
       objectReference: {fileID: 11400000, guid: fae857a67ded12447920b175698a1388,
+        type: 2}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 749a0eb89726be749ae0d8e3aa846cdc,
         type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
