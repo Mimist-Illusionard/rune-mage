@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class ModifyMana : ISpellLogic
+public class ModifyHealth : ISpellLogic
 {
     [SerializeField] private float _modifier;
     [SerializeField] private ModifierType _type;
@@ -16,14 +16,13 @@ public class ModifyMana : ISpellLogic
 
     public IEnumerator Logic(GameObject spell, ISpell iSpell)
     {
-        Debug.Log("Modify Mana");
-
         if (_type == ModifierType.Minus)
         {
-            PlayerManager.Singleton.GetMana().ManaChange(-_modifier);
-        } else if (_type == ModifierType.Plus)
+            PlayerManager.Singleton.GetHealth().RemoveHealth(_modifier);
+        }
+        else if (_type == ModifierType.Plus)
         {
-            PlayerManager.Singleton.GetMana().ManaChange(_modifier);
+            PlayerManager.Singleton.GetHealth().AddHealth(_modifier);
         }
 
         iSpell.IsLogicEnded = true;

@@ -38,7 +38,7 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
     {
         if (other.gameObject.GetComponentInObject<Health>())
         {
-            StartCoroutine(DamageLogic(other));
+            StartCoroutine(DamageLogic(other));   
         }
     }
 

@@ -78,10 +78,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 8|IsManaEqualValue, Assembly-CSharp
+      Data: 8|IsHealthEqualValue, Assembly-CSharp
     - Name: Value
       Entry: 4
-      Data: 1.5
+      Data: 0.1
     - Name: EqualType
       Entry: 3
       Data: 3
@@ -118,10 +118,10 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 12|ModifyMana, Assembly-CSharp
+      Data: 12|ModifyHealth, Assembly-CSharp
     - Name: _modifier
       Entry: 4
-      Data: 1.5
+      Data: 0.1
     - Name: _type
       Entry: 3
       Data: 2

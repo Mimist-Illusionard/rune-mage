@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class IsManaEqualValue : ICondition
+public class IsHealthEqualValue : ICondition
 {
     public float Value;
     public EqualType EqualType;
 
     public bool Condition()
     {
-        var mana = PlayerManager.Singleton.GetMana().GetCurrentMana();
+        var health = PlayerManager.Singleton.GetHealth().CurrentHealth;
 
         switch (EqualType)
         {
@@ -16,13 +16,13 @@ public class IsManaEqualValue : ICondition
                 return false;
 
             case EqualType.Equal:
-                return mana == Value;
+                return health == Value;
 
             case EqualType.Less:
-                return mana < Value;
+                return health < Value;
 
             case EqualType.Greater:
-                return mana > Value;
+                return health > Value;
 
             default:
                 Debug.LogError($"Not setted EqualType in {this}");
