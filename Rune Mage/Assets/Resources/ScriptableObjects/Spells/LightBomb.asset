@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
-  m_Name: Firecircle
+  m_Name: LightBomb
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -27,31 +27,40 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 4
     - Name: 
       Entry: 7
       Data: 1|SpawnPointLogic, Assembly-CSharp
     - Name: _spawnPointType
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|DamageLogic, Assembly-CSharp
+      Data: 2|SpeedLogic, Assembly-CSharp
+    - Name: _speed
+      Entry: 4
+      Data: 1000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 3|DamageLogic, Assembly-CSharp
     - Name: _damage
       Entry: 4
-      Data: 5
+      Data: 15
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|LifeTimeLogic, Assembly-CSharp
+      Data: 4|LifeTimeLogic, Assembly-CSharp
     - Name: _lifeTime
       Entry: 4
-      Data: 2
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -62,10 +71,12 @@ MonoBehaviour:
       Entry: 8
       Data: 
   Sprite: {fileID: 0}
-  _Prefab: {fileID: 6714257348929866549, guid: c67dfa3797a00bb468f6053ed11f2dff, type: 3}
+  _Prefab: {fileID: 8442868355097852606, guid: 7259be20d3f41024288cdf4f6c66cf56, type: 3}
   Runes:
-  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
-  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
-  Name: Fire Circle
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  Name: Light Bomb
   Description: 
-  ManaCost: 30
+  ManaCost: 20

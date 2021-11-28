@@ -12,7 +12,7 @@ public class ExplodeZone : Interactable, IDamage, IInitialize
 
     private void Start()
     {
-        transform.DOScale(_scaleEndPosition, _scaleTime).OnComplete(() => transform.DOScale(new Vector3(0f,0f,0f), 0.25f).OnComplete(() => Destroy(gameObject)));
+        //transform.DOScale(_scaleEndPosition, _scaleTime).OnComplete(() => transform.DOScale(new Vector3(0f,0f,0f), 0.25f).OnComplete(() => Destroy(gameObject)));
     }
 
     protected override void OnEnter(Collider other)
