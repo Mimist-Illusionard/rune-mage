@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7622964766145559671}
   m_Layer: 6
   m_Name: ForwardSpawnPoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 2453702891945421697}
   m_Layer: 6
   m_Name: CameraHolder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3126,13 +3126,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4835186757584552397}
-  m_LocalRotation: {x: 0.0018880013, y: 0.7071599, z: 0.7070481, w: 0.0020941508}
-  m_LocalPosition: {x: -0.000011639952, y: 0.0015440001, z: 0.00008493602}
+  m_LocalRotation: {x: 0.0018728334, y: 0.70203453, z: 0.7121373, w: 0.0021077986}
+  m_LocalPosition: {x: -0.00001, y: 0.00116, z: -0.00016}
   m_LocalScale: {x: -0.08858342, y: -0.22632444, z: -0.30558825}
   m_Children: []
   m_Father: {fileID: 1101303017316726716}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.12, y: 21.496, z: 158.485}
 --- !u!33 &5613889089994650747
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3659,7 +3659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aniamtor: {fileID: 344229539}
   _currentWeapon: {fileID: 0}
-  _swordSpawnpoint: {fileID: 0}
+  _swordSpawnpoint: {fileID: 4755512210479130338}
   _spheresSpawnpoints: []
 --- !u!1 &5638677603479375687
 GameObject:
@@ -6052,7 +6052,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8839592371481164965}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c26747f172cf2004a932f5fd1e380638, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 533cc579cc19f1b41a9b815f486d4808, type: 3}
   m_Controller: {fileID: 9100000, guid: 52051d2fc44a91f448432b0b8cd25697, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -6085,10 +6085,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201356062155892048}
-  - component: {fileID: 8152665402744389943}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6108,25 +6107,6 @@ Transform:
   m_Father: {fileID: 5555720868998747670}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8152665402744389943
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8843518035121591717}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c26747f172cf2004a932f5fd1e380638, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8861531933749357569
 GameObject:
   m_ObjectHideFlags: 0

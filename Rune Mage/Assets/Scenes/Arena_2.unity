@@ -1215,6 +1215,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216820101}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &231444673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231444674}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &231444674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231444673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &260307461
 GameObject:
   m_ObjectHideFlags: 0
@@ -7479,32 +7509,9 @@ MonoBehaviour:
   PointsEnemys_1:
   - {fileID: 7620673544185104431, guid: 9ceaaac75a2a69d47920e257bb9252f3, type: 3}
   PointsEnemys_4:
-  - {fileID: 7620673544185104431, guid: 9ceaaac75a2a69d47920e257bb9252f3, type: 3}
+  - {fileID: 3018972119910829534, guid: 48a625c2d8ea100478b81ab460911622, type: 3}
   PointsEnemys_8: []
   Summons: []
-  SpawnPoints:
-  - {fileID: 905713540}
-  - {fileID: 117149558}
-  - {fileID: 129477141}
-  - {fileID: 645895287}
-  - {fileID: 1380757420}
-  - {fileID: 1479175500}
-  - {fileID: 1743001957}
-  - {fileID: 61383069}
-  - {fileID: 1639371574}
-  - {fileID: 1377102222}
-  - {fileID: 1997068865}
-  - {fileID: 1825010305}
-  - {fileID: 69268710}
-  - {fileID: 1202430952}
-  - {fileID: 346865403}
-  - {fileID: 784359722}
-  - {fileID: 1352270488}
-  - {fileID: 407992714}
-  - {fileID: 1142263580}
-  - {fileID: 283871788}
-  - {fileID: 1362587438}
-  - {fileID: 1033354635}
 --- !u!1 &1947959406
 GameObject:
   m_ObjectHideFlags: 0

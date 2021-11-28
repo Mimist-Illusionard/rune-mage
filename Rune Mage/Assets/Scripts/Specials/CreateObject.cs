@@ -5,6 +5,13 @@ public class CreateObject : MonoBehaviour
 {
     public GameObject Prefab;
 
+    public bool Initialize;
+
+    private void Start()
+    {
+        if (Initialize) Create();
+    }
+
     public void Create()
     {
         var createdObject = Instantiate(Prefab);

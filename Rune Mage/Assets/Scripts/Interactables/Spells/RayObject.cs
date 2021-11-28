@@ -9,6 +9,9 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
     public float Damage { get; set; }
     public float Speed { get; set; }
 
+    public bool NeedToDestroy = true;
+    public bool IgnorePlayer;
+
     private void Start()
     {
         GameManager.Singleton.AddExecuteObject(this);
@@ -16,13 +19,13 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
 
     public void Initialize()
     {
-        Destroy(gameObject);
+        if (NeedToDestroy) Destroy(gameObject);
     }
 
     public void Execute()
     {
-        if (!_spawnPoint) Destroy(gameObject);
-        else
+        if (!_spawnPoint && NeedToDestroy) Destroy(gameObject);
+        else if(_spawnPoint)
         {
             transform.position = _spawnPoint.position;
             transform.rotation = _spawnPoint.rotation;
@@ -38,7 +41,9 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
     {
         if (other.gameObject.GetComponentInObject<Health>())
         {
-            StartCoroutine(DamageLogic(other));   
+            if (IgnorePlayer && other.tag == "Player") return;
+            else
+                StartCoroutine(DamageLogic(other));   
         }
     }
 

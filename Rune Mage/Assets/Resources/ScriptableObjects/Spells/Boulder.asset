@@ -42,7 +42,7 @@ MonoBehaviour:
       Data: 2|SpeedLogic, Assembly-CSharp
     - Name: _speed
       Entry: 4
-      Data: 800
+      Data: 750
     - Name: 
       Entry: 8
       Data: 
