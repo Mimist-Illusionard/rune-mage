@@ -30,7 +30,7 @@ public class TransformEngine : MonoBehaviour
 
     public static void TransformLookAt(GameObject @object, Vector3 vector, float RotateSpeed)
     {
-        if (@object == null) return;
+        if (@object == null || vector == null) return;
         Vector3 vector3 = vector - @object.transform.position;
         Quaternion quaternion = Quaternion.LookRotation(vector3, @object.transform.up);
         @object.transform.localRotation = Quaternion.Lerp(@object.transform.localRotation, quaternion, RotateSpeed * Time.deltaTime);
