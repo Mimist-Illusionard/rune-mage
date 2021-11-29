@@ -72,7 +72,7 @@ MonoBehaviour:
       Data: 
   WeaponPrefab: {fileID: 5790206249332549769, guid: 94693be4a30470040b19071d1987dcde,
     type: 3}
-  Durability: 3
+  Durability: 0
   Type: 1
-  SpellPrefab: {fileID: 8924190661391177180, guid: cc5bbef0234f0b2419d741135c6667d0,
+  SpellPrefab: {fileID: 1687167826300079187, guid: cd37508884e429c4c804d4b7c32ec542,
     type: 3}

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8724454173657381030}
   - component: {fileID: 6828470880045657234}
   - component: {fileID: 2910016367303562574}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Slam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,8 +127,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6944427237581206556, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427237581206556, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427237826061392, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6944427237826061397, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
@@ -230,6 +240,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell_Nature
       objectReference: {fileID: 0}
+    - target: {fileID: 6944427238180338099, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6944427238308182883, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -242,8 +257,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6944427238308182909, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427238308182909, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427238948033584, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6944427238948033584, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
@@ -270,6 +295,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6944427239057541682, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6944427239057541687, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
       propertyPath: looping
@@ -284,6 +314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].time
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427239458308304, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6944427239458308309, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
@@ -314,6 +349,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427239530580301, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6944427239530580301, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
         type: 3}
@@ -359,6 +399,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944427239547285847, guid: 81f48fe67fdfc434d96b4dffb6b7fc00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6944427238180338098, guid: 81f48fe67fdfc434d96b4dffb6b7fc00, type: 3}

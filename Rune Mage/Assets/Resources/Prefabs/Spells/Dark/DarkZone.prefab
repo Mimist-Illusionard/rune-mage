@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2177630742853190722}
   - component: {fileID: 2177630742853190721}
   - component: {fileID: 9150999722953271133}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DarkZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,6 +181,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion_Arcane_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3728020703757951210, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099749063447156474, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308046701272421983, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7443786284371632687, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -195,6 +210,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757958975074478929, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 035dc14fc993e4c4aa37ba3a96134ffa, type: 3}

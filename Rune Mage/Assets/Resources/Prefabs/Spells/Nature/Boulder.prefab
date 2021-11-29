@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5535273330081870428}
   - component: {fileID: 3003109690072670167}
   - component: {fileID: 7224405052159843943}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Boulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 6632198514663776466, guid: 24f47ca68a7f8e34480ac6582fa0ff47, type: 3}
+  Initialize: 0
 --- !u!65 &3003109690072670167
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -250,6 +251,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da8e96cd0b7bcd84e9e211397de1e5cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: da8e96cd0b7bcd84e9e211397de1e5cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da8e96cd0b7bcd84e9e211397de1e5cb, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1947684322084276696}
   - component: {fileID: 8125097894231036561}
   - component: {fileID: 5883974055509572959}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealingZone_Transparent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,5 +74,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252992cef289e0641b38bbc57b629c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 4365573117504592596, guid: 6c861cb594c39db43b46ddc8d95f8977, type: 3}
+  Prefab: {fileID: 7933973811724348490, guid: fc43c6632a9249649b874ec5fd989763, type: 3}
   Initialize: 1
