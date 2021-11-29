@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class DeadAction : SerializedMonoBehaviour
 {
-    public List<IDeadAction> actions = new List<IDeadAction>();
+    public List<ISpecialAction> actions = new List<ISpecialAction>();
 
     private void OnDestroy()
     {
-        foreach (IDeadAction action in actions)
+        foreach (ISpecialAction action in actions)
         {
             action.StartAction(gameObject);
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public interface IDeadAction
+public interface ISpecialAction
 {
     void StartAction(GameObject @object);
 }

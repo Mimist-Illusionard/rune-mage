@@ -18,6 +18,7 @@ public class Projectile : Interactable, IDamage, ISpeed, ILifeTime, IInitialize,
             _rigidbody.AddForce(_spawnPoint.forward * Speed);
             transform.rotation = _spawnPoint.rotation;
         }
+
     }
 
     protected override void OnEnter(Collider other)

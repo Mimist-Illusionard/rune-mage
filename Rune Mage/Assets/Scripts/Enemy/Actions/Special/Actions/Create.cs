@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateAfterDead : IDeadAction
+public class CreateAfterDead : ISpecialAction
 {
     public List<GameObject> objects = new List<GameObject>();
 

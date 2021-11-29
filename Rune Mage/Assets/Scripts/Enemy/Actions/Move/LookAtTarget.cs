@@ -21,11 +21,11 @@ public class LookAtTarget : IEnemyAction
 
     private IEnumerator Looking()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 100; i++)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
             if (!bject) yield return null;
-            TransformEngine.TransformLookAt(bject, bject.GetComponent<EnemyData>().target.transform.position, 36);
+            TransformEngine.TransformLookAt(bject, bject.GetComponent<EnemyData>().target.transform.position, 10f);
         }
         if (_parent != null)
         { _parent.ExitToMain(); }

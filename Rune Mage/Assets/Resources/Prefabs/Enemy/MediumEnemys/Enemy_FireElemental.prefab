@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5889870330524553930}
   - component: {fileID: 4722904279986308780}
   - component: {fileID: 5434460646349380706}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire_0 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 2878461494181974549}
   - component: {fileID: 5205735426153400623}
   - component: {fileID: 2300957550218684709}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2886086984415057443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,10 +234,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3957236398227844346}
   - component: {fileID: 6663582222796398992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -248,7 +248,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3176167348002996452}
-  m_LocalRotation: {x: 0.00000005303939, y: 0.007962943, z: -0.000000075068456, w: 0.9999683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.00114, y: -0.0048, z: 0.01391}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 9027398241750577136}
   - component: {fileID: 3873093447107984544}
   - component: {fileID: 5310934421131190887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 184062164027439554}
   - component: {fileID: 4634106677337506850}
   - component: {fileID: 165393765098511695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire_0 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 2318969149587330774}
   - component: {fileID: 865394843231277287}
   - component: {fileID: 1597395597088991629}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   - component: {fileID: 1254733921243048792}
   - component: {fileID: 4381782212329184832}
   - component: {fileID: 8775484278858642638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u041F\u043B\u043E\u0441\u043A\u043E\u0441\u0442\u044C.006"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 5235927854399712080}
   - component: {fileID: 127469260789955421}
   - component: {fileID: 7275473885937722297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u041F\u043B\u043E\u0441\u043A\u043E\u0441\u0442\u044C.002"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 770761360653841411}
   - component: {fileID: 4193850505370739258}
   - component: {fileID: 5876201835309821644}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u041F\u043B\u043E\u0441\u043A\u043E\u0441\u0442\u044C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -837,7 +837,7 @@ GameObject:
   - component: {fileID: 7622415944806700904}
   - component: {fileID: 8494245903438441163}
   - component: {fileID: 4086962494023683192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy_FireElemental
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1045,7 +1045,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496775767127443575}
   - component: {fileID: 1618358239548683779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Null
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1085,7 @@ GameObject:
   - component: {fileID: 2711365078624889985}
   - component: {fileID: 3217084715215791571}
   - component: {fileID: 5793746594615576912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AroundFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

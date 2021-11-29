@@ -74,7 +74,7 @@ public class AISpawner : MonoBehaviour
             {
                 SpawnRandom(PointsEnemys_8, 8);
             }
-            if(EnemyPoints == 1) break; 
+            if(EnemyPoints == 1) SpawnRandom(PointsEnemys_1, 1); 
         }
         CurrentWave++;
     }

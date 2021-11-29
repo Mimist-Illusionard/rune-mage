@@ -12,6 +12,7 @@ public class BonusState : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 

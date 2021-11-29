@@ -1097,7 +1097,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &455898247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1126,7 +1126,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 455898246}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3
+  m_Radius: 3.2
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -1135,7 +1135,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 4
   m_BaseOffset: 2.62
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -1170,7 +1170,8 @@ MonoBehaviour:
   Speed: 4
   AttackRadius: 3
   MeleeRadius: 3
-  _bulletPrefab: {fileID: 0}
+  _bulletPrefab: {fileID: 2994363800222682087, guid: 81f333b872174404b94a3609d25e5f70,
+    type: 3}
   _bulletDamage: 10
   _bulletLifeTime: 5
   _bulletSpeed: 2000
@@ -1201,7 +1202,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|MoveToMainPoint, Assembly-CSharp
@@ -1210,43 +1211,37 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 7
-      Data: 2|ClassicMove, Assembly-CSharp
+      Data: 2|LookAtTarget, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|LookAtTarget, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|SimpleQ, Assembly-CSharp
+      Data: 3|SimpleQ, Assembly-CSharp
     - Name: Quest
       Entry: 7
-      Data: 5|Vision, Assembly-CSharp
+      Data: 4|Vision, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: True
       Entry: 7
-      Data: 6|Parallel, Assembly-CSharp
+      Data: 5|Parallel, Assembly-CSharp
     - Name: actions
       Entry: 7
-      Data: 7|IEnemyAction[], Assembly-CSharp
+      Data: 6|IEnemyAction[], Assembly-CSharp
     - Name: 
       Entry: 12
       Data: 2
     - Name: 
       Entry: 7
-      Data: 8|RuneAttack, Assembly-CSharp
+      Data: 7|RuneAttack, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 9|BonusState, Assembly-CSharp
+      Data: 8|BonusState, Assembly-CSharp
     - Name: buff
       Entry: 3
       Data: 2
@@ -1267,7 +1262,7 @@ MonoBehaviour:
       Data: 
     - Name: False
       Entry: 7
-      Data: 10|SimpleBonus, Assembly-CSharp
+      Data: 9|SimpleBonus, Assembly-CSharp
     - Name: buff
       Entry: 3
       Data: 2
@@ -1299,8 +1294,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455898246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6197522, y: 2.926527, z: -7.978655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.6197522, y: 1.926527, z: -7.978655}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 543450652715286329}
   - {fileID: 1383465145}
@@ -2011,7 +2006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631043197}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1572416978}
@@ -2982,7 +2977,7 @@ PrefabInstance:
     - target: {fileID: 5555720868998747670, guid: 9aac79415a52e1f448b25de0a8eec84e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5555720868998747670, guid: 9aac79415a52e1f448b25de0a8eec84e,
         type: 3}
@@ -3593,8 +3588,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383465144}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.4, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 455898252}
@@ -4103,13 +4098,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e21702ad23dc644be833731fbdca41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPoints: 0
-  PointsEnemys_1:
-  - {fileID: 7620673544185104431, guid: 9ceaaac75a2a69d47920e257bb9252f3, type: 3}
-  PointsEnemys_4:
-  - {fileID: 3018972119910829534, guid: 48a625c2d8ea100478b81ab460911622, type: 3}
+  EnemyPoints: 2
+  PointsEnemys_1: []
+  PointsEnemys_4: []
   PointsEnemys_8: []
-  Summons: []
+  Summons:
+  - {fileID: 6419450250955313238, guid: efe12014212dce84abf63bf1a4c9a24d, type: 3}
 --- !u!114 &1684976263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4123,8 +4117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainPoints: []
-  AggresiveDistance: 6
-  Y_PointHeight: 10
+  AggresiveDistance: 8
+  Y_PointHeight: 7
 --- !u!1 &1724216199
 GameObject:
   m_ObjectHideFlags: 0
@@ -5351,7 +5345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3247177597482556432}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aed736a2b0f3e494e9f44d90ac01c3a1, type: 3}
   m_Name: 
@@ -5512,7 +5506,7 @@ Transform:
   m_Children:
   - {fileID: 8809579562838929430}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3247177597482556432
 GameObject:
@@ -5534,7 +5528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3249938732470043479
 MonoBehaviour:
   m_ObjectHideFlags: 0

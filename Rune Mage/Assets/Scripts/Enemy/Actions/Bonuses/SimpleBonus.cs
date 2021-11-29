@@ -22,6 +22,7 @@ public class SimpleBonus : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
