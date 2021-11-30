@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a8f2c8dbda0c54b94b138f290ecfe9, type: 3}
-  m_Name: FireSword
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: VoidPush
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -27,7 +27,7 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 3
     - Name: 
       Entry: 7
       Data: 1|SpawnPointLogic, Assembly-CSharp
@@ -42,25 +42,16 @@ MonoBehaviour:
       Data: 2|DamageLogic, Assembly-CSharp
     - Name: _damage
       Entry: 4
-      Data: 15
+      Data: 25
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 7
-      Data: 3|SpeedLogic, Assembly-CSharp
-    - Name: _speed
-      Entry: 4
-      Data: 800
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 4|LifeTimeLogic, Assembly-CSharp
+      Data: 3|LifeTimeLogic, Assembly-CSharp
     - Name: _lifeTime
       Entry: 4
-      Data: 5
+      Data: 1.5
     - Name: 
       Entry: 8
       Data: 
@@ -70,9 +61,13 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  WeaponPrefab: {fileID: 5790206249332549769, guid: 94693be4a30470040b19071d1987dcde,
-    type: 3}
-  Durability: 3
-  Type: 1
-  SpellPrefab: {fileID: 1687167826300079187, guid: cd37508884e429c4c804d4b7c32ec542,
-    type: 3}
+  Sprite: {fileID: 0}
+  _Prefab: {fileID: 3596505412000045295, guid: 3ce3c61586bca6b42b785f12de74875b, type: 3}
+  Runes:
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 02dccdc1c5e1ef441b8c96d3a3765fc9, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
+  Name: Void Push
+  Description: 
+  ManaCost: 25

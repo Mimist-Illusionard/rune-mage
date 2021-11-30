@@ -26,7 +26,14 @@ public class SpawnPointLogic : ISpellLogic
                     break;
 
                 case SpawnPointType.RaycastPoint:
-                    spell.transform.position = PlayerManager.Singleton.Raycast().point;
+                    var point = PlayerManager.Singleton.Raycast().point;
+
+                    RaycastHit hitInfo;
+                    Physics.Raycast(point, Vector3.down, out hitInfo);
+
+                    if (hitInfo.point == new Vector3(0f,0f,0f)) spell.transform.position = point;
+                    else spell.transform.position = hitInfo.point;
+
                     break;
 
                 case SpawnPointType.BulletSpawnPoint:
