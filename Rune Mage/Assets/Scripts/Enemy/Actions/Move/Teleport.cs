@@ -40,6 +40,7 @@ public class Teleport : IEnemyAction
 
     private void TP()
     {
+        if (!bject) return;
         bject.GetComponent<NavMeshAgent>().enabled = false;
         TransformEngine.TeleportObj(bject, AIController.Singleton.GetPointToDistination(bject.GetComponent<EnemyData>().behavior));
         bject.GetComponent<NavMeshAgent>().enabled = true;

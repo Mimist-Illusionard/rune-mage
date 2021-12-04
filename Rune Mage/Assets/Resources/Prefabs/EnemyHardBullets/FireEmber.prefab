@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff8ea076fbdd4b41b13a57da68d5850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
   Target: {fileID: 0}
   RotP: 0.01
   Speed: 0.1

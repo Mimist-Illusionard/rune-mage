@@ -62,6 +62,7 @@ public class AISpawner : MonoBehaviour
         while (EnemyPoints > 0)
         {
             yield return new WaitForSeconds(0.2f);
+            if (EnemyPoints == 1) { break; }
             if (Random.value < 0.33)
             {
                 SpawnRandom(PointsEnemys_1, 1);
@@ -74,7 +75,7 @@ public class AISpawner : MonoBehaviour
             {
                 SpawnRandom(PointsEnemys_8, 8);
             }
-            if(EnemyPoints == 1) SpawnRandom(PointsEnemys_1, 1); 
+            
         }
         CurrentWave++;
     }
