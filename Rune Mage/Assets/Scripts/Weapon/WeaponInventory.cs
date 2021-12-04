@@ -15,12 +15,12 @@ public class WeaponInventory : MonoBehaviour
 
     private void Update()
     {
-        if (_currentWeapon != null && Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _currentWeapon != null && _currentWeapon.Durability > 0)
         {
             _aniamtor.PlayAttackAnimation();
             UseWeaponLogic();
 
-            if(_currentWeapon.Durability <= 0)
+            if (_currentWeapon.Durability <= 0)
             {
                 foreach (var weapon in _createdWeapons)
                 {

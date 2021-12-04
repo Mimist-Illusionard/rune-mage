@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872180b62a0451947a3322bedd33d47e, type: 3}
+  m_Name: IceArrows
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: SpellLogics
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|LoopLogic, Assembly-CSharp
+    - Name: _spellLogics
+      Entry: 7
+      Data: 2|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 3|DelayLogic, Assembly-CSharp
+    - Name: _delay
+      Entry: 4
+      Data: 0.2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 4|LifeTimeLogic, Assembly-CSharp
+    - Name: _lifeTime
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 5|SpeedLogic, Assembly-CSharp
+    - Name: _speed
+      Entry: 4
+      Data: 1000
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|SpawnPointLogic, Assembly-CSharp
+    - Name: _spawnPointType
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|DamageLogic, Assembly-CSharp
+    - Name: _damage
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _loopAmount
+      Entry: 4
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  Sprite: {fileID: 706759742261878509, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
+  _Prefab: {fileID: 4376700278413359793, guid: 39a6baf9c4228e7449bd7eb6a6a94658, type: 3}
+  Runes:
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
+  Name: Ice Arrows
+  Description: Ice spike
+  ManaCost: 10

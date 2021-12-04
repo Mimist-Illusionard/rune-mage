@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5924509135024863387}
   - component: {fileID: 5924509135024863384}
   - component: {fileID: 5824166658953441912}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ScorchingLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 3240619128780052282, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3240619128780052285, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 3240619129828264587, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3240619129828264589, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 3240619130251671232, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3240619130251671235, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
@@ -164,7 +164,12 @@ PrefabInstance:
     - target: {fileID: 3240619130287013369, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240619130287013370, guid: caf5916b67e478e4081acf9f177a389c,
+        type: 3}
+      propertyPath: m_MaxParticleSize
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3240619130287013371, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
@@ -229,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 5319055187178079822, guid: caf5916b67e478e4081acf9f177a389c,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf5916b67e478e4081acf9f177a389c, type: 3}

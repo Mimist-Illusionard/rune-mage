@@ -69,4 +69,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eccbd12dca6a7d24a90dd372e60677fc, type: 2}
   Name: Stone Spikes
   Description: 
-  ManaCost: 25
+  ManaCost: 0

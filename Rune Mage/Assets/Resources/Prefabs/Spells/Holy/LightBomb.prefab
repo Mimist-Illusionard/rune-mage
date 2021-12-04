@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3534740716965469847}
   - component: {fileID: 8752799742788948509}
   - component: {fileID: 2965150839107389435}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LightBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 4020421568969601508, guid: 685b91b649b2e1346aec12559548ab26, type: 3}
+  Initialize: 0
 --- !u!114 &2965150839107389435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HolyGrenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389116439582662063, guid: 1e1af1c4427b5e445ab8ab81d6884d91,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e1af1c4427b5e445ab8ab81d6884d91, type: 3}

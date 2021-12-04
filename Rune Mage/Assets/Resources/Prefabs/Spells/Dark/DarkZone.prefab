@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2177630742853190723}
   - component: {fileID: 2177630742853190722}
   - component: {fileID: 2177630742853190721}
-  - component: {fileID: 9150999722953271133}
-  m_Layer: 0
+  - component: {fileID: 1408390408883656169}
+  m_Layer: 11
   m_Name: DarkZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _isIgnorePlayer: 0
---- !u!114 &9150999722953271133
+--- !u!114 &1408390408883656169
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,11 +89,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 2177630742853190724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a075db5858185408a1a0f5b56020ce, type: 3}
+  m_Script: {fileID: 11500000, guid: a1ecabee9efba9e4da891c3e8391942b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DestroyTime: 1.5
-  Initialize: 1
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _logics
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|LifeTimeLogic, Assembly-CSharp
+    - Name: _lifeTime
+      Entry: 4
+      Data: 1.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|DamageLogic, Assembly-CSharp
+    - Name: _damage
+      Entry: 4
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1001 &1171530410101414143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -181,6 +219,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion_Arcane_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3728020703757951210, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5099749063447156474, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6308046701272421983, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7443786284371632687, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -195,6 +248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8757958975074478929, guid: 035dc14fc993e4c4aa37ba3a96134ffa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 035dc14fc993e4c4aa37ba3a96134ffa, type: 3}

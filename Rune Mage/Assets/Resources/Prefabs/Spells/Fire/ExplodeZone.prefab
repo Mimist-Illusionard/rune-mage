@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6723855770056813708}
   - component: {fileID: 9195790222922203483}
   - component: {fileID: 3209689695334823841}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ExplodeZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,10 +117,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9069165005538321607}
     m_Modifications:
+    - target: {fileID: 34804757726200609, guid: 9556e40635c6f4a47929213ddb022409,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1953714657109559461, guid: 9556e40635c6f4a47929213ddb022409,
         type: 3}
       propertyPath: m_Name
       value: Spell_Fire_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953714657109559461, guid: 9556e40635c6f4a47929213ddb022409,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3117955086859858292, guid: 9556e40635c6f4a47929213ddb022409,
         type: 3}
@@ -156,6 +166,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619678951332779420, guid: 9556e40635c6f4a47929213ddb022409,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5990091037044296155, guid: 9556e40635c6f4a47929213ddb022409,
         type: 3}
@@ -246,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741170181728124084, guid: 9556e40635c6f4a47929213ddb022409,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9556e40635c6f4a47929213ddb022409, type: 3}

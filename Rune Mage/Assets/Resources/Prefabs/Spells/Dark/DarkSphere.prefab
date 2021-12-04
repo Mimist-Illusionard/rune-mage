@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5540109494221503494}
   - component: {fileID: 8725059211558411208}
   - component: {fileID: 5540109494221503548}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DarkSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}

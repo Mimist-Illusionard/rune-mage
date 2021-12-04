@@ -14,19 +14,40 @@ public class UpwardsFlying : MonoBehaviour
 
     private void Start()
     {
-        UpwardsDoMove();
+        var randomnumber = Random.Range(0, 100);
+
+        if (randomnumber >= 50)
+        {
+            UpwardsDoMove(true);
+        } else
+        {
+            DownwardsDoMove(true);
+        }
     }
 
 
-    private void UpwardsDoMove()
+    private void UpwardsDoMove(bool isStart)
     {
-        _moveAmount = Random.Range(_upwardsFlying, _upwardsFlying + _randomFlyingInterval);
-
-        transform.DOMoveY(transform.position.y + _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => DownwardsDoMove());
+        if (isStart)
+        {
+            _moveAmount = Random.Range(_upwardsFlying, _upwardsFlying + _randomFlyingInterval);
+            transform.DOMoveY(transform.position.y + _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => DownwardsDoMove(false));
+        } else
+        {
+            transform.DOMoveY(transform.position.y + _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => DownwardsDoMove(true));
+        }
     }
 
-    private void DownwardsDoMove()
+    private void DownwardsDoMove(bool isStart)
     {
-        transform.DOMoveY(transform.position.y - _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => UpwardsDoMove());
+        if (isStart)
+        {
+            _moveAmount = Random.Range(_upwardsFlying, _upwardsFlying + _randomFlyingInterval);
+            transform.DOMoveY(transform.position.y - _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => UpwardsDoMove(false));
+        }
+        else
+        {
+            transform.DOMoveY(transform.position.y - _moveAmount, Random.Range(_duration, _duration + _randomDurationInterval)).SetEase(Ease).OnComplete(() => UpwardsDoMove(true));
+        }        
     }
 }
