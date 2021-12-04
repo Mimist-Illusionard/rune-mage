@@ -93,14 +93,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 0
-    SerializedBytes: 0101070000005f006c006f0067006900630073002f00000000014b000000530079007300740065006d002e0043006f006c006c0065006300740069006f006e0073002e00470065006e0065007200690063002e004c00690073007400600031005b005b0049005300700065006c006c004c006f006700690063002c00200041007300730065006d0062006c0079002d004300530068006100720070005d005d002c0020006d00730063006f0072006c006900620000000000060200000000000000022f01000000011e0000004c00690066006500540069006d0065004c006f006700690063002c00200041007300730065006d0062006c0079002d00430053006800610072007000010000001f01090000005f006c00690066006500540069006d0065000000c03f05022f02000000011c000000440061006d006100670065004c006f006700690063002c00200041007300730065006d0062006c0079002d00430053006800610072007000020000001f01070000005f00640061006d0061006700650000000041050705
+    SerializedFormat: 2
+    SerializedBytes: 
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: _logics
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISpellLogic, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 1|LifeTimeLogic, Assembly-CSharp
+    - Name: _lifeTime
+      Entry: 4
+      Data: 1.5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 2|DamageLogic, Assembly-CSharp
+    - Name: _damage
+      Entry: 4
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!1001 &1171530410101414143
 PrefabInstance:
   m_ObjectHideFlags: 0

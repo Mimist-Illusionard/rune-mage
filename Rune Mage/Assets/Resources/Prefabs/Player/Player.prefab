@@ -3419,6 +3419,7 @@ GameObject:
   - component: {fileID: 236908575504147295}
   - component: {fileID: 7435875969090036887}
   - component: {fileID: 1925202176}
+  - component: {fileID: 9106524081455352778}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -3526,6 +3527,18 @@ MonoBehaviour:
   _currentWeapon: {fileID: 0}
   _swordSpawnpoint: {fileID: 4755512210479130338}
   _spheresSpawnpoints: []
+--- !u!114 &9106524081455352778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555720868998747666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 526c5a79859535a499739b32473351f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5638677603479375687
 GameObject:
   m_ObjectHideFlags: 0

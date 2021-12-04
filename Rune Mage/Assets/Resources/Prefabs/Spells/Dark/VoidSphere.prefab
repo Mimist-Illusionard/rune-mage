@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5540109494221503494}
   - component: {fileID: 5540109494221503548}
   - component: {fileID: 5540109494221503549}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: VoidSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefab: {fileID: 2177630742853190724, guid: 19220ef09fa303049bb0484335ad35c8, type: 3}
+  Initialize: 0
 --- !u!1001 &6850291162615243290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,6 +112,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5540109494221503546}
     m_Modifications:
+    - target: {fileID: 239525891651864814, guid: 15ac25e00d8cb09479bbfc9abc0e78fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 239525892485551699, guid: 15ac25e00d8cb09479bbfc9abc0e78fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 239525892755074680, guid: 15ac25e00d8cb09479bbfc9abc0e78fe,
         type: 3}
       propertyPath: m_RootOrder
@@ -170,6 +181,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Projectile_Dark_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 239525892755074683, guid: 15ac25e00d8cb09479bbfc9abc0e78fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 239525893379386402, guid: 15ac25e00d8cb09479bbfc9abc0e78fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15ac25e00d8cb09479bbfc9abc0e78fe, type: 3}

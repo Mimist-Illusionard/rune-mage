@@ -73,7 +73,7 @@ MonoBehaviour:
       Data: 7|ModifyMana, Assembly-CSharp
     - Name: _modifier
       Entry: 4
-      Data: 0.1
+      Data: 0.25
     - Name: _type
       Entry: 3
       Data: 1
