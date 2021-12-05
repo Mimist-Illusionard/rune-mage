@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c0ea5068bca5634ba2950afad04b70c, type: 3}
-  m_Name: DarkRay
+  m_Name: VoidPush
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 6984196371392499090, guid: 78bd8a8450decc94690a0d04c687f982, type: 3}
-  Spell: {fileID: 11400000, guid: 75e94aef39328174ca900450dc7f1dee, type: 2}
+  Prefab: {fileID: 3596505412000045295, guid: d1a110c616024fa4cb70e6cf290dc171, type: 3}
+  Spell: {fileID: 11400000, guid: d49784f9c7224c743a85d0f368404f27, type: 2}
   IsKnown: 0
