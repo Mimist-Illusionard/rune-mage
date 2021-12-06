@@ -18,6 +18,7 @@ public class AISpawner : MonoBehaviour
     [Header("SpawnSettings")]
     private List<GameObject> SpawnPoints = new List<GameObject>();
     private int CurrentWave = 0;
+    private bool LastWave;
 
     private void Awake()
     {
@@ -88,17 +89,24 @@ public class AISpawner : MonoBehaviour
 
     private void CheckWave()
     {
-        if (CurrentWave <= 2)
+        if (CurrentWave <= 2 && LastWave == false)
         {
-            if (EnemyPoints > 20)
+            if (EnemyPoints >= 20)
             {
                 StartCoroutine(SpawnWave());
+            }
+            if (EnemyPoints < 20)
+            {
+                if (LastWave == false)
+                {
+                    LastWave = true;
+                    StartCoroutine(SpawnWave());
+                }
             }
         }
         else
         {
-            //Exit
-            Debug.LogError("Exit");
+            gameObject.GetComponent<RewardSpellSystem>().RandomReward();
         }
     }
 

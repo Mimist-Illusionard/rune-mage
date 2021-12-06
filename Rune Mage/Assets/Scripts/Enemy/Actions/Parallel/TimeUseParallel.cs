@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TimeUseParallel : IEnemyAction
 {
+    public IEnemyAction MainAction;
+    public IEnemyAction SubActtion;
+
     public float TimeToActive;
     public float Tick;
 
@@ -13,7 +16,8 @@ public class TimeUseParallel : IEnemyAction
 
     public void ExitToMain()
     {
-        
+        if (!bject) return;
+        bject.GetComponentInObject<EnemyMain>().ReturnAction();
     }
 
     public void PlayAction(GameObject @object, IEnemyAction _Parent)
@@ -22,5 +26,18 @@ public class TimeUseParallel : IEnemyAction
         _parent = _Parent;
     }
 
-    
+    public IEnumerator Activate()
+    {
+        MainAction.PlayAction(bject,this);
+        for(float i = TimeToActive; i > 0; i -= Tick)
+        {
+            yield return new WaitForSeconds(Tick);
+            if (!bject) yield return null;
+            SubActtion.PlayAction(bject, this);
+        }
+        if (_parent != null)
+        { _parent.ExitToMain(); }
+        else { ExitToMain(); }
+        _parent = null;
+    }
 }
