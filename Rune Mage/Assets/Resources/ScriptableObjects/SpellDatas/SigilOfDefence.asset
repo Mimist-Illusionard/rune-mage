@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c0ea5068bca5634ba2950afad04b70c, type: 3}
-  m_Name: DarkRay
+  m_Name: SigilOfDefence
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 6984196371392499090, guid: 78bd8a8450decc94690a0d04c687f982, type: 3}
-  Spell: {fileID: 11400000, guid: 75e94aef39328174ca900450dc7f1dee, type: 2}
+  Prefab: {fileID: 886650629793195211, guid: b0115ce86f7aeee4c92779ce961de9e7, type: 3}
+  Spell: {fileID: 11400000, guid: f2830f9880451344693f61d9fffbc6c2, type: 2}
   IsKnown: 0

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c0ea5068bca5634ba2950afad04b70c, type: 3}
-  m_Name: DarkRay
+  m_Name: ExplodeZone
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 6984196371392499090, guid: 78bd8a8450decc94690a0d04c687f982, type: 3}
-  Spell: {fileID: 11400000, guid: 75e94aef39328174ca900450dc7f1dee, type: 2}
+  Prefab: {fileID: 8545568375444848253, guid: 48428198a94454643817ed6c1ec88634, type: 3}
+  Spell: {fileID: 11400000, guid: 8836a51c2a5016948845eeec94ad65ab, type: 2}
   IsKnown: 0
