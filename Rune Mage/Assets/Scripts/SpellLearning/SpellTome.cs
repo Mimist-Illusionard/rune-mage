@@ -15,9 +15,12 @@ public class SpellTome : Interactable
     {
         if (!other.GetComponent<Player>()) return;
 
-        SpellsSystem.Singleton.GetSpells().Add(_spell);
+        if (_spell)
+        {
+            GameObject.FindObjectOfType<HintRunes>().SetHintRunes(_spell);
 
-        GameObject.FindObjectOfType<HintRunes>().SetHintRunes(_spell);
+            SpellsSystem.Singleton.GetSpells().Add(_spell);
+        }
 
         var player = other.gameObject;
 
