@@ -24,7 +24,8 @@ public class PlayerManager : MonoBehaviour, IExecute
 
 	public void Execute()
 	{
-		_player._canRun = _stamina.CanRun();
+		if(_player != null)
+			_player._canRun = _stamina.CanRun();
 	}
 
 	public void SetPlayer(Player player)

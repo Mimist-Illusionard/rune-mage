@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneBehaviour : MonoBehaviour
 {
-
     public void UnloadActiveScene()
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());

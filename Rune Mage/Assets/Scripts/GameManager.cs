@@ -13,11 +13,6 @@ public class GameManager : MonoBehaviour
         Singleton = this;
     }
 
-    private void Start()
-    {
-        Application.targetFrameRate = 144;
-    }
-
     private void Update()
     {
         for (var i = 0; i < _executes.Count; i++)
