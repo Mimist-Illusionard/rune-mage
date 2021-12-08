@@ -20,6 +20,7 @@ public class MainCamera : MonoBehaviour, IExecute
     {
         //SwitchCursorMode(true);
         GameManager.Singleton.AddExecuteObject(this);
+        ChangeSentivity();
     }
 
     public void Execute()
@@ -74,5 +75,10 @@ public class MainCamera : MonoBehaviour, IExecute
     private void OnDestroy()
     {
         GameManager.Singleton.RemoveExecuteObject(this);
+    }
+
+    public void ChangeSentivity()
+    {
+        _mouseSensitivity = SettingsManager.Singleton.MouseSentitive;
     }
 }
