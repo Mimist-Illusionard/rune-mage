@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 327170b773d4c5942a60c6389c758b60, type: 3}
   m_Name: Rune_2
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  Sprite: {fileID: -1440015328999608377, guid: b2c4b2498bf5fe44b90f0670ff7b91d5, type: 3}
   Name: Rune_2

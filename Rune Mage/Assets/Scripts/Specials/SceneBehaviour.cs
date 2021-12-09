@@ -1,9 +1,12 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine;
+
 
 
 public class SceneBehaviour : MonoBehaviour
 {
+    private int _sceneId;
+
     public void UnloadActiveScene()
     {
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
@@ -17,5 +20,15 @@ public class SceneBehaviour : MonoBehaviour
     public void LoadScene(int id)
     {
         SceneManager.LoadSceneAsync(id);
+    }
+
+    public void LoadSceneForId()
+    {
+        SceneManager.LoadSceneAsync(_sceneId);
+    }
+
+    public void ChangeSceneId(int value)
+    {
+        _sceneId = value;
     }
 }
