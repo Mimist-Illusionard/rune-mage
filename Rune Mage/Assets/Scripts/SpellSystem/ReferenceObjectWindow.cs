@@ -1,9 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-
+#if UNITY_EDITOR
 public class ReferenceObjectWindow : EditorWindow
 {
+
     private static string _objectPath;
     private static string _fieldName;
     private static bool _isArray;
@@ -62,4 +63,6 @@ public class ReferenceObjectWindow : EditorWindow
             Close();
         }
     }
+
 }
+#endif

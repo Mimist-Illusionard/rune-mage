@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpellLogic
 {
-    private List<SpellNodeData> _spellNodeDatas;
+    /*private List<SpellNodeData> _spellNodeDatas;
     private List<NodeLogic> _spellNodeLogics;
 
     public SpellLogic(List<SpellNodeData> spellNodeDatas)
@@ -15,7 +15,7 @@ public class SpellLogic
         _spellNodeLogics = new List<NodeLogic>();
 
         //InitializeLogic();
-    }
+    }*/
 
     //private void InitializeLogic()
     //{
