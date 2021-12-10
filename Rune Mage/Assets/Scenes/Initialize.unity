@@ -130,6 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493413119269156089, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
+        type: 3}
+      propertyPath: _spells.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bc93d0effd2d204a9848b53402e86f6,
+        type: 2}
     - target: {fileID: 7493413119269156091, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
         type: 3}
       propertyPath: m_RootOrder
@@ -210,10 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9409d128c0f9fee4c855f6b49c545064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Main: {fileID: 24300002, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Music: {fileID: 3704935775913036908, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Effects: {fileID: 1617027129853381109, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
+  Mixer: {fileID: 24100000, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
   MouseSentitive: 2
 --- !u!1001 &508759831
 PrefabInstance:

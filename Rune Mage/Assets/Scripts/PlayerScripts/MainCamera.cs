@@ -18,7 +18,6 @@ public class MainCamera : MonoBehaviour, IExecute
 
     private void Start()
     {
-        //SwitchCursorMode(true);
         GameManager.Singleton.AddExecuteObject(this);
         ChangeSentivity();
     }
