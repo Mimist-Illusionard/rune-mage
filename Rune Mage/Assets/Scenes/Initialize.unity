@@ -192,29 +192,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a9436b0fbffb7a4f82655b1b01a4982, type: 3}
---- !u!1 &319944609 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7493413119269156093, guid: 8a9436b0fbffb7a4f82655b1b01a4982,
-    type: 3}
-  m_PrefabInstance: {fileID: 3645697}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &319944610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319944609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9409d128c0f9fee4c855f6b49c545064, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Main: {fileID: 24300002, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Music: {fileID: 3704935775913036908, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  Effects: {fileID: 1617027129853381109, guid: a264dd13981b8be49bb9712430b2e557, type: 2}
-  MouseSentitive: 2
 --- !u!1001 &508759831
 PrefabInstance:
   m_ObjectHideFlags: 0

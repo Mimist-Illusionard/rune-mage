@@ -76,4 +76,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 15e3df3bb3595714cb30a158c01f18e7, type: 2}
   Name: Fireball
   Description: 
-  ManaCost: 0
+  ManaCost: 10
