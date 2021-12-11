@@ -3307,7 +3307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: {fileID: 1235150706}
   _sceneBehaviour: {fileID: 359649962}
-  _maxLevelAmount: 2
+  _maxLevelAmount: 3
 --- !u!1001 &690919228
 PrefabInstance:
   m_ObjectHideFlags: 0
