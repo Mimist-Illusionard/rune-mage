@@ -3286,7 +3286,7 @@ GameObject:
   - component: {fileID: 5555720867787874292}
   - component: {fileID: 4489594994174642395}
   - component: {fileID: 3185453537009417778}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -3380,7 +3380,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
