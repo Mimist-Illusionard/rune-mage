@@ -33,8 +33,8 @@ public class SettingsManager : MonoBehaviour
     private void SetPrefs()
     {
         if (PlayerPrefs.HasKey("MasterVolume")) { ChangeVolume(PlayerPrefs.GetFloat("MasterVolume") + 0.8f); } else { PlayerPrefs.SetFloat("MasterVolume", ChangeVolume(0.8f)); }
-        if (PlayerPrefs.HasKey("MusicVolume")) { ChangeVolume(PlayerPrefs.GetFloat("MusicVolume") + 0.8f); } else { PlayerPrefs.SetFloat("MusicVolume", ChangeVolume(0.8f)); }
-        if (PlayerPrefs.HasKey("EffectsVolume")) { ChangeVolume(PlayerPrefs.GetFloat("EffectsVolume") + 0.8f); } else { PlayerPrefs.SetFloat("EffectsVolume", ChangeVolume(0.8f)); }
+        if (PlayerPrefs.HasKey("MusicVolume")) { ChangeMusicVolume(PlayerPrefs.GetFloat("MusicVolume") + 0.8f); } else { PlayerPrefs.SetFloat("MusicVolume", ChangeMusicVolume(0.8f)); }
+        if (PlayerPrefs.HasKey("EffectsVolume")) { ChangeEffectVolume(PlayerPrefs.GetFloat("EffectsVolume") + 0.8f); } else { PlayerPrefs.SetFloat("EffectsVolume", ChangeEffectVolume(0.8f)); }
         if (PlayerPrefs.HasKey("Sens")) { ChangeSens(PlayerPrefs.GetFloat("Sens")); } else { PlayerPrefs.SetFloat("Sens", 2); }
         if (PlayerPrefs.HasKey("ResW") && PlayerPrefs.HasKey("ResH")) { _resolution.width = PlayerPrefs.GetInt("ResW"); _resolution.height = PlayerPrefs.GetInt("ResH"); Resolution(_resolution); } else { PlayerPrefs.SetInt("ResW", Screen.currentResolution.width); PlayerPrefs.SetInt("ResH", Screen.currentResolution.height); Resolution(_resolution); }
     }
