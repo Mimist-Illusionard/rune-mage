@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 
 
+#if UNITY_EDITOR
 public class OffMeshLinkWindow : EditorWindow
 {
     public List<OffMeshLink> OffMeshLinks;
@@ -114,3 +115,4 @@ public class OffMeshLinkWindow : EditorWindow
         }
     }
 }
+#endif

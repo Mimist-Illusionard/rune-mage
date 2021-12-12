@@ -12,6 +12,11 @@ public class LevelChoser : MonoBehaviour
 
     private int _levelCounter;
 
+    private void Start()
+    {
+        _sceneBehaviour.ChangeSceneId(_levelCounter + 3);
+    }
+
     public void Increase()
     {
         if (_levelCounter + 1 > _maxLevelAmount) return;
@@ -19,7 +24,7 @@ public class LevelChoser : MonoBehaviour
         _levelCounter++;
         _text.text = _levelCounter.ToString();
 
-        _sceneBehaviour.ChangeSceneId(_levelCounter);
+        _sceneBehaviour.ChangeSceneId(_levelCounter + 3);
     }
 
     public void Decrease()
@@ -29,6 +34,6 @@ public class LevelChoser : MonoBehaviour
         _levelCounter--;
         _text.text = _levelCounter.ToString();
 
-        _sceneBehaviour.ChangeSceneId(_levelCounter);
+        _sceneBehaviour.ChangeSceneId(_levelCounter + 3);
     }
 }

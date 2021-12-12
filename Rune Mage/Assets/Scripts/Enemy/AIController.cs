@@ -103,4 +103,9 @@ public class AIController : MonoBehaviour,IExecute
         if (objects.Count == 0) { objects.Add(MainPoints[Random.Range(0, MainPoints.Count)]); }
         return objects[Random.Range(0, objects.Count)].transform.position;
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Singleton.RemoveExecuteObject(this);
+    }
 }
