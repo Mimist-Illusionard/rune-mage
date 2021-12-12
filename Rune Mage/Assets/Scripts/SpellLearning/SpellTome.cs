@@ -23,6 +23,7 @@ public class SpellTome : Interactable
         }
 
         var player = other.gameObject;
+        player.GetComponent<Health>().AddHealth(30f);
 
         player.GetComponent<CharacterController>().enabled = false;
 
