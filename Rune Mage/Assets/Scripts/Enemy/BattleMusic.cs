@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class BattleMusic : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class BattleMusic : MonoBehaviour
 
     private void Start()
     {
-        PlayTime = First.time;
+        PlayTime = First.clip.length;
         First.Play();
         StartCoroutine(WaitEnd());
     }
