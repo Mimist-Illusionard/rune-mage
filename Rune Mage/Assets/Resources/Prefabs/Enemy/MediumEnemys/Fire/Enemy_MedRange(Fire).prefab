@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 3021875738089558681}
   - component: {fileID: 3874791910451900218}
   - component: {fileID: 8687540092860451209}
+  - component: {fileID: -5967857410853251288}
   m_Layer: 8
   m_Name: Enemy_MedRange(Fire)
   m_TagString: Untagged
@@ -229,6 +230,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5967857410853251288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018972119910829534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fde703e0d5d3e4458e7140dee137205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 3920287803528530413, guid: d630fe3ae4f818042b0a9b01cae0f6e1, type: 3}
+  _worldCanvas: {fileID: 0}
+  _scaleValue: 1.5
+  _randomScaleValue: 1
+  _scaleDuration: 1
+  _randomPositionValue: 0.5
+  _fadeTime: 1
 --- !u!1 &3177775534863949780
 GameObject:
   m_ObjectHideFlags: 0
