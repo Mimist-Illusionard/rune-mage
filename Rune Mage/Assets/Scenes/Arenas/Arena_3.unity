@@ -4784,6 +4784,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: EnemyPoints
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: Summons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: Summons.Array.data[0]
+      value: 
+      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+        type: 3}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: Summons.Array.data[1]
+      value: 
+      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+        type: 3}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: Summons.Array.data[2]
+      value: 
+      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+        type: 3}
+    - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
+        type: 3}
+      propertyPath: Summons.Array.data[3]
+      value: 
+      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+        type: 3}
     - target: {fileID: 3954499486692488251, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: _rewardSpawnpoint

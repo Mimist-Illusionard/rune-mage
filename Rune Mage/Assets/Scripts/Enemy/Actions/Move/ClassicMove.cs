@@ -30,8 +30,8 @@ public class ClassicMove : IEnemyAction
         for (; ; )
         {
             yield return new WaitForSeconds(0.1f);
-            if (!bject) yield return null;
-            if (bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
+            if (!bject) break;
+            if (bject && bject.GetComponentInObject<NavMeshAgent>().remainingDistance <= 0.3f + bject.GetComponentInObject<NavMeshAgent>().stoppingDistance)
             {
                 break;
             }

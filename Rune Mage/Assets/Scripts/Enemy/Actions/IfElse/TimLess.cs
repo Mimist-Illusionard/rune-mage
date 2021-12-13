@@ -8,6 +8,7 @@ public class TimLess : IQuest
 
     public void ExitToMain(SimpleQ i)
     {
+        if (!i.bject) return;
         i.tt = true;
         i.ExitToMain();
     }

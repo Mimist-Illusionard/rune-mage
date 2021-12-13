@@ -6,7 +6,8 @@ public class Distance : IQuest
 
     public void ExitToMain(SimpleQ i)
     {
-        if(Dst > 0)
+        if (!i.bject) return;
+        if (Dst > 0)
         {
             if (i.bject.GetComponent<EnemyMain>().TargetDistance <= Dst)
             {

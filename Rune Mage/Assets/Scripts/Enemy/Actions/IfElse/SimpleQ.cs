@@ -12,6 +12,7 @@ public class SimpleQ : IEnemyAction
 
     public void ExitToMain()
     {
+        if (!bject) return;
         if (tt)
         {
             True.PlayAction(bject, _parent);
