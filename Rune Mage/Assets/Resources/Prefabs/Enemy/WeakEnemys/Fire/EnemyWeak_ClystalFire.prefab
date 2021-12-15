@@ -442,7 +442,7 @@ MonoBehaviour:
   target: {fileID: 0}
   behavior: 1
   Health: 10
-  Speed: 10
+  Speed: 18
   AttackRadius: 8
   MeleeRadius: 0
   _bulletPrefab: {fileID: 8028069897243866330, guid: 3f419a90806821341bbae20d0ac913ae,

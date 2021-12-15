@@ -203,10 +203,10 @@ MonoBehaviour:
         mscorlib
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 3
     - Name: 
       Entry: 7
-      Data: 1|MoveToMainPoint, Assembly-CSharp
+      Data: 1|ClassicMove, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -215,37 +215,28 @@ MonoBehaviour:
       Data: 2|SimpleQ, Assembly-CSharp
     - Name: Quest
       Entry: 7
-      Data: 3|Vision, Assembly-CSharp
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: True
-      Entry: 7
-      Data: 4|SimpleQ, Assembly-CSharp
-    - Name: Quest
-      Entry: 7
-      Data: 5|Distance, Assembly-CSharp
-    - Name: Dst
+      Data: 3|TimLess, Assembly-CSharp
+    - Name: time
       Entry: 4
-      Data: 0
+      Data: 2
     - Name: 
       Entry: 8
       Data: 
     - Name: True
       Entry: 7
-      Data: 6|RuneAttackCycle, Assembly-CSharp
+      Data: 4|RuneAttackCycle, Assembly-CSharp
     - Name: AttackCount
       Entry: 3
-      Data: 4
+      Data: 3
     - Name: AttackTime
       Entry: 4
-      Data: 0.2
+      Data: 0.1
     - Name: 
       Entry: 8
       Data: 
     - Name: False
       Entry: 7
-      Data: 7|MoveToMainPoint, Assembly-CSharp
+      Data: 5|Empty, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -255,9 +246,33 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: 
+      Entry: 7
+      Data: 6|SimpleQ, Assembly-CSharp
+    - Name: Quest
+      Entry: 7
+      Data: 7|TimLess, Assembly-CSharp
+    - Name: time
+      Entry: 4
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: True
+      Entry: 7
+      Data: 8|RuneAttackCycle, Assembly-CSharp
+    - Name: AttackCount
+      Entry: 3
+      Data: 3
+    - Name: AttackTime
+      Entry: 4
+      Data: 0.1
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: False
       Entry: 7
-      Data: 8|MoveToMainPoint, Assembly-CSharp
+      Data: 9|Empty, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 

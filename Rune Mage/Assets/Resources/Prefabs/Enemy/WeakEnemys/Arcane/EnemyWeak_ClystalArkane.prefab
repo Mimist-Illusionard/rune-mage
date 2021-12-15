@@ -9969,7 +9969,7 @@ MonoBehaviour:
       Data: 2
     - Name: 
       Entry: 7
-      Data: 1|MoveToMainPoint, Assembly-CSharp
+      Data: 1|ClassicMove, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -9978,19 +9978,70 @@ MonoBehaviour:
       Data: 2|SimpleQ, Assembly-CSharp
     - Name: Quest
       Entry: 7
-      Data: 3|Vision, Assembly-CSharp
+      Data: 3|Distance, Assembly-CSharp
+    - Name: Dst
+      Entry: 4
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
     - Name: True
       Entry: 7
-      Data: 4|RuneAttack, Assembly-CSharp
+      Data: 4|Parallel, Assembly-CSharp
+    - Name: actions
+      Entry: 7
+      Data: 5|IEnemyAction[], Assembly-CSharp
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 6|SpawnCollInPoint, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 7|SimpleQ, Assembly-CSharp
+    - Name: Quest
+      Entry: 7
+      Data: 8|TimLess, Assembly-CSharp
+    - Name: time
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: True
+      Entry: 7
+      Data: 9|Empty, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
     - Name: False
       Entry: 7
-      Data: 5|Empty, Assembly-CSharp
+      Data: 10|Empty, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: tt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: False
+      Entry: 7
+      Data: 11|ClassicMove, Assembly-CSharp
     - Name: 
       Entry: 8
       Data: 
@@ -10023,10 +10074,10 @@ MonoBehaviour:
   target: {fileID: 0}
   behavior: 1
   Health: 10
-  Speed: 8
+  Speed: 14
   AttackRadius: 20
   MeleeRadius: 0
-  _bulletPrefab: {fileID: 5270557213994211588, guid: 92ce1170eb1adf34d9fc8a96ceccacb2,
+  _bulletPrefab: {fileID: 8028069897243866330, guid: f33f100c30ba6444b98a941172c1eeaa,
     type: 3}
   _bulletDamage: 5
   _bulletLifeTime: 6
@@ -10111,7 +10162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5554021161761389726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5554021160426014465}

@@ -4787,36 +4787,36 @@ PrefabInstance:
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: EnemyPoints
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: Summons.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: Summons.Array.data[0]
       value: 
-      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+      objectReference: {fileID: 3759823222143669630, guid: 569ac5ab5204de64195dd3676e364dc6,
         type: 3}
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: Summons.Array.data[1]
       value: 
-      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+      objectReference: {fileID: 3759823222143669630, guid: 569ac5ab5204de64195dd3676e364dc6,
         type: 3}
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: Summons.Array.data[2]
       value: 
-      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+      objectReference: {fileID: 3759823222143669630, guid: 569ac5ab5204de64195dd3676e364dc6,
         type: 3}
     - target: {fileID: 3954499486692488249, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
       propertyPath: Summons.Array.data[3]
       value: 
-      objectReference: {fileID: 5554021161349882953, guid: 2d4a6cd48d47d244a9d832f3231fe90f,
+      objectReference: {fileID: 3759823222143669630, guid: 569ac5ab5204de64195dd3676e364dc6,
         type: 3}
     - target: {fileID: 3954499486692488251, guid: 47b30566d3815334f9af5a1f83e6fc45,
         type: 3}
