@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
@@ -11,6 +12,8 @@ public class SpellsSystem : MonoBehaviour
 
     private int _currentRunesInSpell;
     private bool _isSpellCasting;
+
+    public Action OnSpellCasted;
 
     public List<Rune> _currentRunes = new List<Rune>();
     public static SpellsSystem Singleton { get; private set; }
@@ -62,6 +65,8 @@ public class SpellsSystem : MonoBehaviour
 
             if (correctRunes == spellLength && !_isSpellCasting)
             {
+                OnSpellCasted?.Invoke();
+
                 Debug.Log($"Correct spell: {spell} Spell Name: {spell.Name} Spell Length: {spell.Runes.Count} Spell Cost: {spell.ManaCost}");
                 StartCoroutine(SpellLogic(spell));
                 break;

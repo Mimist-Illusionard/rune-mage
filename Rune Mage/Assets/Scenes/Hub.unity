@@ -3461,7 +3461,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7321883209006320177, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
 --- !u!224 &658527476 stripped
 RectTransform:
@@ -3631,6 +3632,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 677565647}
     m_Modifications:
+    - target: {fileID: 4964902630246761575, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5004976642112355351, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -3671,7 +3677,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7321883209006320177, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
 --- !u!224 &710978237 stripped
 RectTransform:
@@ -10119,6 +10126,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5382860346851727108}
     m_Modifications:
+    - target: {fileID: 4964902630246761575, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5224249208557590656, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -10229,7 +10241,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7321883209006320177, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
 --- !u!224 &1996462632 stripped
 RectTransform:
@@ -10730,6 +10743,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2063182834}
     m_Modifications:
+    - target: {fileID: 4964902630246761575, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5004976642112355351, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -10845,7 +10863,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: WorldCanvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7321883209006320177, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a3f1fc1440a6d749a7d248b9e2fd43b, type: 3}
 --- !u!224 &2116273918 stripped
 RectTransform:
@@ -11741,6 +11760,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5354327203156978164, guid: 0c99ce64498eb1544b2ddda68ffece8a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5382860346544051543, guid: 0c99ce64498eb1544b2ddda68ffece8a,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -11846,12 +11870,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.75
       objectReference: {fileID: 0}
+    - target: {fileID: 7724558205277897348, guid: 0c99ce64498eb1544b2ddda68ffece8a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8448678919160721846, guid: 0c99ce64498eb1544b2ddda68ffece8a,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5352890573912132818, guid: 0c99ce64498eb1544b2ddda68ffece8a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c99ce64498eb1544b2ddda68ffece8a, type: 3}
 --- !u!4 &5382860346851727106 stripped
 Transform:
