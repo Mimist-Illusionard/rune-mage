@@ -18,6 +18,8 @@ public class CameraImpactController : MonoBehaviour, IExecute
     [SerializeField] private float _smallVectorValue;
     [SerializeField] private float _blendTime;
 
+    private bool _isShake;
+
     private void Start()
     {
         SpellsSystem.Singleton.OnSpellCasted += SpellImpact;
@@ -35,7 +37,11 @@ public class CameraImpactController : MonoBehaviour, IExecute
 
     private void SpellImpact()
     {
-        transform.GetComponent<Camera>().DOShakePosition(_duration, _strength, _vibration, _randomness, true);
+        if (!_isShake)
+        {
+            _isShake = true;
+            transform.GetComponent<Camera>().DOShakePosition(_duration, _strength, _vibration, _randomness, true).OnComplete(() => _isShake = false);
+        }
     }
 
     private void MovementImpact(float horizontalInput, float verticalInput)
