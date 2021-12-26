@@ -3453,7 +3453,7 @@ MonoBehaviour:
   _strength: 0.1
   _vibration: 3
   _randomness: 0
-  _duration: 1
+  _duration: 0.25
   _bigVectorValue: 2
   _smallVectorValue: 1
   _blendTime: 1.5

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a26f8053683545b820e3872417070, type: 3}
+  m_Name: GenerationConfig
+  m_EditorClassIdentifier: 
+  MaxRoomAmount: 20
+  GenerationTime: 15
+  Constant: 1
+  SecretsDivide: 10
+  SecretsAmount: 2
+  WallPrefab: {fileID: 4589293187087311979, guid: 9424dce4ee4aa2c41a64e23663aa6e26,
+    type: 3}
+  SecretWallPrefab: {fileID: 4589293187087311979, guid: 41a0093d0515c8c45a39b6febb2a3229,
+    type: 3}
+  Boss_1:
+    Probability: 0
+    IsNeedCreate: 0
+    Amount: 0
+    Prefabs:
+    - {fileID: 4659126488117710819, guid: 2afc1ee4550de4349abf863303957c78, type: 3}

@@ -8,7 +8,7 @@ using UnityEditor;
 using Sirenix.OdinInspector;
 
 
-[CreateAssetMenu(fileName = "Spell", menuName = "Data/SpellSystem/Spell")]
+[CreateAssetMenu(fileName = "Spell", menuName = "Ruinum/Data/SpellSystem/Spell")]
 [Serializable]
 public class Spell : SerializedScriptableObject, ISpell
 {

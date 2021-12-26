@@ -5,7 +5,7 @@ using System;
 using Sirenix.OdinInspector;
 
 
-[CreateAssetMenu(fileName = "Rune", menuName = "Data/SpellSystem/Rune")]
+[CreateAssetMenu(fileName = "Rune", menuName = "Ruinum/Data/SpellSystem/Rune")]
 [Serializable]
 public class Rune : ScriptableObject
 {

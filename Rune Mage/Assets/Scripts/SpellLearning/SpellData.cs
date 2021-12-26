@@ -3,7 +3,7 @@
 using System;
 
 [Serializable]
-[CreateAssetMenu(fileName = "SpellData", menuName = "Data/SpellSystem/SpellData")]
+[CreateAssetMenu(fileName = "SpellData", menuName = "Ruinum/Data/SpellSystem/SpellData")]
 public class SpellData : ScriptableObject
 {
     public GameObject Prefab;

@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "Weapon", menuName = "Data/Weapon")]
+[CreateAssetMenu(fileName = "Weapon", menuName = "Ruinum/Data/Weapon")]
 public class Weapon : SerializedScriptableObject, ISpell
 {
     public GameObject WeaponPrefab;
