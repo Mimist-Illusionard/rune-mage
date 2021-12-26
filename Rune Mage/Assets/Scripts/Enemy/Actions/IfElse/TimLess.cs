@@ -15,6 +15,7 @@ public class TimLess : IQuest
 
     public void PlayQuest(SimpleQ i)
     {
+        time *= i.bject.GetComponent<EnemyMain>().ActionTimeModifier;
         CoroutineManager.Singleton.RunCoroutine(tt(i));
     }
 

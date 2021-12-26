@@ -64,7 +64,7 @@ public class SimpleHardBul : Interactable, IExecute
     {
         yield return new WaitForSeconds(TimeAIM);
         AIM = false;
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 4f);
         Speed += 0.15f;
     }
 }

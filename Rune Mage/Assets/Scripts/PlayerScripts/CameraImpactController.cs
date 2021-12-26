@@ -42,47 +42,47 @@ public class CameraImpactController : MonoBehaviour, IExecute
     {
         if (horizontalInput >= 0.5f) //Player going to right
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, -_bigVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, -_bigVectorValue), _blendTime);
         }
 
         if (horizontalInput <= -0.5f) //Player going to left
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, _bigVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, _bigVectorValue), _blendTime);
         }
 
         if (horizontalInput >= -0.1f && horizontalInput <= 0.1f)
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, 0), _blendTime);
         }
 
         if (verticalInput >= 0.5f) //Player going forward
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, 0), _blendTime);
         }
 
         if (verticalInput <= -0.5f) //Player going backwards
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, 0), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, 0), _blendTime);
         }
 
         if (horizontalInput >= 0.5f && verticalInput >= 0.5f) //Going to right-upper angle
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, -_smallVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, -_smallVectorValue), _blendTime);
         }
 
         if (horizontalInput <= -0.5f && verticalInput >= 0.5f) //Going to left-upper angle
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, _smallVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, _smallVectorValue), _blendTime);
         }
 
         if (horizontalInput >= 0.5f && verticalInput <= -0.5f) //Going to right-down angle
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, -_smallVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, -_smallVectorValue), _blendTime);
         }
 
         if (horizontalInput <= -0.5f && verticalInput <= -0.5f) //Going to left-down angle
         {
-            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.position.x, _camera.transform.position.y, _smallVectorValue), _blendTime);
+            _camera.transform.DOLocalRotate(new Vector3(_camera.transform.localPosition.x, _camera.transform.localPosition.y, _smallVectorValue), _blendTime);
         }
     }
 

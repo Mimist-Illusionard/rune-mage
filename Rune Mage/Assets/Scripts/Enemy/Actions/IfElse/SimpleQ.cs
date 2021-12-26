@@ -16,10 +16,12 @@ public class SimpleQ : IEnemyAction
         if (tt)
         {
             True.PlayAction(bject, _parent);
+            _parent = null;
         }
         else
         {
             False.PlayAction(bject, _parent);
+            _parent = null;
         }
     }
 
@@ -28,6 +30,5 @@ public class SimpleQ : IEnemyAction
         _parent = _Parent;
         bject = @object;
         Quest.PlayQuest(this);
-        _parent = null;
     }
 }

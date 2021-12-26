@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.AI;
 
 public class EnemyMain : SerializedMonoBehaviour, IEnemys
 {
     public EnemyData data;
+    public float ActionTimeModifier = 1;
 
     [Header("ActionSystem")]
     public List<IEnemyAction> enemyActions = new List<IEnemyAction>();
     public int currentAction;
     private int _actionsCout;
+    private bool Stunned = false;
     
     public float TargetDistance { get; set; }
     public bool TargetVisible { get; set; }
@@ -24,6 +27,7 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
         FindObjectOfType<AIController>().enemys.Add(this);
         gameObject.GetComponent<Health>().OnHealthZero += Death;
         ActionPoint = true;
+        SetTimeModifier(ActionTimeModifier);
         GetAction();
     }
 
@@ -48,14 +52,35 @@ public class EnemyMain : SerializedMonoBehaviour, IEnemys
 
     public void ReturnAction(/*bool isParallel*/)
     {
+        if (Stunned) return;
+        Debug.Log(Stunned);
         currentAction++;
         if (currentAction == enemyActions.Count) currentAction = 0;
         GetAction();
+    }
+
+    public void SetTimeModifier(float modifier)
+    {
+        ActionTimeModifier = modifier;
+    }
+
+    public void Stun(float duration)
+    {
+        Stunned = true;
+        gameObject.GetComponent<NavMeshAgent>().isStopped = true;
+        StartCoroutine(StunTime(duration));
     }
 
     public void Death()
     {
         FindObjectOfType<AIController>().RemoveEnemy(this);
         Destroy(gameObject);
+    }
+
+    private IEnumerator StunTime(float t)
+    {
+        yield return new WaitForSeconds(t);
+        Stunned = false;
+        ReturnAction();
     }
 }

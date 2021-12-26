@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 5554021161349882957}
   - component: {fileID: 5554021161349882956}
   - component: {fileID: 5554021161349882958}
+  - component: {fileID: 5773685819294914581}
   - component: {fileID: 782675234806089734}
   - component: {fileID: 2639668095247949197}
   m_Layer: 8
@@ -441,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   behavior: 1
-  Health: 10
+  Health: 30
   Speed: 18
   AttackRadius: 8
   MeleeRadius: 0
@@ -472,6 +473,49 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5773685819294914581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5554021161349882953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6c0d3fcd979ff4eb13402df366fe07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: actions
+      Entry: 7
+      Data: 0|System.Collections.Generic.List`1[[ISpecialAction, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 1|StunEnemy, Assembly-CSharp
+    - Name: TimeStun
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
 --- !u!114 &782675234806089734
 MonoBehaviour:
   m_ObjectHideFlags: 0

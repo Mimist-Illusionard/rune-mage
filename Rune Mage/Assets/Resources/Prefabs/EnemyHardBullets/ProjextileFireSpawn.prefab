@@ -9,11 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 626061146608523160}
-  - component: {fileID: 5330263788783506732}
-  - component: {fileID: 448347437271998717}
   - component: {fileID: 5509541878361739283}
-  m_Layer: 7
-  m_Name: ProjextileFire
+  - component: {fileID: 7894040301678818094}
+  - component: {fileID: 6691714215428015305}
+  - component: {fileID: 8518187729216281041}
+  m_Layer: 9
+  m_Name: ProjextileFireSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,13 +29,26 @@ Transform:
   m_GameObject: {fileID: 942583507762353114}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 7021029794619239008}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5330263788783506732
+--- !u!135 &5509541878361739283
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942583507762353114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7894040301678818094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,13 +57,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 942583507762353114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773cfc798c995324d8552a7bf05e5e4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff8ea076fbdd4b41b13a57da68d5850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnEnterEvent:
     m_PersistentCalls:
-      m_Calls: []
---- !u!54 &448347437271998717
+      m_Calls:
+      - m_Target: {fileID: 6691714215428015305}
+        m_TargetAssemblyTypeName: CreateAndTransform, Assembly-CSharp
+        m_MethodName: Create
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  Target: {fileID: 0}
+  RotP: 0.01
+  Speed: 0.1
+  Damage: 15
+  TimeAIM: 3
+--- !u!114 &6691714215428015305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942583507762353114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17240676d76d38a49bff9f037f3e0b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 5869229029559480062, guid: 9a1f051ebece7ea42a56b2e1c2667c7c, type: 3}
+  Initialzie: 0
+  DestroyTime: 10
+--- !u!54 &8518187729216281041
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,19 +111,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &5509541878361739283
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942583507762353114}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4398446699410483089
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +122,7 @@ GameObject:
   - component: {fileID: 4398446699410483090}
   - component: {fileID: 4398446699410483092}
   - component: {fileID: 4398446699410483091}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4398446699410483089}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7021029794462610444}
@@ -362,8 +395,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.05
-      minScalar: 0.03
+      scalar: 0.1
+      minScalar: 0.06
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4906,7 +4939,7 @@ GameObject:
   - component: {fileID: 4398446700876926231}
   - component: {fileID: 4398446700876926249}
   - component: {fileID: 4398446700876926248}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Expansive Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4921,7 +4954,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4398446700876926230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.12, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7021029794462610444}
@@ -5179,7 +5212,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 6
       minScalar: 8
       maxCurve:
         serializedVersion: 2
@@ -9722,7 +9755,7 @@ GameObject:
   - component: {fileID: 7021029794462610444}
   - component: {fileID: 7021029794462610442}
   - component: {fileID: 7021029794462610445}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9737,7 +9770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7021029794462610447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4398446700876926231}
@@ -9997,8 +10030,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.5
+      scalar: 5
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -14540,7 +14573,7 @@ GameObject:
   - component: {fileID: 7021029794619239008}
   - component: {fileID: 7021029794619239011}
   - component: {fileID: 7021029794619239010}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Projectile_Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14814,7 +14847,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19320,7 +19353,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 1
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 10
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
