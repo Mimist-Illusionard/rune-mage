@@ -25,8 +25,9 @@ public class GridGenerator : MonoBehaviour
     {
         _generationTime = _config.GenerationTime;
 
-        _currentRoomAmounts = 0;
+        DestroyAllRooms();
         _createdRooms.Clear();
+        _currentRoomAmounts = 0;
 
         CreateStartRoom();
         StartCoroutine(GenerationTime());

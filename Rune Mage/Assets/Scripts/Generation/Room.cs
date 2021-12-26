@@ -78,7 +78,8 @@ public class Room : MonoBehaviour
     public bool CheckAvailable()
     {
         var boxCollider = GetComponentInChildren<BoxCollider>();
-        var colliders = Physics.OverlapBox(transform.position, Vector3.Scale(boxCollider.gameObject.transform.localScale, boxCollider.size) / 2);
+        int layerMask = 1 << 14;
+        var colliders = Physics.OverlapBox(transform.position, Vector3.Scale(boxCollider.gameObject.transform.localScale, boxCollider.size) / 2, Quaternion.identity, layerMask);
         for (int i = 0; i < colliders.Length; i++)
         {
             var collider = colliders[i];
