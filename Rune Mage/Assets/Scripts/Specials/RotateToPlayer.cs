@@ -14,6 +14,7 @@ public class RotateToPlayer : MonoBehaviour, IExecute
 
     public void Execute()
     {
+        if (!_target) return;
         transform.LookAt(_target);
     }
 

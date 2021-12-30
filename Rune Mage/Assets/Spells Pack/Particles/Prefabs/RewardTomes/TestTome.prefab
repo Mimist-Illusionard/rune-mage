@@ -76,9 +76,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  _learnPrefab: {fileID: 5631821202973691364, guid: d1f93ff3c64c9c34486358e0e7f2bc06,
-    type: 3}
+      - m_Target: {fileID: 3553110589541336953}
+        m_TargetAssemblyTypeName: SpellTome, Assembly-CSharp
+        m_MethodName: HealPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3553110589541336953}
+        m_TargetAssemblyTypeName: SpellTome, Assembly-CSharp
+        m_MethodName: TeleportPlayerToTeleportPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _spell: {fileID: 0}
+  _hintRunes: {fileID: 0}
 --- !u!114 &-7268021642694304746
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,19 +1,25 @@
 using System.Collections;
+using System.Collections.Generic;
 
 using UnityEngine;
 
 
-public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, IInitialize
+public class RayObject : MonoBehaviour, ISpawnPoint, IDamage, ISpeed, IExecute, IInitialize
 {
+    [SerializeField] private Collider _collider;
     private Transform _spawnPoint;
     public float Damage { get; set; }
     public float Speed { get; set; }
 
     public bool NeedToDestroy = true;
     public bool IgnorePlayer;
+    
+    private List<Collider> _colliders = new List<Collider>();
+    private float _currentTime;
 
     private void Start()
     {
+        _currentTime = Speed;
         GameManager.Singleton.AddExecuteObject(this);
     }
 
@@ -30,6 +36,18 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
             transform.position = _spawnPoint.position;
             transform.rotation = _spawnPoint.rotation;
         }
+
+        var colliders = Physics.OverlapBox(transform.position, _collider.bounds.size / 2);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            var collider = colliders[i];
+            _colliders.Add(collider);
+        }
+
+        DamageLogic();
+
+        _colliders.Clear();
     }
 
     public void SetSpawnPoint(Transform spawnPoint)
@@ -37,31 +55,21 @@ public class RayObject : Interactable, ISpawnPoint, IDamage, ISpeed, IExecute, I
         _spawnPoint = spawnPoint;
     }
 
-    protected override void OnEnter(Collider other)
+    private void DamageLogic()
     {
-        if (other.gameObject.GetComponentInObject<Health>())
+        _currentTime -= Time.deltaTime;
+        if (_currentTime <= 0f)
         {
-            if (IgnorePlayer && other.tag == "Player") return;
-            else
-                StartCoroutine(DamageLogic(other));   
+            for (int i = 0; i < _colliders.Count; i++)
+            {
+                var collider = _colliders[i];
+                if (!collider.TryGetComponentInObject<Health>(out var health)) continue;
+
+                health.RemoveHealth(Damage);
+            }
+
+            _currentTime = Speed;
         }
-    }
-
-    protected override void OnExit(Collider other)
-    {
-    }
-
-    private IEnumerator DamageLogic(Collider other)
-    {
-        var health = other.gameObject.GetComponentInObject<Health>();
-
-        while (other)
-        {
-            yield return new WaitForSeconds(Speed);
-            health.RemoveHealth(Damage);
-        }
-
-        yield return null;
     }
 
     private void OnDestroy()

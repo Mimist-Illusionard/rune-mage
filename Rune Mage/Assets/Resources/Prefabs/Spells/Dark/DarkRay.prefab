@@ -208,9 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8e75006eaf874a8b06c070a1e96a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _collider: {fileID: 5883706671684823748}
   NeedToDestroy: 1
   IgnorePlayer: 0
 --- !u!65 &5883706671684823748

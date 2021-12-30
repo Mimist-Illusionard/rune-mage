@@ -6,7 +6,14 @@ using System;
 public class RewardSpellSystem : MonoBehaviour
 {
     [SerializeField] Transform _rewardSpawnpoint;
-    [SerializeField] private SpellReward[] _spellsRewards;    
+    [SerializeField] private SpellReward[] _spellsRewards;
+
+    [SerializeField] private bool _initialize;
+
+    private void Start()
+    {
+        if (_initialize) RandomReward();
+    }
 
     public void RandomReward()
     {

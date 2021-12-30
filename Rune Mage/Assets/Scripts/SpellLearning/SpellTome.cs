@@ -3,8 +3,10 @@
 
 public class SpellTome : Interactable
 {
-    [SerializeField] private GameObject _learnPrefab;
     [SerializeField] private Spell _spell;
+    [SerializeField] private HintRunes _hintRunes;
+
+    private Player _player;    
 
     public void SetSpell(Spell spell)
     {
@@ -14,26 +16,33 @@ public class SpellTome : Interactable
     protected override void OnEnter(Collider other)
     {
         if (!other.GetComponent<Player>()) return;
+        _player = other.GetComponent<Player>();
 
         if (_spell)
         {
-            GameObject.FindObjectOfType<HintRunes>().SetHintRunes(_spell);
+            if (!_hintRunes) GameObject.FindObjectOfType<HintRunes>().SetHintRunes(_spell);
+            else _hintRunes.SetHintRunes(_spell);
 
             SpellsSystem.Singleton.GetSpells().Add(_spell);
         }
 
-        var player = other.gameObject;
-        player.GetComponent<Health>().AddHealth(30f);
+        Destroy(gameObject);
+    }
 
-        player.GetComponent<CharacterController>().enabled = false;
+    public void TeleportPlayerToTeleportPosition()
+    {
+        _player.GetComponent<CharacterController>().enabled = false;
 
         var teleportPosition = GameObject.FindGameObjectWithTag("TeleportPosition").transform;
-        player.transform.position = teleportPosition.position;
-        player.transform.rotation = teleportPosition.rotation;
+        _player.transform.position = teleportPosition.position;
+        _player.transform.rotation = teleportPosition.rotation;
 
-        player.GetComponent<CharacterController>().enabled = true;
+        _player.GetComponent<CharacterController>().enabled = true;
+    }
 
-        Destroy(gameObject);
+    public void HealPlayer()
+    {
+        _player.GetComponent<Health>().AddHealth(30f);
     }
 
     protected override void OnExit(Collider other)

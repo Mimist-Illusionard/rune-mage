@@ -74,6 +74,7 @@ public class GridGenerator : MonoBehaviour
     {
         foreach (var room in _createdRooms)
         {
+            if (!room) continue;
             Destroy(room.gameObject);
         }
     }
@@ -244,7 +245,7 @@ public class GridGenerator : MonoBehaviour
                 var door = createdRoom.Doors[j];
 
                 var wall = Instantiate(_config.WallPrefab, door.Object.transform);
-                wall.transform.position = new Vector3(wall.transform.position.x, 2.47f, wall.transform.position.z);
+                wall.transform.position = new Vector3(wall.transform.position.x, 2.77f, wall.transform.position.z);
 
                 if (createdRoom.CanBeSecretRoom) createdRoom.SecretRoom = true;
             }
@@ -260,6 +261,7 @@ public class GridGenerator : MonoBehaviour
     //Find random rooms to made from it secretRoom
     private IEnumerator CreateSecretRooms()
     {
+        var time = 3f;
         var secretRooms = 0;
         if (_config.Constant) secretRooms = _config.SecretsAmount;
         else secretRooms = _currentRoomAmounts / _config.SecretsDivide;
@@ -267,13 +269,21 @@ public class GridGenerator : MonoBehaviour
         while (true)
         {
             var room = _createdRooms[UnityEngine.Random.Range(0, _createdRooms.Count)];
+            time -= Time.deltaTime;
 
+            if (time <= 0f) break;
             if (secretRooms <= 0) break;
             if (room.SecretRoom == false) continue;
             if (room.UsedDoors.Count > 1) continue;
 
             var wall = Instantiate(_config.SecretWallPrefab, room.UsedDoors[0].Object.transform);
             wall.transform.position = new Vector3(wall.transform.position.x, 2.47f, wall.transform.position.z);
+
+            var item = Instantiate(_config.ItemsPrefabs[UnityEngine.Random.Range(0, _config.ItemsPrefabs.Length)]);
+            item.transform.position = room.transform.position;
+            item.transform.parent = room.transform;
+
+            room.SecretRoom = false;
             secretRooms--;
 
             yield return new WaitForSeconds(0.15f);
