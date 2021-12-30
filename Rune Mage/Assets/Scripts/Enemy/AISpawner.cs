@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class AISpawner : MonoBehaviour
 {
     public int EnemyPoints;
     private AIController aIController;
+
+    public Action OnWavesEnd; 
 
     [Header("EnemysLists")]
     public List<GameObject> PointsEnemys_1 = new List<GameObject>();
@@ -25,7 +31,12 @@ public class AISpawner : MonoBehaviour
         aIController = gameObject.GetComponent<AIController>();
     }
 
-    void Start()
+    private void Start()
+    {
+        StartWaves();
+    }
+
+    public void StartWaves()
     {
         SpawnPoints = AIController.Singleton.MainPoints;
         StartCoroutine(FirstWave());
@@ -106,6 +117,7 @@ public class AISpawner : MonoBehaviour
         }
         else
         {
+            OnWavesEnd?.Invoke();
             gameObject.GetComponent<RewardSpellSystem>().RandomReward();
         }
     }

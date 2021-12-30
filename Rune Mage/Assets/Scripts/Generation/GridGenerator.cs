@@ -273,7 +273,7 @@ public class GridGenerator : MonoBehaviour
 
             if (time <= 0f) break;
             if (secretRooms <= 0) break;
-            if (room.SecretRoom == false) continue;
+            if (room.SecretRoom == false || room.IsSecretRoom) continue;
             if (room.UsedDoors.Count > 1) continue;
 
             var wall = Instantiate(_config.SecretWallPrefab, room.UsedDoors[0].Object.transform);
@@ -283,7 +283,7 @@ public class GridGenerator : MonoBehaviour
             item.transform.position = room.transform.position;
             item.transform.parent = room.transform;
 
-            room.SecretRoom = false;
+            room.IsSecretRoom = true;
             secretRooms--;
 
             yield return new WaitForSeconds(0.15f);
@@ -331,8 +331,14 @@ public class GridGenerator : MonoBehaviour
                     * Math.Sign(chosenRoomDoor.Object.transform.localPosition.z)));
                 break;
             default:
+                $"There isn't implementation for {chosenRoomDoor.Direction}".LogError();
                 break;
         }
+    }
+
+    public GenerationConfig GetConfig()
+    {
+        return _config;
     }
 }
 

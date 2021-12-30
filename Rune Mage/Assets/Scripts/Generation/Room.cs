@@ -8,12 +8,58 @@ public class Room : MonoBehaviour
 {
     public Transform Point;
 
-    public RoomType RoomType = RoomType.Usual;
+    [Header("Room Settings")]
     public bool SecretRoom = true;
     public bool CanBeSecretRoom = false;
+    [HideInInspector()] 
+    public bool IsSecretRoom = false;
     public List<Door> Doors = new List<Door>();
     public List<Door> UsedDoors;
 
+    [Header("Enemy Spawn Settings")]
+    public List<GameObject> MainPoints;
+    public List<GameObject> Enemies;
+
+    private List<GameObject> _createdBlockDoors;
+    private bool _isTriggered;
+
+    #region Enemy Spawning Methods
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_isTriggered || SecretRoom || !other.GetComponent<Player>()) return;
+
+        AIController.Singleton.MainPoints.Clear();
+        AIController.Singleton.MainPoints = MainPoints;
+
+        var aiSpawner = GameObject.FindObjectOfType<AISpawner>();
+        aiSpawner.OnWavesEnd += DestroyExitBlockers;
+        aiSpawner.PointsEnemys_1 = Enemies;
+        aiSpawner.StartWaves();
+
+        var generationConfig = GameObject.FindObjectOfType<GridGenerator>().GetConfig();
+        for (int i = 0; i < UsedDoors.Count; i++)
+        {
+            var blockDoor = Instantiate(generationConfig.BlockerDoor, UsedDoors[i].Object.transform, UsedDoors[i].Object.transform);
+            _createdBlockDoors.Add(blockDoor);
+        }
+
+        _isTriggered = true;
+    }
+
+    private void DestroyExitBlockers()
+    {
+        "Destroying blockers".Log();
+        for (int i = 0; i < _createdBlockDoors.Count; i++)
+        {
+            Destroy(_createdBlockDoors[i]);
+        }
+
+        GameObject.FindObjectOfType<AISpawner>().OnWavesEnd -= DestroyExitBlockers;
+    }
+
+    #endregion
+
+    #region Generation Methods
     public Door FindNearDoor(Door target)
     {
         Door nearDoor = default;
@@ -92,6 +138,7 @@ public class Room : MonoBehaviour
 
         return true;
     }
+    #endregion
 }
 
 [Serializable]
@@ -116,12 +163,5 @@ public enum Direction
     None = 0,
     X    = 1,
     Z    = 2,
-}
-
-public enum RoomType
-{
-    None     = 0,
-    Usual    = 1,
-    Treasure = 2,
-    Special  = 3
+    Y    = 3
 }

@@ -21,6 +21,7 @@ public class GenerationConfig : ScriptableObject
     [Header("Prefabs")]
     public GameObject WallPrefab;
     public GameObject SecretWallPrefab;
+    public GameObject BlockerDoor;
 
     [Header("Boss Room Prefabs")]
     public GridRoom Boss_1;

@@ -23,6 +23,8 @@ MonoBehaviour:
     type: 3}
   SecretWallPrefab: {fileID: 3029041426220536530, guid: 63c7c52f1912fbf48b9443de4bedd538,
     type: 3}
+  BlockerDoor: {fileID: 3029041426220536530, guid: 69d7825dae9c9614bb2cdd75be3db628,
+    type: 3}
   Boss_1:
     Probability: 0
     IsNeedCreate: 0

@@ -344,8 +344,8 @@ MonoBehaviour:
     IsNeedCreate: 0
     Amount: 0
     Prefabs:
-    - {fileID: 4659126488117710819, guid: 017eb870bdd858e4b82662efc6b7740e, type: 3}
     - {fileID: 4659126488117710819, guid: c3960eb8611cc5d4791e1b97c0700bf7, type: 3}
+    - {fileID: 4659126488117710819, guid: 017eb870bdd858e4b82662efc6b7740e, type: 3}
   - Probability: 20
     IsNeedCreate: 0
     Amount: 2

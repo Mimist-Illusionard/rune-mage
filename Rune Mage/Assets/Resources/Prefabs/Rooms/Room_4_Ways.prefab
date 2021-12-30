@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659126488117710817}
   - component: {fileID: 4659126488117710822}
+  - component: {fileID: 4764724048491419482}
   m_Layer: 0
   m_Name: Room_4_Ways
   m_TagString: Untagged
@@ -175,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Point: {fileID: 3968797152642219411}
-  RoomType: 1
   SecretRoom: 1
   CanBeSecretRoom: 1
   Doors:
@@ -192,6 +192,21 @@ MonoBehaviour:
     Direction: 1
     Type: 3
   UsedDoors: []
+  MainPoints: []
+  Enemies: []
+--- !u!65 &4764724048491419482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659126488117710819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 6, z: 15}
+  m_Center: {x: 0, y: 2.5, z: 0}
 --- !u!1 &4659126488820158995
 GameObject:
   m_ObjectHideFlags: 0
