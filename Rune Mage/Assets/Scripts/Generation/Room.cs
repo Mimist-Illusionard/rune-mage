@@ -9,29 +9,32 @@ public class Room : MonoBehaviour
     public Transform Point;
 
     [Header("Room Settings")]
-    public bool SecretRoom = true;
     public bool CanBeSecretRoom = false;
+    [HideInInspector()]
+    public bool SecretRoom = true;
     [HideInInspector()] 
     public bool IsSecretRoom = false;
     public List<Door> Doors = new List<Door>();
     public List<Door> UsedDoors;
 
     [Header("Enemy Spawn Settings")]
+    public int EnemyPoints;
     public List<GameObject> MainPoints;
     public List<GameObject> Enemies;
 
-    private List<GameObject> _createdBlockDoors;
+    private List<GameObject> _createdBlockDoors = new List<GameObject>();
     private bool _isTriggered;
 
     #region Enemy Spawning Methods
     private void OnTriggerEnter(Collider other)
     {
-        if (_isTriggered || SecretRoom || !other.GetComponent<Player>()) return;
+        if (_isTriggered || IsSecretRoom || !other.GetComponent<Player>()) return;
 
         AIController.Singleton.MainPoints.Clear();
         AIController.Singleton.MainPoints = MainPoints;
 
         var aiSpawner = GameObject.FindObjectOfType<AISpawner>();
+        aiSpawner.EnemyPoints = EnemyPoints;
         aiSpawner.OnWavesEnd += DestroyExitBlockers;
         aiSpawner.PointsEnemys_1 = Enemies;
         aiSpawner.StartWaves();
@@ -39,7 +42,8 @@ public class Room : MonoBehaviour
         var generationConfig = GameObject.FindObjectOfType<GridGenerator>().GetConfig();
         for (int i = 0; i < UsedDoors.Count; i++)
         {
-            var blockDoor = Instantiate(generationConfig.BlockerDoor, UsedDoors[i].Object.transform, UsedDoors[i].Object.transform);
+            var blockDoor = Instantiate(generationConfig.BlockerDoor, UsedDoors[i].Object.transform);
+            blockDoor.transform.position = new Vector3(blockDoor.transform.position.x, 2.77f, blockDoor.transform.position.z);
             _createdBlockDoors.Add(blockDoor);
         }
 

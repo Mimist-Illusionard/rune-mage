@@ -246,6 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4659126488117710817}
   - component: {fileID: 4659126488117710822}
+  - component: {fileID: 4645191703627517659}
   m_Layer: 0
   m_Name: StartRoom
   m_TagString: Untagged
@@ -282,9 +283,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Point: {fileID: 0}
-  RoomType: 1
   SecretRoom: 0
   CanBeSecretRoom: 0
+  IsSecretRoom: 0
   Doors:
   - Object: {fileID: 4659126487953076735}
     Direction: 1
@@ -299,6 +300,21 @@ MonoBehaviour:
     Direction: 2
     Type: 2
   UsedDoors: []
+  EnemyPoints: 0
+  MainPoints: []
+  Enemies: []
+--- !u!114 &4645191703627517659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4659126488117710819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5dff1f44e2f886429de6c1fdeb3b991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4659126488820158995
 GameObject:
   m_ObjectHideFlags: 0

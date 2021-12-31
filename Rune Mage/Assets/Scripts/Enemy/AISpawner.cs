@@ -33,7 +33,7 @@ public class AISpawner : MonoBehaviour
 
     private void Start()
     {
-        StartWaves();
+        //StartWaves();
     }
 
     public void StartWaves()
@@ -118,7 +118,7 @@ public class AISpawner : MonoBehaviour
         else
         {
             OnWavesEnd?.Invoke();
-            gameObject.GetComponent<RewardSpellSystem>().RandomReward();
+            //gameObject.GetComponent<RewardSpellSystem>().RandomReward();
         }
     }
 
