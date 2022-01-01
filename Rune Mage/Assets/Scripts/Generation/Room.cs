@@ -39,9 +39,11 @@ public class Room : MonoBehaviour
         aiSpawner.PointsEnemys_1 = Enemies;
         aiSpawner.StartWaves();
 
-        var generationConfig = GameObject.FindObjectOfType<GridGenerator>().GetConfig();
+        var generationConfig = GameObject.FindObjectOfType<Generator>().GetConfig();
         for (int i = 0; i < UsedDoors.Count; i++)
         {
+            if (UsedDoors[i].ConnectedRoom.IsSecretRoom) continue;
+
             var blockDoor = Instantiate(generationConfig.BlockerDoor, UsedDoors[i].Object.transform);
             blockDoor.transform.position = new Vector3(blockDoor.transform.position.x, 2.77f, blockDoor.transform.position.z);
             _createdBlockDoors.Add(blockDoor);
@@ -119,10 +121,13 @@ public class Room : MonoBehaviour
         return null;
     }
 
-    public void RemoveDoor(Door door)
+    public void RemoveDoor(Door door, Room connectedRoom)
     {
         if (Doors.Remove(door))
+        {
             UsedDoors.Add(door);
+            door.ConnectedRoom = connectedRoom;
+        }
     }
 
     public bool CheckAvailable()
@@ -149,6 +154,7 @@ public class Room : MonoBehaviour
 public class Door
 {
     public GameObject Object;
+    public Room ConnectedRoom;
     public Direction Direction;
     public DoorType Type;
 }
