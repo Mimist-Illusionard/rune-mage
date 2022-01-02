@@ -19,7 +19,7 @@ MonoBehaviour:
   SecretsAmount: 2
   ItemsPrefabs:
   - {fileID: 8128537416906966510, guid: 7da900712bb24cc409d58f366645967e, type: 3}
-  WallPrefab: {fileID: 3029041426220536530, guid: 691b423c759523b4d86e0859154c148f,
+  WallPrefab: {fileID: 3029041426220536530, guid: cd915d1448bfc2f4b8e049eab84a71ba,
     type: 3}
   SecretWallPrefab: {fileID: 3029041426220536530, guid: 63c7c52f1912fbf48b9443de4bedd538,
     type: 3}

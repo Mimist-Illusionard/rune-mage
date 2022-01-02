@@ -154,6 +154,7 @@ public class Room : MonoBehaviour
 public class Door
 {
     public GameObject Object;
+    public Transform WallSpawnPoint;
     public Room ConnectedRoom;
     public Direction Direction;
     public DoorType Type;

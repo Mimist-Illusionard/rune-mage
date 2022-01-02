@@ -141,23 +141,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Point: {fileID: 3968797152642219411}
-  RoomType: 1
-  SecretRoom: 0
   CanBeSecretRoom: 0
+  SecretRoom: 0
+  IsSecretRoom: 0
   Doors:
   - Object: {fileID: 4659126487953076735}
+    WallSpawnPoint: {fileID: 4659126487953076732}
+    ConnectedRoom: {fileID: 0}
     Direction: 1
     Type: 4
   - Object: {fileID: 4659126488820158995}
+    WallSpawnPoint: {fileID: 4659126488820158992}
+    ConnectedRoom: {fileID: 0}
     Direction: 1
     Type: 3
   - Object: {fileID: 1362830600341245919}
+    WallSpawnPoint: {fileID: 1952672004336768700}
+    ConnectedRoom: {fileID: 0}
     Direction: 2
     Type: 2
   - Object: {fileID: 4762770138399067167}
+    WallSpawnPoint: {fileID: 3968797152642219411}
+    ConnectedRoom: {fileID: 0}
     Direction: 2
     Type: 1
   UsedDoors: []
+  EnemyPoints: 0
+  MainPoints: []
+  Enemies: []
 --- !u!1 &4659126488820158995
 GameObject:
   m_ObjectHideFlags: 0

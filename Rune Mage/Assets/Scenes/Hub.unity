@@ -11086,7 +11086,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _teleportPoint: {fileID: 5382860346851727106}
+  _teleportPoint: {fileID: 5382860346851727107}
 --- !u!114 &2915903673064324301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11483,12 +11483,6 @@ PrefabInstance:
     - {fileID: 5352890573912132818, guid: 0c99ce64498eb1544b2ddda68ffece8a, type: 3}
     - {fileID: 7724809595890902946, guid: 0c99ce64498eb1544b2ddda68ffece8a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c99ce64498eb1544b2ddda68ffece8a, type: 3}
---- !u!4 &5382860346851727106 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 553926660, guid: 0c99ce64498eb1544b2ddda68ffece8a,
-    type: 3}
-  m_PrefabInstance: {fileID: 5382860346851727105}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5382860346851727107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5382860346544051543, guid: 0c99ce64498eb1544b2ddda68ffece8a,

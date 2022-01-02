@@ -244,7 +244,7 @@ public class Generator : MonoBehaviour
             {
                 var door = createdRoom.Doors[j];
 
-                var wall = Instantiate(_config.WallPrefab, door.Object.transform);
+                var wall = Instantiate(_config.WallPrefab, door.WallSpawnPoint.transform);
                 wall.transform.position = new Vector3(wall.transform.position.x, 2.77f, wall.transform.position.z);
 
                 if (createdRoom.CanBeSecretRoom) createdRoom.SecretRoom = true;
@@ -258,7 +258,7 @@ public class Generator : MonoBehaviour
         }
     }
 
-    //Find random rooms to made from it secretRoom
+    //Find random rooms to made secretRoom from it
     private IEnumerator CreateSecretRooms()
     {
         var time = 3f;
@@ -277,11 +277,11 @@ public class Generator : MonoBehaviour
             if (room.UsedDoors.Count > 1) continue;
 
             var wall = Instantiate(_config.SecretWallPrefab, room.UsedDoors[0].Object.transform);
-            wall.transform.position = new Vector3(wall.transform.position.x, 2.47f, wall.transform.position.z);
+            wall.transform.position = new Vector3(wall.transform.position.x, 2.52f, wall.transform.position.z);
 
-            var item = Instantiate(_config.ItemsPrefabs[UnityEngine.Random.Range(0, _config.ItemsPrefabs.Length)]);
-            item.transform.position = room.transform.position;
-            item.transform.parent = room.transform;
+            var secretItem = Instantiate(_config.ItemsPrefabs[UnityEngine.Random.Range(0, _config.ItemsPrefabs.Length)]);
+            secretItem.transform.position = room.transform.position;
+            secretItem.transform.parent = room.transform;
 
             room.IsSecretRoom = true;
             secretRooms--;
