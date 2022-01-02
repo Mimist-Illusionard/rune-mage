@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class CoroutineManager : MonoBehaviour
+public class CoroutineManager : BaseSingleton<CoroutineManager>
 {
     public static CoroutineManager Singleton { get; private set; }
 

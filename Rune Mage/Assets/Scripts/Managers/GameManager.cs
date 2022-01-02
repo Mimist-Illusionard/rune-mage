@@ -1,17 +1,9 @@
 ﻿using System.Collections.Generic;
 
-using UnityEngine;
 
-
-public class GameManager : MonoBehaviour
+public class GameManager : BaseSingleton<GameManager>
 {
     private List<IExecute> _executes = new List<IExecute>();
-    public static GameManager Singleton { get; private set; }
-
-    private void Awake()
-    {
-        Singleton = this;
-    }
 
     private void Update()
     {

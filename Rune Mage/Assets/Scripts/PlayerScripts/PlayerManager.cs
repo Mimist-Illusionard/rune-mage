@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class PlayerManager : MonoBehaviour, IExecute
+public class PlayerManager : BaseSingleton<PlayerManager>, IExecute
 {
     private Player _player;
 	private MainCamera _camera;
@@ -9,13 +9,7 @@ public class PlayerManager : MonoBehaviour, IExecute
 	private Health _health;
 	private Mana _mana => GetComponent<Mana>();
 	private Stamina _stamina => GetComponent<Stamina>();
-
-    public static PlayerManager Singleton { get; private set; }
-
-	private void Awake()
-	{
-		Singleton = this;
-	}
+	private Currency _currency => GetComponent<Currency>();
 
     private void Start()
 	{ 
@@ -56,6 +50,11 @@ public class PlayerManager : MonoBehaviour, IExecute
 	public Stamina GetStamina()
     {
 		return _stamina;
+    }
+
+	public Currency GetCurrency()
+    {
+		return _currency;
     }
 
 	public Health GetHealth()

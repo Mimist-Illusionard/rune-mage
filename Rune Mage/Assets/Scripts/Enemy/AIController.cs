@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIController : MonoBehaviour,IExecute
+
+public class AIController : BaseSingleton<AIController>, IExecute
 {
     public List<IEnemys> enemys = new List<IEnemys>();
-    public static AIController Singleton { get; private set; }
     private AISpawner aISpawner;
     [HideInInspector] public List<GameObject> MainPoints = new List<GameObject>();
     private GameObject _player;
@@ -13,18 +12,16 @@ public class AIController : MonoBehaviour,IExecute
     public float AggresiveDistance;
     public float Y_PointHeight;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Singleton = this;
+        base.Awake();
+
         MainPoints.AddRange(GameObject.FindGameObjectsWithTag("MainPoint"));
+
         _player = FindObjectOfType<Player>().gameObject;
+        aISpawner = GetComponent<AISpawner>();
+
         GameManager.Singleton.AddExecuteObject(this);
-        aISpawner = gameObject.GetComponent<AISpawner>();
-    }
-
-    private void Start()
-    {
-
     }
 
     public void RemoveEnemy(EnemyMain enemy)

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WeaponInventory : MonoBehaviour
 {
-    [SerializeField] private PlayerAnimator _aniamtor;
+    [SerializeField] private PlayerAnimator _animator;
     [SerializeField] private Weapon _currentWeapon;
 
     [SerializeField] private Transform _swordSpawnpoint;
@@ -17,7 +17,7 @@ public class WeaponInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && _currentWeapon != null && _currentWeapon.Durability > 0)
         {
-            _aniamtor.PlayAttackAnimation();
+            _animator.PlayAttackAnimation();
             UseWeaponLogic();
 
             if (_currentWeapon.Durability <= 0)

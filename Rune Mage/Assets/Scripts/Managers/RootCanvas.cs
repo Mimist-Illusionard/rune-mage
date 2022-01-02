@@ -1,12 +1,5 @@
-using UnityEngine;
 
 
-public class RootCanvas : MonoBehaviour
+public class RootCanvas : BaseSingleton<RootCanvas>
 {
-    public static RootCanvas Singleton { get; private set; }
-
-    private void Awake()
-    {
-        Singleton = this;
-    }
 }

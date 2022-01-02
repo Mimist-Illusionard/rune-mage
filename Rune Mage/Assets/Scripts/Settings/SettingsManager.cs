@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SettingsManager : MonoBehaviour
+
+public class SettingsManager : BaseSingleton<SettingsManager>
 {
     public AudioMixer Mixer;
 
@@ -11,13 +10,12 @@ public class SettingsManager : MonoBehaviour
 
     private bool _fullScreen = true;
 
-    public static SettingsManager Singleton;
-
     private Resolution _resolution;
 
-    private void Awake()
+    protected override void Awake()
     {
-        Singleton = this;
+        base.Awake();
+
         if (PlayerPrefs.HasKey("FPSLock"))
         {
             ChangeFPS(PlayerPrefs.GetInt("FPSLock"));

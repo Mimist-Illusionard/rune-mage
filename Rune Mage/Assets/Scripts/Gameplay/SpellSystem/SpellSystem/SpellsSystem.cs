@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SpellsSystem : MonoBehaviour
+public class SpellsSystem : BaseSingleton<SpellsSystem>
 {
     [SerializeField] private List<Spell> _spells = new List<Spell>();
     [SerializeField] private int _maxRunesAmount;
@@ -16,12 +16,6 @@ public class SpellsSystem : MonoBehaviour
     public Action OnSpellCasted;
 
     public List<Rune> _currentRunes = new List<Rune>();
-    public static SpellsSystem Singleton { get; private set; }
-
-    private void Awake()
-    {
-        Singleton = this;
-    }
 
     public bool AddNewRune(Rune rune)
     {
