@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class HardSpawnAttack : IEnemyAction
 {
+    public enum Pos { Obj, Point };
+    public Pos pos;
     public GameObject HardBulletPref;
     public int AttacksCount;
     public float TickTime;
@@ -33,9 +35,11 @@ public class HardSpawnAttack : IEnemyAction
             if (!bject) break;
             yield return new WaitForSeconds(TickTime);
             var Bul = Object.Instantiate(HardBulletPref,null);
-            Bul.gameObject.transform.position = bject.gameObject.transform.position;
+            if(pos == Pos.Obj) { Bul.gameObject.transform.position = bject.gameObject.transform.position; }
+            else { Bul.gameObject.transform.position = bject.gameObject.transform.position; }
+            { Bul.gameObject.transform.position = bject.GetComponentInObject<Spawnpoint>().transform.position; }
             Bul.transform.Rotate(new Vector3(Random.Range(-135, -45), Random.Range(-60, 60), Random.Range(-60, 60)));
-            Bul.GetComponent<SimpleHardBul>().Target = bject.GetComponent<EnemyData>().target.gameObject;
+            if(Bul.GetComponent<SimpleHardBul>()) Bul.GetComponent<SimpleHardBul>().Target = bject.GetComponent<EnemyData>().target.gameObject;
         }
         if (_parent != null)
         { _parent.ExitToMain(); }
