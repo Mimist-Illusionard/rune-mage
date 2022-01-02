@@ -8,12 +8,64 @@ public class Room : MonoBehaviour
 {
     public Transform Point;
 
-    public RoomType RoomType = RoomType.Usual;
-    public bool SecretRoom = true;
+    [Header("Room Settings")]
     public bool CanBeSecretRoom = false;
+    [HideInInspector()]
+    public bool SecretRoom = true;
+    [HideInInspector()] 
+    public bool IsSecretRoom = false;
     public List<Door> Doors = new List<Door>();
     public List<Door> UsedDoors;
 
+    [Header("Enemy Spawn Settings")]
+    public int EnemyPoints;
+    public List<GameObject> MainPoints;
+    public List<GameObject> Enemies;
+
+    private List<GameObject> _createdBlockDoors = new List<GameObject>();
+    private bool _isTriggered;
+
+    #region Enemy Spawning Methods
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_isTriggered || IsSecretRoom || !other.GetComponent<Player>()) return;
+
+        AIController.Singleton.MainPoints.Clear();
+        AIController.Singleton.MainPoints = MainPoints;
+
+        var aiSpawner = GameObject.FindObjectOfType<AISpawner>();
+        aiSpawner.EnemyPoints = EnemyPoints;
+        aiSpawner.OnWavesEnd += DestroyExitBlockers;
+        aiSpawner.PointsEnemys_1 = Enemies;
+        aiSpawner.StartWaves();
+
+        var generationConfig = GameObject.FindObjectOfType<Generator>().GetConfig();
+        for (int i = 0; i < UsedDoors.Count; i++)
+        {
+            if (UsedDoors[i].ConnectedRoom.IsSecretRoom) continue;
+
+            var blockDoor = Instantiate(generationConfig.BlockerDoor, UsedDoors[i].Object.transform);
+            blockDoor.transform.position = new Vector3(blockDoor.transform.position.x, 2.77f, blockDoor.transform.position.z);
+            _createdBlockDoors.Add(blockDoor);
+        }
+
+        _isTriggered = true;
+    }
+
+    private void DestroyExitBlockers()
+    {
+        "Destroying blockers".Log();
+        for (int i = 0; i < _createdBlockDoors.Count; i++)
+        {
+            Destroy(_createdBlockDoors[i]);
+        }
+
+        GameObject.FindObjectOfType<AISpawner>().OnWavesEnd -= DestroyExitBlockers;
+    }
+
+    #endregion
+
+    #region Generation Methods
     public Door FindNearDoor(Door target)
     {
         Door nearDoor = default;
@@ -69,16 +121,20 @@ public class Room : MonoBehaviour
         return null;
     }
 
-    public void RemoveDoor(Door door)
+    public void RemoveDoor(Door door, Room connectedRoom)
     {
         if (Doors.Remove(door))
+        {
             UsedDoors.Add(door);
+            door.ConnectedRoom = connectedRoom;
+        }
     }
 
     public bool CheckAvailable()
     {
         var boxCollider = GetComponentInChildren<BoxCollider>();
-        var colliders = Physics.OverlapBox(transform.position, Vector3.Scale(boxCollider.gameObject.transform.localScale, boxCollider.size) / 2);
+        int layerMask = 1 << 14;
+        var colliders = Physics.OverlapBox(transform.position, Vector3.Scale(boxCollider.gameObject.transform.localScale, boxCollider.size) / 2, Quaternion.identity, layerMask);
         for (int i = 0; i < colliders.Length; i++)
         {
             var collider = colliders[i];
@@ -91,12 +147,14 @@ public class Room : MonoBehaviour
 
         return true;
     }
+    #endregion
 }
 
 [Serializable]
 public class Door
 {
     public GameObject Object;
+    public Room ConnectedRoom;
     public Direction Direction;
     public DoorType Type;
 }
@@ -115,12 +173,5 @@ public enum Direction
     None = 0,
     X    = 1,
     Z    = 2,
-}
-
-public enum RoomType
-{
-    None     = 0,
-    Usual    = 1,
-    Treasure = 2,
-    Special  = 3
+    Y    = 3
 }

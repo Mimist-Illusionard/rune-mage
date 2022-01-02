@@ -190,9 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8e75006eaf874a8b06c070a1e96a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _collider: {fileID: 7118405465812198198}
   NeedToDestroy: 0
   IgnorePlayer: 1
 --- !u!114 &7118405465812198196

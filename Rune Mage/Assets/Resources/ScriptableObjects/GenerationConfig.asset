@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f99a26f8053683545b820e3872417070, type: 3}
   m_Name: GenerationConfig
   m_EditorClassIdentifier: 
-  MaxRoomAmount: 20
+  MaxRoomAmount: 10
   GenerationTime: 15
   Constant: 1
   SecretsDivide: 10
   SecretsAmount: 2
-  WallPrefab: {fileID: 4589293187087311979, guid: 9424dce4ee4aa2c41a64e23663aa6e26,
+  ItemsPrefabs:
+  - {fileID: 8128537416906966510, guid: 7da900712bb24cc409d58f366645967e, type: 3}
+  WallPrefab: {fileID: 3029041426220536530, guid: 691b423c759523b4d86e0859154c148f,
     type: 3}
-  SecretWallPrefab: {fileID: 4589293187087311979, guid: 41a0093d0515c8c45a39b6febb2a3229,
+  SecretWallPrefab: {fileID: 3029041426220536530, guid: 63c7c52f1912fbf48b9443de4bedd538,
+    type: 3}
+  BlockerDoor: {fileID: 3029041426220536530, guid: 69d7825dae9c9614bb2cdd75be3db628,
     type: 3}
   Boss_1:
     Probability: 0

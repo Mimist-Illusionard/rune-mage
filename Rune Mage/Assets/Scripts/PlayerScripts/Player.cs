@@ -37,7 +37,7 @@ public class Player : MonoBehaviour, IExecute
 		{
 			Sprint();
 			Move();
-			GameGravity();
+			//GameGravity();
 			Jump();
 		}
 	}
