@@ -11,9 +11,6 @@ GameObject:
   - component: {fileID: 5924509135024863382}
   - component: {fileID: 5924509135024863385}
   - component: {fileID: 7134083663425231943}
-  - component: {fileID: 5924509135024863387}
-  - component: {fileID: 5924509135024863384}
-  - component: {fileID: 5824166658953441912}
   m_Layer: 11
   m_Name: ScorchingLightAllVFX
   m_TagString: Untagged
@@ -65,50 +62,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5924509135024863387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924509135024863383}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad8e75006eaf874a8b06c070a1e96a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  NeedToDestroy: 0
-  IgnorePlayer: 1
---- !u!114 &5924509135024863384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924509135024863383}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a075db5858185408a1a0f5b56020ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyTime: 10
-  Initialize: 1
---- !u!114 &5824166658953441912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924509135024863383}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f2a7c796389bb840b722bf24f1502ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startPostionOffset: {x: 0, y: -1, z: 0}
 --- !u!1001 &5924509135749111582
 PrefabInstance:
   m_ObjectHideFlags: 0

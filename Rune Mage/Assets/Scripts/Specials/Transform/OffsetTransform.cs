@@ -1,14 +1,14 @@
 using UnityEngine;
 
 
-public class OffsetTransform : MonoBehaviour
+public class OffsetTransform : BaseOnStart
 {
     [SerializeField] private Vector3 _startPostionOffset;
-    
-    private void Start()
+
+    public override void Logic()
     {
-        transform.position = new Vector3(gameObject.transform.position.x + _startPostionOffset.x, 
-            gameObject.transform.position.y + _startPostionOffset.y, 
+        transform.position = new Vector3(gameObject.transform.position.x + _startPostionOffset.x,
+            gameObject.transform.position.y + _startPostionOffset.y,
             gameObject.transform.position.z + _startPostionOffset.z);
 
         Destroy(this);

@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyParticleAfterEnd : MonoBehaviour
+
+public class DestroyParticleAfterEnd : BaseOnStart
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Logic()
     {
         ParticleSystem particle = gameObject.GetComponent<ParticleSystem>();
-        Destroy(gameObject, particle.duration);
-    } 
+        Destroy(gameObject, particle.main.duration);
+    }
 }

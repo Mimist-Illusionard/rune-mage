@@ -1,13 +1,13 @@
 using UnityEngine;
 
 
-public class TeleportPlayerToPoint : MonoBehaviour
+public class TeleportPlayerToPoint : BaseOnStart
 {
     public Transform TeleportPosition;
 
-    private void Start()
+    public override void Logic()
     {
         var player = GameObject.FindObjectOfType<Player>();
         player.transform.position = TeleportPosition.position;
-    }    
+    }   
 }

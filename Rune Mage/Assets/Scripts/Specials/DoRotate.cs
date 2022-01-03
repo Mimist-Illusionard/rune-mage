@@ -3,7 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 
 
-public class DoRotate : MonoBehaviour
+public class DoRotate : BaseOnStart
 {
     public Vector3 RotateVector;
     public float RotateDuration;
@@ -11,10 +11,9 @@ public class DoRotate : MonoBehaviour
     public bool Initialize;
     public bool Infinite;
 
-    private void Start()
+    public override void Logic()
     {
-        if (Initialize)
-            Rotate();
+        Rotate();
     }
 
     public void Rotate()

@@ -19552,7 +19552,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6643032628959862689}
-  - component: {fileID: 7480000146186341007}
   m_Layer: 0
   m_Name: HealChoseSpell
   m_TagString: Untagged
@@ -19577,17 +19576,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &7480000146186341007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7933973811724348490}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a075db5858185408a1a0f5b56020ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DestroyTime: 5
-  Initialize: 1

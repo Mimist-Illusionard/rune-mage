@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
 
-public class DestroyIsHasPlayer : MonoBehaviour
+public class DestroyIsHasPlayer : BaseOnStart
 {
-    private void Start()
+    public override void Logic()
     {
         if (GameObject.FindObjectsOfType<Player>().Length >= 2)
         {

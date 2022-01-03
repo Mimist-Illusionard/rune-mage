@@ -1,12 +1,12 @@
 using UnityEngine;
 
 
-public class SetAxisRotation : MonoBehaviour
+public class SetAxisRotation : BaseOnStart
 {
     [SerializeField] private float _axisRotation;
     [SerializeField] private AxisType[] _axises;
 
-    private void Start()
+    public override void Logic()
     {
         SetRotation();
     }

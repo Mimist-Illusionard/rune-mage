@@ -3577,7 +3577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a925f3860d1ed4cae09246df191cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _aniamtor: {fileID: 344229539}
+  _animator: {fileID: 344229539}
   _currentWeapon: {fileID: 0}
   _swordSpawnpoint: {fileID: 4755512210479130338}
   _spheresSpawnpoints: []

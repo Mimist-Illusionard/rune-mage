@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 
-public class DoScale : MonoBehaviour
+public class DoScale : BaseOnStart
 {
     [SerializeField] private Vector3 _scaleVector;
     [SerializeField] private float _scaleDuration;
@@ -14,9 +14,9 @@ public class DoScale : MonoBehaviour
 
     public UnityEvent Event;
 
-    private void Start()
+    public override void Logic()
     {
-        if (Initialize) Scale();
+        Scale();
     }
 
     public void Scale()

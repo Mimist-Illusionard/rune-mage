@@ -107,9 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad8e75006eaf874a8b06c070a1e96a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _collider: {fileID: 7311142671377372210}
   NeedToDestroy: 0
   IgnorePlayer: 0
 --- !u!114 &8827284467618045074
@@ -176,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a075db5858185408a1a0f5b56020ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStart: 1
   DestroyTime: 10
   Initialize: 0
 --- !u!1 &6602643103596903843
@@ -14876,7 +14875,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  useUnscaledTime: 0
+  useUnscaledTime: 1
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
   startDelay:

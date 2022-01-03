@@ -11,7 +11,7 @@ public class OffMeshLinkWindow : EditorWindow
     public List<OffMeshLink> OffMeshLinks;
     public Transform WaypointRoot;
 
-    public SerializedObject serializedObject;
+    public SerializedObject SerializedObject;
 
     public OffMeshLink FirstLink = null;
     public OffMeshLink SecondLink = null;
@@ -24,9 +24,9 @@ public class OffMeshLinkWindow : EditorWindow
 
     private void OnGUI()
     {
-        serializedObject = new SerializedObject(this);
+        SerializedObject = new SerializedObject(this);
 
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("WaypointRoot"));
+        EditorGUILayout.PropertyField(SerializedObject.FindProperty("WaypointRoot"));
 
         if (WaypointRoot == null)
         {
@@ -43,7 +43,7 @@ public class OffMeshLinkWindow : EditorWindow
             EditorGUILayout.EndVertical();
         }
 
-        serializedObject.ApplyModifiedProperties();
+        SerializedObject.ApplyModifiedProperties();
     }
 
     private void DrawButtons()
@@ -87,8 +87,8 @@ public class OffMeshLinkWindow : EditorWindow
     {
         EditorGUILayout.BeginHorizontal("box");
 
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("FirstLink"));
-        EditorGUILayout.PropertyField(serializedObject.FindProperty("SecondLink"));
+        EditorGUILayout.PropertyField(SerializedObject.FindProperty("FirstLink"));
+        EditorGUILayout.PropertyField(SerializedObject.FindProperty("SecondLink"));
 
         EditorGUILayout.EndHorizontal();
     }

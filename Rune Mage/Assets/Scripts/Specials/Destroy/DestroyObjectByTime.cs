@@ -3,16 +3,9 @@ using System.Collections;
 using UnityEngine;
 
 
-public class DestroyObjectByTime : MonoBehaviour
+public class DestroyObjectByTime : BaseOnStart
 {
     public float DestroyTime;
-     
-    public bool Initialize;
-
-    private void Start()
-    {
-        if (Initialize) StartCoroutine(DestroyObject());
-    }
 
     public IEnumerator DestroyObject()
     {
@@ -24,5 +17,10 @@ public class DestroyObjectByTime : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    public override void Logic()
+    {
+        StartCoroutine(DestroyObject());
     }
 }

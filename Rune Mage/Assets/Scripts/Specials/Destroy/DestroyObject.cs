@@ -1,16 +1,15 @@
 using UnityEngine;
 
 
-public class DestroyObject : MonoBehaviour
+public class DestroyObject : BaseOnStart
 {
-    public bool Initialize;
-    public void Start()
-    {
-        if (Initialize) Destroy();
-    }
-
     public void Destroy()
     {
         Destroy(gameObject);
+    }
+
+    public override void Logic()
+    {
+        Destroy();
     }
 }

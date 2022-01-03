@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6611373369543894354}
   - component: {fileID: 2633508850662421862}
   m_Layer: 0
-  m_Name: ExplisionDark
+  m_Name: ExplosionDark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
